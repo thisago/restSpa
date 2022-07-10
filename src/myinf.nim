@@ -1,8 +1,20 @@
 import pkg/prologue
+import pkg/dotenv
 
-proc hello*(ctx: Context) {.async.} =
-  resp "<h1>Hello, Prologue!</h1>"
 
-let app = newApp()
-app.get("/", hello)
-app.run()
+import myinf/routes
+import myinf/db
+import myinf/db/setup
+
+proc main =
+  dotenv.load()
+
+  inDb: setup dbConn
+    
+  let app = newApp()
+  for r in routesDefinition:
+    app.addRoute(r.routes, r.path)
+  app.run()
+
+when isMainModule:
+  main()
