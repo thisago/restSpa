@@ -15,6 +15,7 @@ SPA & REST template using prologue, norm and karax
 - [ ] Add route to get the logged user data
 - [ ] Add login logging table
 - [ ] Add last ip in `User`
+- [ ] Add tests
 
 ---
 
