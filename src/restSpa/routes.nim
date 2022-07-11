@@ -1,7 +1,7 @@
 import pkg/prologue
 
-import myinf/routes/home
-import myinf/routes/api/auth
+import restSpa/routes/home
+import restSpa/routes/api/auth
 
 type Route = tuple
   path: string

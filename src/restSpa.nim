@@ -4,9 +4,9 @@ import prologue
 import prologue/middlewares/utils
 import prologue/middlewares/signedCookieSession
 
-import myinf/routes
-import myinf/db
-import myinf/db/setup
+import restSpa/routes
+import restSpa/db
+import restSpa/db/setup
 
 
 proc main =

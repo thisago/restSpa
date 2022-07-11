@@ -2,10 +2,10 @@
 
 version       = "0.3.0"
 author        = "Thiago Navarro"
-description   = "MyInf.co"
+description   = "SPA & REST template using prologue, norm and karax"
 license       = "Proprietary"
 srcDir        = "src"
-bin           = @["myinf"]
+bin           = @["restSpa"]
 binDir = "build"
 
 

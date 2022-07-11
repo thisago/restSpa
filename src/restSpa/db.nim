@@ -1,4 +1,4 @@
-import myinf/configs
+import restSpa/configs
 
 import pkg/norm/sqlite
 export sqlite

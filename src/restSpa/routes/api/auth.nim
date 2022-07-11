@@ -1,9 +1,9 @@
 import pkg/prologue
 
-import myinf/db
-import myinf/db/models/user
+import restSpa/db
+import restSpa/db/models/user
 
-import myinf/utils
+import restSpa/utils
 
 proc r_signIn*(ctx: Context) {.async.} =
   ## Create new user with POST

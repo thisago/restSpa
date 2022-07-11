@@ -1,6 +1,6 @@
 import pkg/prologue
 
-import myinf/utils
+import restSpa/utils
 
 proc r_home*(ctx: Context) {.async.} =
   ## Homepage
