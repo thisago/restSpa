@@ -1,6 +1,21 @@
 # restSpa
 
-SPA & REST template using prologue, norm and karax
+SPA & REST template using Prologue, Norm and Karax
+
+## Stack
+
+- Nim (Programming language)
+- Norm (ORM)
+- Prologue (Backend framework)
+- Karax (Frontend framework)
+
+## Features
+
+- User manipulation in a SQLite DB
+- `.env` configs
+- REST API
+- SPA
+- 100% in Nim
 
 ## Setup
 
