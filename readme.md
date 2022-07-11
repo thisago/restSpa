@@ -21,6 +21,9 @@ SPA & REST template using Prologue, Norm and Karax
 
 1. Uncomment `.env` in [.gitignore](.gitignore)
 2. Replace all `respSpa` to your project name
+3. Change the `secretKey` in [.env](.env)
+
+- In production disable the `debug` in [.env](.env)
 
 ## TODO
 
