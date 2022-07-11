@@ -3,7 +3,7 @@
 version       = "0.3.0"
 author        = "Thiago Navarro"
 description   = "SPA & REST template using prologue, norm and karax"
-license       = "Proprietary"
+license       = "mit"
 srcDir        = "src"
 bin           = @["restSpa"]
 binDir = "build"
