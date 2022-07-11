@@ -1,9 +1,14 @@
-import pkg/norm/model
+import pkg/norm/[
+  model,
+  pragmas
+]
 
 type
   User* = ref object of Model
     ## User DB model
-    username*, email*, password*: string
+    username* {.unique.}: string
+    email* {.unique.}: string
+    password*: string
 
 proc newUser*(username, email, password: string): User =
   ## Creates new `User`

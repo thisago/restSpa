@@ -1,5 +1,18 @@
 # Changelog
 
+## Version 0.3.0 (Jul 11 2022)
+
+- Added session based login
+- Replaced helloWorld to home route
+- Using the prologue env parser instead of dotenv module
+- Added more .env configs
+- Added debug logging
+- Added API
+  - Added register route
+- Added utilities
+
+---
+
 ## Version 0.2.0 (Jul 10 2022)
 
 - DB

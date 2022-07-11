@@ -1,4 +1,5 @@
 switch("path", "$projectDir/../src")
 switch("path", "$projectDir/../../src")
 
-switch("threads", "on")
+when not defined(windows):
+  switch("threads", "on")
