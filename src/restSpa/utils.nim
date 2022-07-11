@@ -38,16 +38,20 @@ template respJson*(data: untyped; code: HttpCode) =
   ## Send a JSON to client
   resp($(%*data), code)
 
-template respErr*(err: string; code = Http400) =
-  ## Send a error in a JSON to client
-  respJson({"message": err, "error": true}, code)
+template respErr*(msg: string; code = Http400) =
+  ## Send a error message in a JSON to client
+  respJson({"message": msg, "error": true}, code)
+template respSuc*(msg: string; code = Http200) =
+  ## Send a success message in a JSON to client
+  respJson({"message": msg, "error": false}, code)
 
 from std/strutils import `%`
 
+const ifContainsDefaultErr* = "No $1 provided"
 template ifContains*(
   node;
   fields: openArray[string];
-  errorMsg = "No $1 provided";
+  errorMsg: string;
   body: untyped
 ) =
   ## Checks if the json have errors and specific fields, if not exists,
