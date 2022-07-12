@@ -8,7 +8,6 @@ import restSpa/routes
 import restSpa/db
 import restSpa/db/setup
 
-
 proc main =
   inDb: setup dbConn
     
@@ -19,12 +18,17 @@ proc main =
       debug = env.getOrDefault("debug", true),
       port = Port env.getOrDefault("port", 8080),
       secretKey = env.getOrDefault("secretKey", ""),
+      address = env.getOrDefault("address", "")
     )
 
   proc setLoggingLevel =
+    addHandler newFileLogger(env.getOrDefault("errorLog", "error.log"), levelThreshold = lvlError)
+    addHandler newRollingFileLogger env.getOrDefault("rollingLog", "rolling.log")
+    addHandler(newConsoleLogger())
     if settings.debug:
-      addHandler(newConsoleLogger())
       logging.setLogFilter(lvlDebug)
+    else:
+      logging.setLogFilter(lvlInfo)
     
   var app = newApp(
     settings = settings,
@@ -37,6 +41,8 @@ proc main =
 
   for r in routesDefinition:
     app.addRoute(r.routes, r.path)
+  for (code, cb) in defaultRoutes:
+    app.registerErrorHandler(code, cb)
   app.run()
 
 when isMainModule:

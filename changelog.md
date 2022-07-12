@@ -1,5 +1,15 @@
 # Changelog
 
+## Version 0.5.0 (Jul 12 2022)
+
+- Added rolling and error file logging (can config in [.env](.env))
+- Added auto support to forms and `application/x-www-form-urlencoded` body format and seamless integration using `ctx.withParams:`
+- Fixed routes names
+- Added compile-time option to disable form auto parsing
+- Added custom 404 page
+
+---
+
 ## Version 0.4.0 (Jul 11 2022)
 
 - Added session based login

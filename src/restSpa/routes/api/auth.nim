@@ -9,7 +9,7 @@ proc r_signIn*(ctx: Context) {.async.} =
   ## Create new user with POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
-  ctx.withJson:
+  ctx.withParams:
     node.ifContains(["username", "password"], ifContainsDefaultErr):
       let
         username = node{"username"}.getStr
@@ -29,14 +29,13 @@ proc r_signIn*(ctx: Context) {.async.} =
       else:
         ctx.session["username"] = username
         respSuc "Success"
-        
 
 
 proc r_signUp*(ctx: Context) {.async.} =
   ## Create new user with POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
-  ctx.withJson:
+  ctx.withParams:
     node.ifContains(["username", "email", "password"], ifContainsDefaultErr):
       let
         username = node{"username"}.getStr

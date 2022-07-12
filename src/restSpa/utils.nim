@@ -1,5 +1,17 @@
+from std/logging import nil
+
+from std/json import parseJson, `{}=`, `%`, newJObject
+from std/strtabs import keys
+
+const
+  autoFormParsing {.booldefine.} = true
+  autoXmlParsing {.booldefine.} = false # not implemented
+
+when autoXmlParsing:
+  from std/xmlparser import parseXml
+  import std/xmltree
+
 import pkg/prologue
-import std/json
 export json
 
 proc hasKey*(session: var Session; key: string): bool =
@@ -18,20 +30,40 @@ proc setContentJsonHeader*(ctx) =
   ## Set the response content-type to json
   ctx.response.setHeader "content-type", "application/json"
 
-template withJson*(ctx; bodyCode: untyped) =
+template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
   ## Run `body` if request has a JSON body
   ##
   ## If no JSON sent or/and the `content-type` is not
   ## JSON, it will response with `Http400` and close
   ## connection
+  ## 
+  ## Use `mergeGet` to merge the get parameters into `node`
+  ## The GET parameters override the POST
+  let reqMethod = ctx.request.reqMethod
   var
-    node {.inject.}: JsonNode
+    node {.inject.} = newJObject()
     error {.inject.} = true
-  if ctx.request.contentType == "application/json":
-    try:
-      node = parseJson ctx.request.body
-      error = false
-    except JsonParsingError: discard
+
+  if reqMethod == HttpPost:
+    case ctx.request.contentType:
+    of "application/json":
+      try:
+        node = parseJson ctx.request.body
+        error = false
+      except JsonParsingError: discard
+    of "application/x-www-form-urlencoded", "multipart/form-data":
+      when autoFormParsing:
+        for key, val in ctx.request.formParams.data:
+          # echo val.params
+          node{key} = %val.body
+    of "application/xml":
+      when autoXmlParsing:
+        {.fatal: "XML parsing not implemented".}
+    else: discard
+  if mergeGet or reqMethod == HttpGet:
+    for key, val in ctx.request.queryParams:
+      node{key} = %val
+  logging.debug "Auto parsed params: " & $node
   bodyCode
 
 template respJson*(data: untyped; code: HttpCode) =
@@ -59,7 +91,7 @@ template ifContains*(
   ## 
   ## If all is good, the body is executed
   if error:
-    respJson({"message": "Invalid JSON", "error": true}, Http400)
+    respJson({"message": "Invalid request", "error": true}, Http400)
   else:
     var haveAll = true
     for field in fields:
@@ -71,4 +103,7 @@ template ifContains*(
       body
 
 template forceHttpMethod*(ctx; httpMethod: HttpMethod) =
+  ## Forces an specific HTTP method
+  ## 
+  ## Useful just in development
   doAssert ctx.request.reqMethod == httpMethod
