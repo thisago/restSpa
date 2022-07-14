@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.6.0 (Jul 13 2022)
+
+- Added user rank
+- Added docs
+
+---
+
 ## Version 0.5.0 (Jul 12 2022)
 
 - Added rolling and error file logging (can config in [.env](.env))

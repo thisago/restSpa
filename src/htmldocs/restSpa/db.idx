@@ -1,0 +1,3 @@
+dbLock	restSpa/db.html#dbLock	db: dbLock	
+dbConn	restSpa/db.html#dbConn	db: dbConn	
+inDb	restSpa/db.html#inDb.t,untyped	db: inDb(body: untyped)	

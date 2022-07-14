@@ -9,6 +9,12 @@ type
     username* {.unique.}: string
     email* {.unique.}: string
     password*: string
+    rank*: UserRanks
+
+  UserRanks* = enum
+    urGhost, ## Ghost is a user that cannot do anything, a unverified user
+    urUser,  ## Default user privileges
+    urAdmin  ## All privileges
 
 proc newUser*(username, email, password: string): User =
   ## Creates new `User`
@@ -16,6 +22,7 @@ proc newUser*(username, email, password: string): User =
   result.username = username
   result.email = email
   result.password = password # encrypt
+  result.rank = urGhost
 
 proc newUser*: User =
   ## Creates new blank `User`

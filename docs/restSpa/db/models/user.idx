@@ -1,0 +1,7 @@
+User	restSpa/db/models/user.html#User	user: User	
+urGhost	restSpa/db/models/user.html#urGhost	UserRanks.urGhost	
+urUser	restSpa/db/models/user.html#urUser	UserRanks.urUser	
+urAdmin	restSpa/db/models/user.html#urAdmin	UserRanks.urAdmin	
+UserRanks	restSpa/db/models/user.html#UserRanks	user: UserRanks	
+newUser	restSpa/db/models/user.html#newUser,string,string,string	user: newUser(username, email, password: string): User	
+newUser	restSpa/db/models/user.html#newUser	user: newUser(): User	
