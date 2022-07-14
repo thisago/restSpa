@@ -56,7 +56,11 @@ Content-Type: application/json
 2. Replace all `respSpa` to your project name
 3. Change the `secretKey` in [.env](.env)
 
+### Notes
+
 - In production disable the `debug` in [.env](.env)
+
+---
 
 ## TODO
 
