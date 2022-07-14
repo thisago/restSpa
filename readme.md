@@ -17,6 +17,39 @@ SPA & REST template using Prologue, Norm and Karax
 - SPA
 - 100% in Nim
 
+## Routes
+
+### API
+
+The API understands the body type as JSON, url-encoded and forms.
+
+#### `POST /api/signin` - Login
+Example:
+```
+GET /api/signin HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "doe",
+}
+```
+
+#### `POST /api/signup` - Signup
+Example:
+```
+GET /api/signup HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "john",
+  "email": "johndoe@example.com",
+  "password": "doe",
+}
+```
+
+---
+
 ## Setup
 
 1. Uncomment `.env` in [.gitignore](.gitignore)
