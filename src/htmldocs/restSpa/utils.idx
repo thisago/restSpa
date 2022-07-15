@@ -1,9 +1,0 @@
-hasKey	restSpa/utils.html#hasKey,Session,string	utils: hasKey(session: var Session; key: string): bool	
-setContentJsonHeader	restSpa/utils.html#setContentJsonHeader	utils: setContentJsonHeader(ctx)	
-withParams	restSpa/utils.html#withParams.t,,untyped	utils: withParams(ctx; mergeGet = false; bodyCode: untyped)	
-respJson	restSpa/utils.html#respJson.t,untyped,HttpCode	utils: respJson(data: untyped; code: HttpCode)	
-respErr	restSpa/utils.html#respErr.t,string	utils: respErr(msg: string; code = Http400)	
-respSuc	restSpa/utils.html#respSuc.t,string	utils: respSuc(msg: string; code = Http200)	
-ifContainsDefaultErr	restSpa/utils.html#ifContainsDefaultErr	utils: ifContainsDefaultErr	
-ifContains	restSpa/utils.html#ifContains.t,,openArray[string],string,untyped	utils: ifContains(node; fields: openArray[string]; errorMsg: string; body: untyped)	
-forceHttpMethod	restSpa/utils.html#forceHttpMethod.t,,HttpMethod	utils: forceHttpMethod(ctx; httpMethod: HttpMethod)	
