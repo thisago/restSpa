@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 0.8.0 (Jul 18 2022)
+
+- Added `getUser` admin route to get all user data
+- Added min rank verification
+- Automatically creates the admin
+- Fixed `ifContains` error formatting
+- Added `registerIp` and `lastLoginIp` to `User`
+- Added `registerDate` and `lastLoginDate` to `User`
+
+---
+
 ## Version 0.7.0 (Jul 17 2022)
 
 - Fixed user rank

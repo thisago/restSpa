@@ -8,6 +8,7 @@ export locks
 
 var dbLock*: Lock
 initLock dbLock
+
 let dbConn* {.guard: dbLock.} = open(
   dbHost,
   dbUser,

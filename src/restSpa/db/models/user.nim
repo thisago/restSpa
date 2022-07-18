@@ -1,7 +1,14 @@
+from std/json import `$`, `%*`, `%`, `{}=`, delete
+# from std/times import `$`, fromUnix
+
 import pkg/norm/[
   model,
   pragmas
 ]
+
+from restSpa/utils import nowUnix
+from restSpa/db/utils as dbUtils import getFromDb
+import restSpa/db
 
 type
   User* = ref object of Model
@@ -11,6 +18,9 @@ type
     password*: string
 
     internalRank*: int
+
+    registerDate*, lastLoginDate*: int64
+    registerIp*, lastLoginIp*: string
 
   UserRank* = enum
     urGhost = 0, ## Ghost is a user that cannot do anything, a unverified user
@@ -25,14 +35,46 @@ func `rank=`*(user: var User; rank: UserRank) =
   user.internalRank = int rank
 
 
-proc newUser*(username, email, password: string): User =
+proc newUser*(username, email, password: string; registerIp: string; rank = urGhost): User =
   ## Creates new `User`
   new result
   result.username = username
   result.email = email
-  result.password = password # encrypt
-  result.rank = urGhost
+  result.password = password # TODO: hash password
+  result.rank = rank
+  result.registerIp = registerIp
+  result.registerDate = nowUnix()
+
 
 proc newUser*: User =
   ## Creates new blank `User`
-  newUser("", "", "")
+  newUser(
+    username = "",
+    email = "",
+    password = "",
+    registerIp = "",
+    rank = urGhost
+  )
+
+proc toJson*(user: User): string =
+  ## COnverts the user to a JSON notation
+  var node = %*user
+  node{"rank"} = %user.rank
+  # node{"lastLoginDate"} = % $user.lastLoginDate.fromUnix
+  # node{"registerDate"} = % $user.registerDate.fromUnix
+  node.delete "internalRank"
+  result = $node
+
+## DB
+
+proc get*(self: type User; username: string): User =
+  ## Get the user in db which have the username or email same as `username`
+  User.getFromDb(newUser(), ["username", "email"], username)
+
+proc update*(user: var User; loginIp = "") =
+  ## Updates the user in db
+  ##
+  ## To set new login, use `loginIp`
+  user.lastLoginIp = loginIp
+  user.lastLoginDate = nowUnix()
+  inDb: dbConn.update user

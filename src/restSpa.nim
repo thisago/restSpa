@@ -10,7 +10,7 @@ import restSpa/db/setup
 
 proc main =
   inDb: setup dbConn
-    
+
   let
     env = loadPrologueEnv ".env"
     settings = newSettings(
@@ -29,7 +29,7 @@ proc main =
       logging.setLogFilter(lvlDebug)
     else:
       logging.setLogFilter(lvlInfo)
-    
+
   var app = newApp(
     settings = settings,
     startup = @[

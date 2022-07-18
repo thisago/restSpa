@@ -1,6 +1,6 @@
 import pkg/prologue
 
-import restSpa/utils
+# import restSpa/routes/utils
 
 proc r_404*(ctx: Context) {.async.} =
   ## Default 404 page
