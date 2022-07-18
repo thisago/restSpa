@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.7.0 (Jul 17 2022)
+
+- Fixed user rank
+- Added `setRank` to admin privilege routes in API
+- Fixed `withParams` calling
+- Added to utils
+  - `getSession` - Tries to get a session value
+  - `ifLogin`
+  - `ifRank`
+
+---
+
 ## Version 0.6.0 (Jul 13 2022)
 
 - Added user rank

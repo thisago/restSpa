@@ -9,12 +9,21 @@ type
     username* {.unique.}: string
     email* {.unique.}: string
     password*: string
-    rank*: UserRanks
 
-  UserRanks* = enum
-    urGhost, ## Ghost is a user that cannot do anything, a unverified user
+    internalRank*: int
+
+  UserRank* = enum
+    urGhost = 0, ## Ghost is a user that cannot do anything, a unverified user
     urUser,  ## Default user privileges
     urAdmin  ## All privileges
+
+func rank*(user: User): UserRank =
+  ## User.rank getter
+  UserRank(user.internalRank)
+func `rank=`*(user: var User; rank: UserRank) =
+  ## User.rank setter
+  user.internalRank = int rank
+
 
 proc newUser*(username, email, password: string): User =
   ## Creates new `User`

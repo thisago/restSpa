@@ -3,6 +3,8 @@ import pkg/prologue
 import restSpa/routes/home
 import restSpa/routes/api/auth
 
+import restSpa/routes/api/admin
+
 import restSpa/routes/default/notFound
 
 type
@@ -17,6 +19,10 @@ const routesDefinition*: seq[Route] = @[
   ("api", @[
     pattern("/signin", r_signIn, HttpPost, "signin"),
     pattern("/signup", r_signUp, HttpPost, "signup"),
+  ]),
+  ("api/admin", @[
+    pattern("/setRank", r_setRank, HttpPost, "setRank"),
+    # pattern("/signup", r_signUp, HttpPost, "signup"),
   ]),
 ]
 

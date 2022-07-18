@@ -32,13 +32,13 @@ username=admin&email=admin@localhost&password=admin
 
 ###
 
-# POST {{url}}/api/signup?hello=world&username=jorge HTTP/1.1
-# Content-Type: application/xml
+POST {{url}}/api/admin/setRank HTTP/1.1
+Content-Type: application/json
+cookie: session=e3VzZXJuYW1lOiBhZG1pbn0=.0.WRCGhR0Vg4at1rRr1SwU0u9dxd4
 
-# <username>admin</username>
-# <email>admin@localhost</email>
-# <password>admin</password>
+{
+  "username": "admin",
+  "rank": "urUser",
+}
 
-# ###
-
-# GET {{url}}/?username=admin&email=admin@localhost&password=admin HTTP/1.1
+###

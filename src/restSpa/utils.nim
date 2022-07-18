@@ -3,6 +3,10 @@ from std/logging import nil
 from std/json import parseJson, `{}=`, `%`, newJObject
 from std/strtabs import keys
 
+import restSpa/config
+export config
+from restSpa/db/models/user import UserRank
+
 const
   autoFormParsing {.booldefine.} = true
   autoXmlParsing {.booldefine.} = false # not implemented
@@ -36,7 +40,7 @@ template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
   ## If no JSON sent or/and the `content-type` is not
   ## JSON, it will response with `Http400` and close
   ## connection
-  ## 
+  ##
   ## Use `mergeGet` to merge the get parameters into `node`
   ## The GET parameters override the POST
   let reqMethod = ctx.request.reqMethod
@@ -88,7 +92,7 @@ template ifContains*(
 ) =
   ## Checks if the json have errors and specific fields, if not exists,
   ## send the error message.
-  ## 
+  ##
   ## If all is good, the body is executed
   if error:
     respJson({"message": "Invalid request", "error": true}, Http400)
@@ -104,6 +108,35 @@ template ifContains*(
 
 template forceHttpMethod*(ctx; httpMethod: HttpMethod) =
   ## Forces an specific HTTP method
-  ## 
+  ##
   ## Useful just in development
   doAssert ctx.request.reqMethod == httpMethod
+
+proc getSession*(ctx; name: string; default = ""): string =
+  ## Tries to get a session value
+  result = default
+  try:
+    result = ctx.session[sess_username]
+  except: discard
+
+
+template ifLogin*(ctx; loggedIn = true; body: untyped) =
+  ## Runs the code if user have login
+  var check = ctx.getSession(sess_username).len > 0
+  if not loggedIn:
+    check = not check
+  if check:
+    body
+  else:
+    if loggedIn:
+      respErr "User not logged in. Please signin"
+    else:
+      respErr "User logged in. Please logoff"
+
+template ifRank*(ctx; rank: UserRank; body: untyped) =
+  ## Runs the code if user have correct rank
+  ctx.ifLogin true:
+    if ctx.session[sess_username] == "admin": # TODO: fix this and check in db the user rank
+      body
+    else:
+      respErr "Invalid rank"

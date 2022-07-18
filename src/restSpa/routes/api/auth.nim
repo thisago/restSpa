@@ -9,7 +9,7 @@ proc r_signIn*(ctx: Context) {.async.} =
   ## Create new user with POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
-  ctx.withParams:
+  ctx.withParams(mergeGet = false):
     node.ifContains(["username", "password"], ifContainsDefaultErr):
       let
         username = node{"username"}.getStr
@@ -17,10 +17,11 @@ proc r_signIn*(ctx: Context) {.async.} =
       var user = newUser()
       try:
         inDb: dbConn.select(
-                user,
-                "User.username = ? or User.email = ?",
-                username
-              )
+          user,
+          "User.username = ? or User.email = ?",
+          username,
+          username
+        )
       except: discard
       if user.username.len == 0:
         respErr "Invalid username or email"
@@ -35,7 +36,7 @@ proc r_signUp*(ctx: Context) {.async.} =
   ## Create new user with POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
-  ctx.withParams:
+  ctx.withParams(mergeGet = false):
     node.ifContains(["username", "email", "password"], ifContainsDefaultErr):
       let
         username = node{"username"}.getStr
@@ -44,7 +45,7 @@ proc r_signUp*(ctx: Context) {.async.} =
       try:
         var user = newUser(username, email, password)
         inDb: dbConn.insert user
-        ctx.session["username"] = username
+        # ctx.session["username"] = username
         resp($(%*user))
       except DbError:
         case getCurrentExceptionMsg():
