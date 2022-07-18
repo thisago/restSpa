@@ -7,8 +7,8 @@
 - Fixed `withParams` calling
 - Added to utils
   - `getSession` - Tries to get a session value
-  - `ifLogin`
-  - `ifRank`
+  - `ifLogin` - Runs the code if user have login
+  - `ifRank` - Runs the code if user have correct rank
 
 ---
 
