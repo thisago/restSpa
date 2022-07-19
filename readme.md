@@ -16,12 +16,15 @@ SPA & REST template using Prologue, Norm and Karax
 - REST API
 - SPA
 - 100% in Nim
+- Boilerplate free
+- A lot of abstractions
 
 ## Routes
 
 ### API
 
-The API understands the body type as JSON, url-encoded and forms.
+The API understands the body type as JSON, url-encoded and forms. Just specify
+the `Content-Type`
 
 #### `POST /api/signin` - Login
 Example:
@@ -45,6 +48,31 @@ Content-Type: application/json
   "username": "john",
   "email": "johndoe@example.com",
   "password": "doe",
+}
+```
+
+#### `POST /api/admin/setRank` - Set the rank of user (**admin**)
+Example:
+```
+POST /api/admin/setRank HTTP/1.1
+Content-Type: application/json
+cookie: session=<ADMIN SESSION>
+
+{
+  "username": "admin",
+  "rank": "urUser",
+}
+```
+
+#### `POST /api/admin/getUser` - Get all the user data (**admin**)
+Example:
+```
+POST /api/admin/getUser HTTP/1.1
+Content-Type: application/json
+cookie: session=<ADMIN SESSION>
+
+{
+  "username": "admin"
 }
 ```
 

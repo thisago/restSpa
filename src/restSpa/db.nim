@@ -1,5 +1,3 @@
-import restSpa/configs
-
 import pkg/norm/sqlite
 export sqlite
 
@@ -9,12 +7,7 @@ export locks
 var dbLock*: Lock
 initLock dbLock
 
-let dbConn* {.guard: dbLock.} = open(
-  dbHost,
-  dbUser,
-  dbPass,
-  ""
-)
+var dbConn* {.guard: dbLock.}: DbConn
 
 template inDb*(body: untyped) =
   {.gcsafe.}:

@@ -1,0 +1,15 @@
+hasKey	restSpa/routes/utils.html#hasKey,Session,string	utils: hasKey(session: var Session; key: string): bool	
+setContentJsonHeader	restSpa/routes/utils.html#setContentJsonHeader	utils: setContentJsonHeader(ctx)	
+withParams	restSpa/routes/utils.html#withParams.t,,untyped	utils: withParams(ctx; mergeGet = false; bodyCode: untyped)	
+respJson	restSpa/routes/utils.html#respJson.t,untyped,HttpCode	utils: respJson(data: untyped; code: HttpCode)	
+respErr	restSpa/routes/utils.html#respErr.t,string	utils: respErr(msg: string; code = Http400)	
+respSuc	restSpa/routes/utils.html#respSuc.t,string	utils: respSuc(msg: string; code = Http200)	
+respErrJson	restSpa/routes/utils.html#respErrJson.t,string	utils: respErrJson(json: string; code = Http400)	
+respSucJson	restSpa/routes/utils.html#respSucJson.t,string	utils: respSucJson(json: string; code = Http200)	
+ifContainsDefaultErr	restSpa/routes/utils.html#ifContainsDefaultErr	utils: ifContainsDefaultErr	
+ifContains	restSpa/routes/utils.html#ifContains.t,,openArray[string],string,untyped	utils: ifContains(node; fields: openArray[string]; errorMsg: string; body: untyped)	
+forceHttpMethod	restSpa/routes/utils.html#forceHttpMethod.t,,HttpMethod	utils: forceHttpMethod(ctx; httpMethod: HttpMethod)	
+getSession	restSpa/routes/utils.html#getSession,,string,string	utils: getSession(ctx; name: string; default = &quot;&quot;): string	
+ifLogin	restSpa/routes/utils.html#ifLogin.t,,untyped	utils: ifLogin(ctx; loggedIn = true; body: untyped)	
+minRank	restSpa/routes/utils.html#minRank.t,,UserRank,untyped	utils: minRank(ctx; minRank: UserRank; body: untyped)	
+ip	restSpa/routes/utils.html#ip,Request	utils: ip(req: Request): string	

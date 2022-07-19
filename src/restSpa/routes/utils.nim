@@ -145,7 +145,6 @@ template minRank*(ctx; minRank: UserRank; body: untyped) =
     let
       username = ctx.getSession sess_username
       user = User.get username
-    echo user[]
     if user.rank >= minRank:
       body
     else:

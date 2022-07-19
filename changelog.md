@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.9.0 (Jul 18 2022)
+
+<!-- - Adding `editUser` admin route to edit any user data -->
+- Updated docs
+- Updated readme
+- Fixed db env config getting
+
+---
+
 ## Version 0.8.0 (Jul 18 2022)
 
 - Added `getUser` admin route to get all user data

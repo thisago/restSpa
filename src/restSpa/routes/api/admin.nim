@@ -8,6 +8,9 @@ import restSpa/db/models/user
 
 import restSpa/routes/utils
 
+const
+  invalidUsername = "Invalid username or email"
+
 proc r_setRank*(ctx: Context) {.async.} =
   ## Set user rank using POST
   ctx.setContentJsonHeader
@@ -27,7 +30,7 @@ proc r_setRank*(ctx: Context) {.async.} =
           )
         except: discard
         if user.username.len == 0:
-          respErr "Invalid username or email"
+          respErr invalidUsername
         else:
           if user.rank != rank:
             user.rank = rank
@@ -49,6 +52,20 @@ proc r_getUser*(ctx: Context) {.async.} =
         let username = node{"username"}.getStr
         var user = User.get username
         if user.username.len == 0:
-          respErr "Invalid username or email"
+          respErr invalidUsername
+        else:
+          respSucJson user.toJson
+
+proc r_editUser*(ctx: Context) {.async.} =
+  ## Edit user data using POST
+  ctx.setContentJsonHeader
+  ctx.forceHttpMethod HttpPost
+  ctx.minRank urAdmin:
+    ctx.withParams(mergeGet = false):
+      node.ifContains(["username"], ifContainsDefaultErr):
+        let username = node{"username"}.getStr
+        var user = User.get username
+        if user.username.len == 0:
+          respErr invalidUsername
         else:
           respSucJson user.toJson

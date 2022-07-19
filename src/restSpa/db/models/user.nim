@@ -35,7 +35,7 @@ func `rank=`*(user: var User; rank: UserRank) =
   user.internalRank = int rank
 
 
-proc newUser*(username, email, password: string; registerIp: string; rank = urGhost): User =
+proc newUser*(username, email, password: string; registerIp: string; rank = urGhost; registerDate = nowUnix()): User =
   ## Creates new `User`
   new result
   result.username = username
@@ -43,7 +43,7 @@ proc newUser*(username, email, password: string; registerIp: string; rank = urGh
   result.password = password # TODO: hash password
   result.rank = rank
   result.registerIp = registerIp
-  result.registerDate = nowUnix()
+  result.registerDate = registerDate
 
 
 proc newUser*: User =
@@ -53,7 +53,8 @@ proc newUser*: User =
     email = "",
     password = "",
     registerIp = "",
-    rank = urGhost
+    rank = urGhost,
+    registerDate = 0
   )
 
 proc toJson*(user: User): string =
@@ -67,9 +68,15 @@ proc toJson*(user: User): string =
 
 ## DB
 
-proc get*(self: type User; username: string): User =
+proc get*(self: type User; username: string; fields: varargs[string] = []): User =
   ## Get the user in db which have the username or email same as `username`
-  User.getFromDb(newUser(), ["username", "email"], username)
+  ##
+  ## `fields` not working!!
+  var queryFields = @["username", "email"]
+  if fields.len > 0:
+    raise newException(ValueError, "`fields` not working!")
+    queryFields = @fields
+  User.getFromDb(newUser(), queryFields, username)
 
 proc update*(user: var User; loginIp = "") =
   ## Updates the user in db

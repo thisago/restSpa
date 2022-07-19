@@ -23,6 +23,7 @@ const routesDefinition*: seq[Route] = @[
   ("api/admin", @[
     pattern("/setRank", r_setRank, HttpPost, "setRank"),
     pattern("/getUser", r_getUser, HttpPost, "getUser"),
+    pattern("/editUser", r_editUser, HttpPost, "editUser"),
   ]),
 ]
 

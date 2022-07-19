@@ -1,0 +1,2 @@
+r_setRank	restSpa/routes/api/admin.html#r_setRank,Context	admin: r_setRank(ctx: Context): owned(Future[void])	
+r_getUser	restSpa/routes/api/admin.html#r_getUser,Context	admin: r_getUser(ctx: Context): owned(Future[void])	

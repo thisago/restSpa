@@ -9,10 +9,13 @@ import restSpa/db
 import restSpa/db/setup
 
 proc main =
-  inDb: setup dbConn
-
   let
     env = loadPrologueEnv ".env"
+
+    dbHost = env.getOrDefault("dbHost", ":memory:")
+    dbUser = env.getOrDefault("dbUser", "")
+    dbPass = env.getOrDefault("dbPass", "")
+
     settings = newSettings(
       appName = env.getOrDefault("appName", "Prologue"),
       debug = env.getOrDefault("debug", true),
@@ -20,6 +23,10 @@ proc main =
       secretKey = env.getOrDefault("secretKey", ""),
       address = env.getOrDefault("address", "")
     )
+
+  inDb:
+    dbConn = open(dbHost, dbUser, dbPass, "")
+    setup dbConn
 
   proc setLoggingLevel =
     addHandler newFileLogger(env.getOrDefault("errorLog", "error.log"), levelThreshold = lvlError)

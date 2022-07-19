@@ -19,4 +19,5 @@ template getFromDb*(
       query.join " or ",
       vars
     )
-  except NotFoundError: discard
+  except NotFoundError:
+    echo getCurrentExceptionMsg()
