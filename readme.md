@@ -93,11 +93,11 @@ cookie: session=<ADMIN SESSION>
 ## TODO
 
 - [ ] Hash the password
-- [ ] Add user permission levels
+- [x] Add user permission levels
 - [ ] Add delete user route (for moderators?)
 - [ ] Add route to get the logged user data
 - [ ] Add login logging table
-- [ ] Add last ip in `User`
+- [x] Add last ip in `User`
 - [ ] Add tests
 
 ---
