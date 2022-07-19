@@ -51,18 +51,7 @@ Content-Type: application/json
 }
 ```
 
-#### `POST /api/admin/setRank` - Set the rank of user (**admin**)
-Example:
-```
-POST /api/admin/setRank HTTP/1.1
-Content-Type: application/json
-cookie: session=<ADMIN SESSION>
-
-{
-  "username": "admin",
-  "rank": "urUser",
-}
-```
+---
 
 #### `POST /api/admin/getUser` - Get all the user data (**admin**)
 Example:
@@ -76,12 +65,25 @@ cookie: session=<ADMIN SESSION>
 }
 ```
 
+#### `POST /api/admin/editUser` - Get all the user data (**admin**)
+Example:
+```
+POST /api/admin/getUser HTTP/1.1
+Content-Type: application/json
+cookie: session=<ADMIN SESSION>
+
+{
+  "id": "0",
+  "email
+}
+```
+
 ---
 
 ## Setup
 
 1. Uncomment `.env` in [.gitignore](.gitignore)
-2. Replace all `respSpa` to your project name
+2. Replace all `respSpa` to your project name (including files/dirs names and inside files)
 3. Change the `secretKey` in [.env](.env)
 
 ### Notes
@@ -94,11 +96,12 @@ cookie: session=<ADMIN SESSION>
 
 - [ ] Hash the password
 - [x] Add user permission levels
-- [ ] Add delete user route (for moderators?)
+- [ ] Add a route to delete user (for moderators?)
 - [ ] Add route to get the logged user data
 - [ ] Add login logging table
 - [x] Add last ip in `User`
 - [ ] Add tests
+- [ ] Support `id` for querying (`User`s)
 
 ---
 

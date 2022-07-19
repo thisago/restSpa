@@ -25,30 +25,26 @@
   <div class="document" id="documentId">
     <div class="container">
       <h1 class="title">Index</h1>
-      Modules: <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/configs.html">restSpa/configs</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/admin.html">restSpa/routes/api/admin</a>, <a href="restSpa/routes/api/auth.html">restSpa/routes/api/auth</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/routes/utils.html">restSpa/routes/utils</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
-<dl><dt><a name="dbConn" href="#dbConn"><span>dbConn:</span></a></dt><dd><ul class="simple">
+      Modules: <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/admin.html">restSpa/routes/api/admin</a>, <a href="restSpa/routes/api/auth.html">restSpa/routes/api/auth</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/routes/utils.html">restSpa/routes/utils</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
+<dl><dt><a name="cannotFindUser" href="#cannotFindUser"><span>cannotFindUser:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: cannotFindUser" href="restSpa/config.html#cannotFindUser">config: cannotFindUser</a></li>
+          </ul></dd>
+<dt><a name="dbConn" href="#dbConn"><span>dbConn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="db: dbConn" href="restSpa/db.html#dbConn">db: dbConn</a></li>
-          </ul></dd>
-<dt><a name="dbHost" href="#dbHost"><span>dbHost:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="configs: dbHost" href="restSpa/configs.html#dbHost">configs: dbHost</a></li>
           </ul></dd>
 <dt><a name="dbLock" href="#dbLock"><span>dbLock:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="db: dbLock" href="restSpa/db.html#dbLock">db: dbLock</a></li>
           </ul></dd>
-<dt><a name="dbPass" href="#dbPass"><span>dbPass:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="configs: dbPass" href="restSpa/configs.html#dbPass">configs: dbPass</a></li>
-          </ul></dd>
-<dt><a name="dbUser" href="#dbUser"><span>dbUser:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="configs: dbUser" href="restSpa/configs.html#dbUser">configs: dbUser</a></li>
-          </ul></dd>
 <dt><a name="defaultRoutes" href="#defaultRoutes"><span>defaultRoutes:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="routes: defaultRoutes" href="restSpa/routes.html#defaultRoutes">routes: defaultRoutes</a></li>
+          </ul></dd>
+<dt><a name="delInternals" href="#delInternals"><span>delInternals:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="utils: delInternals(node: var JsonNode)" href="restSpa/routes/utils.html#delInternals%2CJsonNode">utils: delInternals(node: var JsonNode)</a></li>
           </ul></dd>
 <dt><a name="forceHttpMethod" href="#forceHttpMethod"><span>forceHttpMethod:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -56,7 +52,7 @@
           </ul></dd>
 <dt><a name="get" href="#get"><span>get:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="user: get(self: type User; username: string): User" href="restSpa/db/models/user.html#get%2CtypeUser%2Cstring">user: get(self: type User; username: string): User</a></li>
+          data-doc-search-tag="user: get(self: type User; username: string; fields: varargs[string] = []): User" href="restSpa/db/models/user.html#get%2CtypeUser%2Cstring%2Cvarargs%5Bstring%5D">user: get(self: type User; username: string; fields: varargs[string] = []): User</a></li>
           </ul></dd>
 <dt><a name="getFromDb" href="#getFromDb"><span>getFromDb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -68,39 +64,67 @@
 <li><a class="reference external"
           data-doc-search-tag="utils: getSession(ctx; name: string; default = &quot;&quot;): string" href="restSpa/routes/utils.html#getSession%2C%2Cstring%2Cstring">utils: getSession(ctx; name: string; default = &quot;&quot;): string</a></li>
           </ul></dd>
+<dt><a name="getUsing" href="#getUsing"><span>getUsing:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="utils: getUsing(table: type; fields: ReqDbFields; node): auto" href="restSpa/routes/utils.html#getUsing%2Ctype%2CReqDbFields%2C">utils: getUsing(table: type; fields: ReqDbFields; node): auto</a></li>
+          </ul></dd>
 <dt><a name="hasKey" href="#hasKey"><span>hasKey:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="utils: hasKey(session: var Session; key: string): bool" href="restSpa/routes/utils.html#hasKey%2CSession%2Cstring">utils: hasKey(session: var Session; key: string): bool</a></li>
           </ul></dd>
 <dt><a name="ifContains" href="#ifContains"><span>ifContains:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="utils: ifContains(node; fields: openArray[string]; errorMsg: string; body: untyped)" href="restSpa/routes/utils.html#ifContains.t%2C%2CopenArray%5Bstring%5D%2Cstring%2Cuntyped">utils: ifContains(node; fields: openArray[string]; errorMsg: string; body: untyped)</a></li>
+          data-doc-search-tag="utils: ifContains(node; all: openArray[string]; body)" href="restSpa/routes/utils.html#ifContains.t%2C%2CopenArray%5Bstring%5D%2C">utils: ifContains(node; all: openArray[string]; body)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="utils: ifContains(node; atLeast: openArray[string]; body)" href="restSpa/routes/utils.html#ifContains.t%2C%2CopenArray%5Bstring%5D%2C_2">utils: ifContains(node; atLeast: openArray[string]; body)</a></li>
           </ul></dd>
-<dt><a name="ifContainsDefaultErr" href="#ifContainsDefaultErr"><span>ifContainsDefaultErr:</span></a></dt><dd><ul class="simple">
+<dt><a name="ifContainsAllErr" href="#ifContainsAllErr"><span>ifContainsAllErr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="utils: ifContainsDefaultErr" href="restSpa/routes/utils.html#ifContainsDefaultErr">utils: ifContainsDefaultErr</a></li>
+          data-doc-search-tag="config: ifContainsAllErr" href="restSpa/config.html#ifContainsAllErr">config: ifContainsAllErr</a></li>
+          </ul></dd>
+<dt><a name="ifContainsAtLeastErr" href="#ifContainsAtLeastErr"><span>ifContainsAtLeastErr:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: ifContainsAtLeastErr" href="restSpa/config.html#ifContainsAtLeastErr">config: ifContainsAtLeastErr</a></li>
+          </ul></dd>
+<dt><a name="ifContainsInvalidReq" href="#ifContainsInvalidReq"><span>ifContainsInvalidReq:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: ifContainsInvalidReq" href="restSpa/config.html#ifContainsInvalidReq">config: ifContainsInvalidReq</a></li>
           </ul></dd>
 <dt><a name="ifLogin" href="#ifLogin"><span>ifLogin:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="utils: ifLogin(ctx; loggedIn = true; body: untyped)" href="restSpa/routes/utils.html#ifLogin.t%2C%2Cuntyped">utils: ifLogin(ctx; loggedIn = true; body: untyped)</a></li>
+          data-doc-search-tag="utils: ifLogin(ctx; loggedIn = true; body)" href="restSpa/routes/utils.html#ifLogin.t%2C%2C">utils: ifLogin(ctx; loggedIn = true; body)</a></li>
+          </ul></dd>
+<dt><a name="ifMinRank" href="#ifMinRank"><span>ifMinRank:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="utils: ifMinRank(ctx; minRank: UserRank; body)" href="restSpa/routes/utils.html#ifMinRank.t%2C%2CUserRank%2C">utils: ifMinRank(ctx; minRank: UserRank; body)</a></li>
           </ul></dd>
 <dt><a name="inDb" href="#inDb"><span>inDb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="db: inDb(body: untyped)" href="restSpa/db.html#inDb.t%2Cuntyped">db: inDb(body: untyped)</a></li>
           </ul></dd>
+<dt><a name="internalDbPrefix" href="#internalDbPrefix"><span>internalDbPrefix:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: internalDbPrefix" href="restSpa/config.html#internalDbPrefix">config: internalDbPrefix</a></li>
+          </ul></dd>
 <dt><a name="ip" href="#ip"><span>ip:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="utils: ip(req: Request): string" href="restSpa/routes/utils.html#ip%2CRequest">utils: ip(req: Request): string</a></li>
           </ul></dd>
-<dt><a name="minRank" href="#minRank"><span>minRank:</span></a></dt><dd><ul class="simple">
+<dt><a name="needLogin" href="#needLogin"><span>needLogin:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="utils: minRank(ctx; minRank: UserRank; body: untyped)" href="restSpa/routes/utils.html#minRank.t%2C%2CUserRank%2Cuntyped">utils: minRank(ctx; minRank: UserRank; body: untyped)</a></li>
+          data-doc-search-tag="config: needLogin" href="restSpa/config.html#needLogin">config: needLogin</a></li>
+          </ul></dd>
+<dt><a name="needLogoff" href="#needLogoff"><span>needLogoff:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: needLogoff" href="restSpa/config.html#needLogoff">config: needLogoff</a></li>
           </ul></dd>
 <dt><a name="newUser" href="#newUser"><span>newUser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: newUser(): User" href="restSpa/db/models/user.html#newUser">user: newUser(): User</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="user: newUser(username, email, password: string; registerIp: string; rank = urGhost): User" href="restSpa/db/models/user.html#newUser%2Cstring%2Cstring%2Cstring%2Cstring">user: newUser(username, email, password: string; registerIp: string; rank = urGhost): User</a></li>
+          data-doc-search-tag="user: newUser(username, email, password: string; registerIp: string; rank = urGhost;
+        registerDate = nowUnix()): User" href="restSpa/db/models/user.html#newUser%2Cstring%2Cstring%2Cstring%2Cstring">user: newUser(username, email, password: string; registerIp: string; rank = urGhost;
+        registerDate = nowUnix()): User</a></li>
           </ul></dd>
 <dt><a name="nowUnix" href="#nowUnix"><span>nowUnix:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -117,6 +141,14 @@
 <dt><a name="rank%3D" href="#rank%3D"><span>rank=:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: rank=(user: var User; rank: UserRank)" href="restSpa/db/models/user.html#rank%3D%2CUser%2CUserRank">user: rank=(user: var User; rank: UserRank)</a></li>
+          </ul></dd>
+<dt><a name="rankNotMeet" href="#rankNotMeet"><span>rankNotMeet:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: rankNotMeet" href="restSpa/config.html#rankNotMeet">config: rankNotMeet</a></li>
+          </ul></dd>
+<dt><a name="r_editUser" href="#r_editUser"><span>r_editUser:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="admin: r_editUser(ctx: Context): owned(Future[void])" href="restSpa/routes/api/admin.html#r_editUser%2CContext">admin: r_editUser(ctx: Context): owned(Future[void])</a></li>
           </ul></dd>
 <dt><a name="respErr" href="#respErr"><span>respErr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -150,10 +182,6 @@
 <li><a class="reference external"
           data-doc-search-tag="routes: routesDefinition" href="restSpa/routes.html#routesDefinition">routes: routesDefinition</a></li>
           </ul></dd>
-<dt><a name="r_setRank" href="#r_setRank"><span>r_setRank:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="admin: r_setRank(ctx: Context): owned(Future[void])" href="restSpa/routes/api/admin.html#r_setRank%2CContext">admin: r_setRank(ctx: Context): owned(Future[void])</a></li>
-          </ul></dd>
 <dt><a name="r_signIn" href="#r_signIn"><span>r_signIn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="auth: r_signIn(ctx: Context): owned(Future[void])" href="restSpa/routes/api/auth.html#r_signIn%2CContext">auth: r_signIn(ctx: Context): owned(Future[void])</a></li>
@@ -182,6 +210,10 @@
 <li><a class="reference external"
           data-doc-search-tag="user: update(user: var User; loginIp = &quot;&quot;)" href="restSpa/db/models/user.html#update%2CUser%2Cstring">user: update(user: var User; loginIp = &quot;&quot;)</a></li>
           </ul></dd>
+<dt><a name="updateFields" href="#updateFields"><span>updateFields:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="utils: updateFields(obj: var object; node: JsonNode; blacklist: openArray[string] = [])" href="restSpa/routes/utils.html#updateFields%2C%2CJsonNode%2CopenArray%5Bstring%5D">utils: updateFields(obj: var object; node: JsonNode; blacklist: openArray[string] = [])</a></li>
+          </ul></dd>
 <dt><a name="urAdmin" href="#urAdmin"><span>urAdmin:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="UserRank.urAdmin" href="restSpa/db/models/user.html#urAdmin">UserRank.urAdmin</a></li>
@@ -198,6 +230,10 @@
 <li><a class="reference external"
           data-doc-search-tag="user: User" href="restSpa/db/models/user.html#User">user: User</a></li>
           </ul></dd>
+<dt><a name="userIdentificators" href="#userIdentificators"><span>userIdentificators:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: userIdentificators" href="restSpa/config.html#userIdentificators">config: userIdentificators</a></li>
+          </ul></dd>
 <dt><a name="UserRank" href="#UserRank"><span>UserRank:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: UserRank" href="restSpa/db/models/user.html#UserRank">user: UserRank</a></li>
@@ -206,11 +242,17 @@
 <li><a class="reference external"
           data-doc-search-tag="utils: withParams(ctx; mergeGet = false; bodyCode: untyped)" href="restSpa/routes/utils.html#withParams.t%2C%2Cuntyped">utils: withParams(ctx; mergeGet = false; bodyCode: untyped)</a></li>
           </ul></dd>
+<dt><a name="withUser" href="#withUser"><span>withUser:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="utils: withUser(node; body)" href="restSpa/routes/utils.html#withUser.t%2C%2C">utils: withUser(node; body)</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="utils: withUser(node; usr: untyped; body)" href="restSpa/routes/utils.html#withUser.t%2C%2Cuntyped%2C">utils: withUser(node; usr: untyped; body)</a></li>
+          </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-18 23:38:08 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-19 22:30:25 UTC</small>
       </div>
     </div>
   </div>

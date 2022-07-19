@@ -6,10 +6,15 @@ respErr	restSpa/routes/utils.html#respErr.t,string	utils: respErr(msg: string; c
 respSuc	restSpa/routes/utils.html#respSuc.t,string	utils: respSuc(msg: string; code = Http200)	
 respErrJson	restSpa/routes/utils.html#respErrJson.t,string	utils: respErrJson(json: string; code = Http400)	
 respSucJson	restSpa/routes/utils.html#respSucJson.t,string	utils: respSucJson(json: string; code = Http200)	
-ifContainsDefaultErr	restSpa/routes/utils.html#ifContainsDefaultErr	utils: ifContainsDefaultErr	
-ifContains	restSpa/routes/utils.html#ifContains.t,,openArray[string],string,untyped	utils: ifContains(node; fields: openArray[string]; errorMsg: string; body: untyped)	
+ifContains	restSpa/routes/utils.html#ifContains.t,,openArray[string],	utils: ifContains(node; all: openArray[string]; body)	
+ifContains	restSpa/routes/utils.html#ifContains.t,,openArray[string],_2	utils: ifContains(node; atLeast: openArray[string]; body)	
 forceHttpMethod	restSpa/routes/utils.html#forceHttpMethod.t,,HttpMethod	utils: forceHttpMethod(ctx; httpMethod: HttpMethod)	
 getSession	restSpa/routes/utils.html#getSession,,string,string	utils: getSession(ctx; name: string; default = &quot;&quot;): string	
-ifLogin	restSpa/routes/utils.html#ifLogin.t,,untyped	utils: ifLogin(ctx; loggedIn = true; body: untyped)	
-minRank	restSpa/routes/utils.html#minRank.t,,UserRank,untyped	utils: minRank(ctx; minRank: UserRank; body: untyped)	
+ifLogin	restSpa/routes/utils.html#ifLogin.t,,	utils: ifLogin(ctx; loggedIn = true; body)	
+ifMinRank	restSpa/routes/utils.html#ifMinRank.t,,UserRank,	utils: ifMinRank(ctx; minRank: UserRank; body)	
 ip	restSpa/routes/utils.html#ip,Request	utils: ip(req: Request): string	
+updateFields	restSpa/routes/utils.html#updateFields,,JsonNode,openArray[string]	utils: updateFields(obj: var object; node: JsonNode; blacklist: openArray[string] = [])	
+getUsing	restSpa/routes/utils.html#getUsing,type,ReqDbFields,	utils: getUsing(table: type; fields: ReqDbFields; node): auto	
+withUser	restSpa/routes/utils.html#withUser.t,,untyped,	utils: withUser(node; usr: untyped; body)	
+withUser	restSpa/routes/utils.html#withUser.t,,	utils: withUser(node; body)	
+delInternals	restSpa/routes/utils.html#delInternals,JsonNode	utils: delInternals(node: var JsonNode)	

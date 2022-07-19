@@ -1,0 +1,16 @@
+@url = http://localhost:8080
+
+POST {{url}}/api/admin/editUser HTTP/1.1
+Content-Type: application/json
+cookie: session=e3VzZXJuYW1lOiBhZG1pbn0=.0.WRCGhR0Vg4at1rRr1SwU0u9dxd4
+
+{
+  "_username": "admin", // The user username to selected
+  // "_email": "admin@localhost", // The user email to selected
+  "email": "webmaster@localhost",
+  // "rank": "urUser",
+  "internal_rank": 0,
+  "registerDate": 0 // Not changes because it is in blacklist
+}
+
+###

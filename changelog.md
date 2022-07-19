@@ -1,8 +1,23 @@
 # Changelog
 
+## Version 0.10.0 (Jul 19 2022)
+
+- Added `editUser` admin route to edit any user data
+- Added `deleteUser` admin a route to delete any user
+- Fixed urlencoded api handling
+- Added to `ifContains` support to check if have all fields or at least one
+- Removed route `setRank` because `editUser` can do it
+- Added `updateFields` to update a object giving a JSON node, supports blacklist fields
+- Changed `doAssert` to just `assert` in `forceHttpMethod` because it just need to check in development
+- Added `delInternals` func to delete all DB internal values from JSON node
+- Added `withUser` to abstract the user getting from request
+- Added `getUsing` to get some DB row using a specific value/column
+- Moved all error messages from [utils.nim](src/restSpa/routes/utils.nim)
+
+---
+
 ## Version 0.9.0 (Jul 18 2022)
 
-<!-- - Adding `editUser` admin route to edit any user data -->
 - Updated docs
 - Updated readme
 - Fixed db env config getting

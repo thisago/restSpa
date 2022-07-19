@@ -10,7 +10,7 @@ proc r_signIn*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.withParams(mergeGet = false):
-    node.ifContains(["username", "password"], ifContainsDefaultErr):
+    node.ifContains(all = ["username", "password"]):
       let
         username = node{"username"}.getStr
         password = node{"password"}.getStr
@@ -31,7 +31,7 @@ proc r_signUp*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.withParams(mergeGet = false):
-    node.ifContains(["username", "email", "password"], ifContainsDefaultErr):
+    node.ifContains(all = ["username", "email", "password"]):
       let
         username = node{"username"}.getStr
         email = node{"email"}.getStr

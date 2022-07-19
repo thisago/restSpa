@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.8.0"
+version       = "0.10.0"
 author        = "Thiago Navarro"
 description   = "SPA & REST template using prologue, norm and karax"
 license       = "mit"
@@ -17,4 +17,4 @@ requires "nim >= 1.6.4"
 requires "prologue", "norm"
 
 task genDocs, "Generate documentation":
-  exec "nim doc -d:usestd --project -d:ssl --out:docs ./src/restSpa.nim"
+  exec "rm -r docs && nim doc -d:usestd --project -d:ssl --out:docs ./src/restSpa.nim"

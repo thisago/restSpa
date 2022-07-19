@@ -17,22 +17,22 @@ type
     email* {.unique.}: string
     password*: string
 
-    internalRank*: int
+    internal_rank*: int
 
     registerDate*, lastLoginDate*: int64
     registerIp*, lastLoginIp*: string
 
   UserRank* = enum
-    urGhost = 0, ## Ghost is a user that cannot do anything, a unverified user
+    urGhost, ## Ghost is a user that cannot do anything, a unverified user
     urUser,  ## Default user privileges
     urAdmin  ## All privileges
 
 func rank*(user: User): UserRank =
   ## User.rank getter
-  UserRank(user.internalRank)
+  UserRank(user.internal_rank)
 func `rank=`*(user: var User; rank: UserRank) =
   ## User.rank setter
-  user.internalRank = int rank
+  user.internal_rank = ord rank
 
 
 proc newUser*(username, email, password: string; registerIp: string; rank = urGhost; registerDate = nowUnix()): User =
@@ -58,12 +58,12 @@ proc newUser*: User =
   )
 
 proc toJson*(user: User): string =
-  ## COnverts the user to a JSON notation
+  ## Converts the user to a JSON notation
   var node = %*user
   node{"rank"} = %user.rank
   # node{"lastLoginDate"} = % $user.lastLoginDate.fromUnix
   # node{"registerDate"} = % $user.registerDate.fromUnix
-  node.delete "internalRank"
+  node.delete "internal_rank"
   result = $node
 
 ## DB
@@ -74,7 +74,7 @@ proc get*(self: type User; username: string; fields: varargs[string] = []): User
   ## `fields` not working!!
   var queryFields = @["username", "email"]
   if fields.len > 0:
-    raise newException(ValueError, "`fields` not working!")
+    # raise newException(ValueError, "`fields` not working!")
     queryFields = @fields
   User.getFromDb(newUser(), queryFields, username)
 
