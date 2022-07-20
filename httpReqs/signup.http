@@ -1,0 +1,19 @@
+@url = http://localhost:8080
+
+POST {{url}}/api/signup HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "user",
+  "email": "user@localhost",
+  "password": "pass",
+}
+
+###
+
+POST {{url}}/api/signup HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+username=user2&email=user2@localhost&password=pass2
+
+###

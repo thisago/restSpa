@@ -94,8 +94,8 @@ from std/strutils import `%`, join
 
 template ifNoError(body) =
   ## If `error` is false execute the body, else shows a error
-  if error: respErr ifContainsInvalidReq
-  else: body
+  if not error: body
+  else: respErr ifContainsInvalidReq
 
 template ifContains*(
   node;
@@ -127,10 +127,10 @@ template ifContains*(
       for field in atLeast:
         if node.hasKey field:
           have = true
-      if not have:
-        respErr ifContainsAtLeastErr % atLeast.join ", "
-      else:
+      if have:
         body
+      else:
+        respErr ifContainsAtLeastErr % atLeast.join ", "
 
 
 template forceHttpMethod*(ctx; httpMethod: HttpMethod) =
@@ -147,9 +147,18 @@ proc getSession*(ctx; name: string; default = ""): string =
   except: discard
 
 
-template ifLogin*(ctx; loggedIn = true; body) =
+template ifLogin*(ctx; loggedIn = true; loggedUsr: untyped; body) =
   ## Runs the code if user have login
-  var check = ctx.getSession(sess_username).len > 0
+  ##
+  ## It will inject `loggedUsr` var that contains the current logged user
+  var check = false
+  let username = ctx.getSession sess_username
+  var loggedUsr {.inject.}: User
+  if username.len > 0:
+    loggedUsr = User.get username
+    if loggedUsr.username.len > 0:
+      check = true
+
   if not loggedIn:
     check = not check
   if check:
@@ -160,15 +169,15 @@ template ifLogin*(ctx; loggedIn = true; body) =
     else:
       respErr needLogoff
 
+template ifLogin*(ctx; loggedIn = true; body) =
+  ## Alias for `ifLogin` but without the injected user var name changing
+  ## (default is `loggedUsr`)
+  ctx.ifLogin(loggedIn, loggedUsr): body
+
 template ifMinRank*(ctx; minRank: UserRank; body) =
   ## Runs the code if user have correct rank
   ctx.ifLogin true:
-    let
-      username = ctx.getSession sess_username
-      usr = User.get username
-    if usr.username.len == 0:
-      respErr cannotFindUser
-    elif usr.rank >= minRank:
+    if loggedUsr.rank >= minRank:
       body
     else:
       respErr rankNotMeet
@@ -188,9 +197,10 @@ from std/json import getStr, getBool, getInt, getFloat
 proc updateFields*(
   obj: var object;
   node: JsonNode;
-  blacklist: openArray[string] = []
-) =
+  blacklist: openArray[string] = [];
+): bool =
   ## Updates the object by node items (if exists)
+  result = false
   for key, value in obj.fieldPairs:
     if key notin blacklist:
       if node.hasKey key:
@@ -199,7 +209,8 @@ proc updateFields*(
         elif value is SomeFloat: value = val.getFloat
         elif value is SomeInteger: value = val.getInt
         elif value is string: value = val.getStr
-
+        if not result:
+          result = true
 
 type
   ReqDbField = tuple
@@ -219,21 +230,21 @@ proc getUsing*(
       result = table.get(val, [inDb])
       break
 
-template withUser*(node; usr: untyped; body) =
+template withUser*(node; usr: untyped; userIdentf: openArray[(string, string)] = userIdentificators; body) =
   ## Checks if contains user identificators and try to get it, then run the body
   var fields: seq[string]
-  for (field, inDb) in userIdentificators:
+  for (field, inDb) in userIdentf:
     fields.add field
   node.ifContains(atLeast = fields):
-    var usr {.inject.} = User.getUsing(userIdentificators, node)
-    if usr.username.len == 0:
-      respErr cannotFindUser
-    else:
+    var usr {.inject.} = User.getUsing(userIdentf, node)
+    if usr.username.len > 0:
       body
+    else:
+      respErr userNotExists
 
 template withUser*(node; body) =
   ## Runs `withUser` but with default `usr` variable
-  node.withUser(usr): body
+  node.withUser(usr, userIdentificators): body
 
 func delInternals*(node: var JsonNode) =
   ## Deletes all DB internals fields from a JSON node

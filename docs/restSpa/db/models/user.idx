@@ -1,4 +1,5 @@
 User	restSpa/db/models/user.html#User	user: User	
+urDisabled	restSpa/db/models/user.html#urDisabled	UserRank.urDisabled	
 urGhost	restSpa/db/models/user.html#urGhost	UserRank.urGhost	
 urUser	restSpa/db/models/user.html#urUser	UserRank.urUser	
 urAdmin	restSpa/db/models/user.html#urAdmin	UserRank.urAdmin	

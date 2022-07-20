@@ -1,6 +1,6 @@
 internalDbPrefix	restSpa/config.html#internalDbPrefix	config: internalDbPrefix	
 sess_username	restSpa/config.html#sess_username	config: sess_username	
-cannotFindUser	restSpa/config.html#cannotFindUser	config: cannotFindUser	
+userNotExists	restSpa/config.html#userNotExists	config: userNotExists	
 ifContainsAllErr	restSpa/config.html#ifContainsAllErr	config: ifContainsAllErr	
 ifContainsAtLeastErr	restSpa/config.html#ifContainsAtLeastErr	config: ifContainsAtLeastErr	
 ifContainsInvalidReq	restSpa/config.html#ifContainsInvalidReq	config: ifContainsInvalidReq	

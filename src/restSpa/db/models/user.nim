@@ -23,9 +23,10 @@ type
     registerIp*, lastLoginIp*: string
 
   UserRank* = enum
-    urGhost, ## Ghost is a user that cannot do anything, a unverified user
-    urUser,  ## Default user privileges
-    urAdmin  ## All privileges
+    urDisabled, ## Disabled user is same as a non-existent user
+    urGhost,    ## Ghost is a user that cannot do anything, a unverified user
+    urUser,     ## Default user privileges
+    urAdmin     ## All privileges
 
 const cantEditUserFields* = [ ## All fields that can't be edited by anyone
   "registerDate",             ## (even admin). Plus the internal fields that is

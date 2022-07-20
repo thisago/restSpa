@@ -10,11 +10,12 @@ ifContains	restSpa/routes/utils.html#ifContains.t,,openArray[string],	utils: ifC
 ifContains	restSpa/routes/utils.html#ifContains.t,,openArray[string],_2	utils: ifContains(node; atLeast: openArray[string]; body)	
 forceHttpMethod	restSpa/routes/utils.html#forceHttpMethod.t,,HttpMethod	utils: forceHttpMethod(ctx; httpMethod: HttpMethod)	
 getSession	restSpa/routes/utils.html#getSession,,string,string	utils: getSession(ctx; name: string; default = &quot;&quot;): string	
+ifLogin	restSpa/routes/utils.html#ifLogin.t,,untyped,	utils: ifLogin(ctx; loggedIn = true; loggedUsr: untyped; body)	
 ifLogin	restSpa/routes/utils.html#ifLogin.t,,	utils: ifLogin(ctx; loggedIn = true; body)	
 ifMinRank	restSpa/routes/utils.html#ifMinRank.t,,UserRank,	utils: ifMinRank(ctx; minRank: UserRank; body)	
 ip	restSpa/routes/utils.html#ip,Request	utils: ip(req: Request): string	
-updateFields	restSpa/routes/utils.html#updateFields,,JsonNode,openArray[string]	utils: updateFields(obj: var object; node: JsonNode; blacklist: openArray[string] = [])	
+updateFields	restSpa/routes/utils.html#updateFields,,JsonNode,openArray[string]	utils: updateFields(obj: var object; node: JsonNode; blacklist: openArray[string] = []): bool	
 getUsing	restSpa/routes/utils.html#getUsing,type,ReqDbFields,	utils: getUsing(table: type; fields: ReqDbFields; node): auto	
-withUser	restSpa/routes/utils.html#withUser.t,,untyped,	utils: withUser(node; usr: untyped; body)	
+withUser	restSpa/routes/utils.html#withUser.t,,untyped,openArray[],	utils: withUser(node; usr: untyped;\n         userIdentf: openArray[(string, string)] = userIdentificators; body)	
 withUser	restSpa/routes/utils.html#withUser.t,,	utils: withUser(node; body)	
 delInternals	restSpa/routes/utils.html#delInternals,JsonNode	utils: delInternals(node: var JsonNode)	

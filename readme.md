@@ -102,6 +102,7 @@ See all the readonly fields at docs: [`cantEditUserFields`](https://thisago.gith
 - All routes calls `forceHttpMethod` that checks if the route is called using
   the correct HTTP method (useful in development and helps identify the routes
   by reading the code)
+- In a `if` statement, try to put the error/fallback in the last
 
 ---
 
@@ -115,7 +116,7 @@ See all the readonly fields at docs: [`cantEditUserFields`](https://thisago.gith
 - [x] Add last ip in `User`
 - [ ] Add tests
 - [ ] Support `id` for querying (`User`s)
-- [ ] Add an error when no fields to edit was provided at `/api/admin/editUser` route
+- [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
 
 ---
 

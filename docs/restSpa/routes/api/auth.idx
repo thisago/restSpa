@@ -1,2 +1,0 @@
-r_signIn	restSpa/routes/api/auth.html#r_signIn,Context	auth: r_signIn(ctx: Context): owned(Future[void])	
-r_signUp	restSpa/routes/api/auth.html#r_signUp,Context	auth: r_signUp(ctx: Context): owned(Future[void])	

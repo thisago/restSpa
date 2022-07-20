@@ -3,24 +3,28 @@ from std/strformat import fmt
 from std/strutils import parseEnum
 import pkg/prologue
 
-import restSpa/db
+# import restSpa/db
 import restSpa/db/models/user
+import restSpa/db
 
 import restSpa/routes/utils
 
-proc r_getUser*(ctx: Context) {.async.} =
+using
+  ctx: Context
+
+proc r_getUser*(ctx) {.async.} =
   ## Get all user data using POST
-  ctx.setContentJsonHeader
   ctx.forceHttpMethod HttpPost
+  ctx.setContentJsonHeader
   ctx.ifMinRank urAdmin:
     ctx.withParams(mergeGet = false):
       node.withUser:
         respSucJson usr.toJson
 
-proc r_editUser*(ctx: Context) {.async.} =
+proc r_editUser*(ctx) {.async.} =
   ## Edit user data using POST
-  ctx.setContentJsonHeader
   ctx.forceHttpMethod HttpPost
+  ctx.setContentJsonHeader
   ctx.ifMinRank urAdmin:
     ctx.withParams(mergeGet = false):
       node.withUser:
@@ -36,6 +40,18 @@ proc r_editUser*(ctx: Context) {.async.} =
             return
 
         # update the user by using JSON node
-        usr[].updateFields(node, blacklist = cantEditUserFields)
-        update usr # save
-        respSucJson usr.toJson # send to client
+        if not usr[].updateFields(node, blacklist = cantEditUserFields):
+          respErr "Please provide some value to edit"
+        else:
+          update usr # save
+          respSucJson usr.toJson # send to client
+
+proc r_delUser*(ctx) {.async.} =
+  ctx.forceHttpMethod HttpPost
+  ctx.setContentJsonHeader
+  ctx.ifMinRank urAdmin:
+    ctx.withParams(mergeGet = false):
+      node.withUser:
+        echo usr[]
+        inDb: dbConn.delete usr
+        respSuc fmt"Successfully deleted '{usr.username}'"

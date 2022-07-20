@@ -1,0 +1,10 @@
+@url = http://localhost:8080
+
+POST {{url}}/api/admin/getUser HTTP/1.1
+Content-Type: application/json
+
+{
+  "_username": "user",
+}
+
+###

@@ -6,7 +6,7 @@ const
 
 # error messages
 const
-  cannotFindUser* = "Cannot find the user"
+  userNotExists* = "User not exists"
 
   ifContainsAllErr* = "Please provide $1"
   ifContainsAtLeastErr* = "Please provide at least $1"

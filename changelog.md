@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 0.11.0 (Jul 20 2022)
+
+- Added an error when no fields to edit was provided at `POST /api/admin/editUser` route
+- Added `POST /api/delUser` route to delete the logged user
+- Renamed module `restSpa/routes/api/auth.nim` to `user.nim`
+- Added `POST /api/admin/delUser` to delete any user (admin)
+- Refactored login route using newly added abstractions
+- Removed the full user sending in sign up
+- Added `POST logOut route`
+
+---
+
 ## Version 0.10.1 (Jul 20 2022)
 
 - Removed `debugEcho` from `delInternals`

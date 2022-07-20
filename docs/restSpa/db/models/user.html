@@ -65,6 +65,7 @@
   registerDate*, lastLoginDate*: int64
   registerIp*, lastLoginIp*: string">User</a></li>
 <li><a class="reference" href="#UserRank" title="UserRank = enum
+  urDisabled,               ## Disabled user is same as a non-existent user
   urGhost,                  ## Ghost is a user that cannot do anything, a unverified user
   urUser,                   ## Default user privileges
   urAdmin                    ## All privileges">UserRank</a></li>
@@ -153,6 +154,7 @@
 </div>
 <div id="UserRank">
   <dt><pre><a href="user.html#UserRank"><span class="Identifier">UserRank</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">urDisabled</span><span class="Other">,</span>               <span class="Comment">## Disabled user is same as a non-existent user</span>
   <span class="Identifier">urGhost</span><span class="Other">,</span>                  <span class="Comment">## Ghost is a user that cannot do anything, a unverified user</span>
   <span class="Identifier">urUser</span><span class="Other">,</span>                   <span class="Comment">## Default user privileges</span>
   <span class="Identifier">urAdmin</span>                    <span class="Comment">## All privileges</span></pre></dt>
@@ -275,7 +277,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-20 15:30:38 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-20 21:49:14 UTC</small>
       </div>
     </div>
   </div>
