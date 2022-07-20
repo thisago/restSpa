@@ -1,6 +1,5 @@
 @url = http://localhost:8080
 
 POST {{url}}/api/delUser HTTP/1.1
-cookie: session=e3VzZXJuYW1lOiBhZG1pbn0=.0.WRCGhR0Vg4at1rRr1SwU0u9dxd4
 
 ###

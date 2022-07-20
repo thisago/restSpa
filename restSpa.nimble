@@ -16,5 +16,8 @@ requires "nim >= 1.6.4"
 # Backend
 requires "prologue", "norm"
 
+
+# Tasks
+
 task genDocs, "Generate documentation":
   exec "rm -r docs && nim doc -d:usestd --project -d:ssl --out:docs ./src/restSpa.nim"

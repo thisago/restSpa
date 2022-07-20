@@ -38,7 +38,7 @@ Content-Type: application/json
 }
 ```
 
-#### `POST /api/signup` - Signup
+#### `POST /api/signup` - Create new account
 Example:
 ```http
 GET /api/signup HTTP/1.1
@@ -51,6 +51,20 @@ Content-Type: application/json
 }
 ```
 
+#### `POST /api/logout`
+Example:
+```http
+GET /api/logout HTTP/1.1
+Cookie: session=<LOGGED SESSION>
+```
+
+#### `POST /api/logout` - Delete current user
+Example:
+```http
+GET /api/delUser HTTP/1.1
+Cookie: session=<LOGGED SESSION>
+```
+
 ---
 
 **Admin**
@@ -60,7 +74,7 @@ Example:
 ```http
 POST /api/admin/getUser HTTP/1.1
 Content-Type: application/json
-cookie: session=<ADMIN SESSION>
+Cookie: session=<ADMIN SESSION>
 
 {
   "_username": "user" // Get using username
@@ -73,15 +87,33 @@ Example: (can edit multiple fields at same time too)
 ```http
 POST /api/admin/getUser HTTP/1.1
 Content-Type: application/json
-cookie: session=<ADMIN SESSION>
+Cookie: session=<ADMIN SESSION>
 
 {
   "_username": "admin", // Edit using username
-  "_email": "", // Edit using email
+  // "_email": "admin@localhost", // Edit using email
   "rank": "urUser" // Can edit almost any field, in this case, we are removing admin privileges
 }
 ```
-See all the readonly fields at docs: [`cantEditUserFields`](https://thisago.github.io/restSpa/restSpa/db/models/user.html#cantEditUserFields)
+
+#### `POST /api/admin/delUser` - Delete any user (**admin**)
+Example:
+```http
+POST /api/admin/getUser HTTP/1.1
+Content-Type: application/json
+Cookie: session=<ADMIN SESSION>
+
+{
+  "_username": "user", // Delete using username
+  // "_email": "user@localhost", // Delete using email
+}
+```
+
+---
+
+**Any API request can be made with `application/json`,**
+**`application/x-www-form-urlencoded` and `multipart/form-data`**
+**content types, just specify the `Content-Type` header**
 
 ---
 
@@ -90,6 +122,7 @@ See all the readonly fields at docs: [`cantEditUserFields`](https://thisago.gith
 1. Uncomment `.env` in [.gitignore](.gitignore)
 2. Replace all `respSpa` to your project name (including files/dirs names and inside files)
 3. Change the `secretKey` in [.env](.env)
+4. Change the `version`, `description` and `author` in [nimble file](restSpa.nimble) - Don't forget the credits ;)
 
 ### Notes
 
@@ -117,6 +150,7 @@ See all the readonly fields at docs: [`cantEditUserFields`](https://thisago.gith
 - [ ] Add tests
 - [ ] Support `id` for querying (`User`s)
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
+- [ ] Frontend (break it in smaller tasks)
 
 ---
 
