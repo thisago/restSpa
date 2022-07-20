@@ -27,6 +27,13 @@ type
     urUser,  ## Default user privileges
     urAdmin  ## All privileges
 
+const cantEditUserFields* = [ ## All fields that can't be edited by anyone
+  "registerDate",             ## (even admin). Plus the internal fields that is
+  "lastLoginDate",            ## automatically removed using `delInternals`
+  "registerIp",
+  "lastLoginIp",
+]
+
 func rank*(user: User): UserRank =
   ## User.rank getter
   UserRank(user.internal_rank)

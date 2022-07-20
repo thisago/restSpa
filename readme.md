@@ -28,55 +28,60 @@ the `Content-Type`
 
 #### `POST /api/signin` - Login
 Example:
-```
+```http
 GET /api/signin HTTP/1.1
 Content-Type: application/json
 
 {
-  "username": "john",
-  "password": "doe",
+  "username": "user",
+  "password": "pass"
 }
 ```
 
 #### `POST /api/signup` - Signup
 Example:
-```
+```http
 GET /api/signup HTTP/1.1
 Content-Type: application/json
 
 {
-  "username": "john",
-  "email": "johndoe@example.com",
-  "password": "doe",
+  "username": "user",
+  "email": "user@localhost",
+  "password": "pass",
 }
 ```
 
 ---
 
+**Admin**
+
 #### `POST /api/admin/getUser` - Get all the user data (**admin**)
 Example:
-```
+```http
 POST /api/admin/getUser HTTP/1.1
 Content-Type: application/json
 cookie: session=<ADMIN SESSION>
 
 {
-  "username": "admin"
+  "_username": "user" // Get using username
+  // "_email": "user@localhost" // Get using email
 }
 ```
 
 #### `POST /api/admin/editUser` - Get all the user data (**admin**)
-Example:
-```
+Example: (can edit multiple fields at same time too)
+```http
 POST /api/admin/getUser HTTP/1.1
 Content-Type: application/json
 cookie: session=<ADMIN SESSION>
 
 {
-  "id": "0",
-  "email
+  "_username": "admin", // Edit using username
+  "_email": "", // Edit using email
+  "rank": "urUser" // Can edit almost any field, in this case, we are removing admin privileges
 }
 ```
+See all the readonly fields at docs: [`cantEditUserFields`](https://thisago.github.io/restSpa/restSpa/db/models/user.html#cantEditUserFields)
 
 ---
 
@@ -90,6 +95,14 @@ cookie: session=<ADMIN SESSION>
 
 - In production disable the `debug` in [.env](.env)
 
+
+## Style-guide and good practices
+
+- All procs starting with `r_` is a route
+- All routes calls `forceHttpMethod` that checks if the route is called using
+  the correct HTTP method (useful in development and helps identify the routes
+  by reading the code)
+
 ---
 
 ## TODO
@@ -102,6 +115,7 @@ cookie: session=<ADMIN SESSION>
 - [x] Add last ip in `User`
 - [ ] Add tests
 - [ ] Support `id` for querying (`User`s)
+- [ ] Add an error when no fields to edit was provided at `/api/admin/editUser` route
 
 ---
 

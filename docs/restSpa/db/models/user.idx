@@ -3,6 +3,7 @@ urGhost	restSpa/db/models/user.html#urGhost	UserRank.urGhost
 urUser	restSpa/db/models/user.html#urUser	UserRank.urUser	
 urAdmin	restSpa/db/models/user.html#urAdmin	UserRank.urAdmin	
 UserRank	restSpa/db/models/user.html#UserRank	user: UserRank	
+cantEditUserFields	restSpa/db/models/user.html#cantEditUserFields	user: cantEditUserFields	
 rank	restSpa/db/models/user.html#rank,User	user: rank(user: User): UserRank	
 rank=	restSpa/db/models/user.html#rank=,User,UserRank	user: rank=(user: var User; rank: UserRank)	
 newUser	restSpa/db/models/user.html#newUser,string,string,string,string	user: newUser(username, email, password: string; registerIp: string; rank = urGhost;\n        registerDate = nowUnix()): User	

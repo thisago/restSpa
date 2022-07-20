@@ -9,8 +9,8 @@ export config
 from restSpa/db/models/user import UserRank
 
 const
-  autoFormParsing {.booldefine.} = true
-  autoXmlParsing {.booldefine.} = false # not implemented
+  autoFormParsing {.boolDefine.} = true
+  autoXmlParsing {.boolDefine.} = false # not implemented
 
 when autoXmlParsing:
   from std/xmlparser import parseXml
@@ -240,6 +240,5 @@ func delInternals*(node: var JsonNode) =
   const internalDbPrefixLen = internalDbPrefix.len
   for key in node.keys:
     if key.len > internalDbPrefixLen:
-      debugecho key[0..<internalDbPrefixLen]
       if key[0..<internalDbPrefixLen] == internalDbPrefix:
         node.delete key

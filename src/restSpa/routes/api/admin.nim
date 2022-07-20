@@ -35,14 +35,7 @@ proc r_editUser*(ctx: Context) {.async.} =
             respErr "Invalid user rank"
             return
 
-        usr[].updateFields( # update the user by using JSON node
-          node,
-          blacklist = [
-            "registerDate",
-            "lastLoginDate",
-            "registerIp",
-            "lastLoginIp"
-          ]
-        )
+        # update the user by using JSON node
+        usr[].updateFields(node, blacklist = cantEditUserFields)
         update usr # save
         respSucJson usr.toJson # send to client

@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.10.1 (Jul 20 2022)
+
+- Removed `debugEcho` from `delInternals`
+- Moved the blacklisted editing fields of `User` to [restSpa/db/models/user.nim](src/restSpa/db/models/user.nim) just to be able to see in docs
+
+---
+
 ## Version 0.10.0 (Jul 19 2022)
 
 - Added `editUser` admin route to edit any user data
