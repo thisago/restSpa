@@ -151,6 +151,7 @@ Cookie: session=<ADMIN SESSION>
 - [ ] Support `id` for querying (`User`s)
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
 - [ ] Frontend (break it in smaller tasks)
+- [ ] Add email sending (in progress)
 
 ---
 
