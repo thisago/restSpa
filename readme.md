@@ -58,7 +58,7 @@ GET /api/logout HTTP/1.1
 Cookie: session=<LOGGED SESSION>
 ```
 
-#### `POST /api/logout` - Delete current user
+#### `POST /api/delUser` - Delete current user
 Example:
 ```http
 GET /api/delUser HTTP/1.1
