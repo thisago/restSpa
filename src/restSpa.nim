@@ -1,46 +1,33 @@
 import std/logging
 
-import prologue
-import prologue/middlewares/utils
-import prologue/middlewares/signedCookieSession
+import pkg/prologue
+import pkg/prologue/middlewares/utils
+import pkg/prologue/middlewares/signedCookieSession
 
+import restSpa/config
 import restSpa/routes
 import restSpa/db
 import restSpa/db/setup
 
 proc main =
-  let
-    env = loadPrologueEnv ".env"
-
-    dbHost = env.getOrDefault("dbHost", ":memory:")
-    dbUser = env.getOrDefault("dbUser", "")
-    dbPass = env.getOrDefault("dbPass", "")
-
-    settings = newSettings(
-      appName = env.getOrDefault("appName", "Prologue"),
-      debug = env.getOrDefault("debug", true),
-      port = Port env.getOrDefault("port", 8080),
-      secretKey = env.getOrDefault("secretKey", ""),
-      address = env.getOrDefault("address", "")
-    )
-
   inDb:
     dbConn = open(dbHost, dbUser, dbPass, "")
     setup dbConn
 
-  proc setLoggingLevel =
-    addHandler newFileLogger(env.getOrDefault("errorLog", "error.log"), levelThreshold = lvlError)
-    addHandler newRollingFileLogger env.getOrDefault("rollingLog", "rolling.log")
-    addHandler(newConsoleLogger())
-    if settings.debug:
-      logging.setLogFilter(lvlDebug)
-    else:
-      logging.setLogFilter(lvlInfo)
+  proc setLoggingLevel(settings: Settings; errorLog, rollingLog: string): auto =
+    result = proc =
+      addHandler newFileLogger(errorLog, levelThreshold = lvlError)
+      addHandler newRollingFileLogger rollingLog
+      addHandler(newConsoleLogger())
+      if settings.debug:
+        logging.setLogFilter(lvlDebug)
+      else:
+        logging.setLogFilter(lvlInfo)
 
   var app = newApp(
     settings = settings,
     startup = @[
-      initEvent(setLoggingLevel)
+      initEvent(settings.setLoggingLevel(errorLog, rollingLog))
     ]
   )
 
@@ -50,7 +37,10 @@ proc main =
     app.addRoute(r.routes, r.path)
   for (code, cb) in defaultRoutes:
     app.registerErrorHandler(code, cb)
+
   app.run()
 
 when isMainModule:
   main()
+else:
+  {.fatal: "This module cannot be imported.".}

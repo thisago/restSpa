@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.12.0 (Jul 23 2022)
+
+- Moved env getting to `restSpa/config.nim`
+- Added option to change all urls to `https`
+- Added email sending (untested)
+- Added activate mail template
+
+---
+
 ## Version 0.11.0 (Jul 20 2022)
 
 - Added an error when no fields to edit was provided at `POST /api/admin/editUser` route

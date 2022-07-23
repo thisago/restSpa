@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.11.0"
+version       = "0.12.0"
 author        = "Thiago Navarro"
 description   = "SPA & REST template using prologue, norm and karax"
 license       = "mit"
@@ -13,9 +13,12 @@ binDir = "build"
 
 requires "nim >= 1.6.4"
 
-# Backend
-requires "prologue", "norm"
 
+# Backend
+requires "prologue", "norm", "mcmail"
+
+# Backend and frontend
+requires "karax"
 
 # Tasks
 
