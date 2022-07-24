@@ -1,5 +1,13 @@
 # Changelog
+## Version 0.13.0 (Jul 23 2022)
 
+- Added salt and ident generation
+- Added ident check
+- Added salt to user db
+- Removed salt and password from data sended to admin in `/api/admin/getUser` route
+- Use `delInternals` in `user.toJson` to avoid repeat
+
+---
 ## Version 0.12.0 (Jul 23 2022)
 
 - Moved env getting to `restSpa/config.nim`
@@ -8,6 +16,7 @@
 - Added activate mail template
 
 ---
+
 
 ## Version 0.11.0 (Jul 20 2022)
 

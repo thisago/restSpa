@@ -69,7 +69,7 @@ Cookie: session=<LOGGED SESSION>
 
 **Admin**
 
-#### `POST /api/admin/getUser` - Get all the user data (**admin**)
+#### `POST /api/admin/getUser` - Get any user data (**admin**)
 Example:
 ```http
 POST /api/admin/getUser HTTP/1.1
@@ -82,7 +82,7 @@ Cookie: session=<ADMIN SESSION>
 }
 ```
 
-#### `POST /api/admin/editUser` - Get all the user data (**admin**)
+#### `POST /api/admin/editUser` - Edit any user (**admin**)
 Example: (can edit multiple fields at same time too)
 ```http
 POST /api/admin/getUser HTTP/1.1
@@ -152,6 +152,9 @@ Cookie: session=<ADMIN SESSION>
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
 - [ ] Frontend (break it in smaller tasks)
 - [ ] Add email sending (in progress)
+- [ ] Add user verification
+- [ ] Add user password reset
+- [ ] Add honeypots or captcha
 
 ---
 

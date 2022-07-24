@@ -73,3 +73,10 @@ proc r_logout*(ctx) {.async.} =
   ctx.ifLogin true: # if logged
     ctx.session.del "username"
     respSuc fmt"Successfully logged out"
+
+# proc r_activate*(ctx) {.async.} =
+#   ctx.forceHttpMethod HttpPost
+#   ctx.setContentJsonHeader
+#   ctx.ifLogin true: # if logged
+#     ctx.session.del "username"
+#     respSuc fmt"Successfully logged out"

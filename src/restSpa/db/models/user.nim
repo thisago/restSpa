@@ -6,16 +6,17 @@ import pkg/norm/[
   pragmas
 ]
 
-from restSpa/utils import nowUnix
+from restSpa/utils import nowUnix, delInternals
 from restSpa/db/utils as dbUtils import getFromDb
 import restSpa/db
+from restSpa/auth/gen import genSalt
 
 type
   User* = ref object of Model
     ## User DB model
     username* {.unique.}: string
     email* {.unique.}: string
-    password*: string
+    password*, salt*: string
 
     internal_rank*: int
 
@@ -28,12 +29,17 @@ type
     urUser,     ## Default user privileges
     urAdmin     ## All privileges
 
-const cantEditUserFields* = [ ## All fields that can't be edited by anyone
-  "registerDate",             ## (even admin). Plus the internal fields that is
-  "lastLoginDate",            ## automatically removed using `delInternals`
-  "registerIp",
-  "lastLoginIp",
-]
+const
+  cantEditUserFields* = [ ## All fields that can't be edited by anyone
+    "registerDate",       ## (even admin). Plus the internal fields that is
+    "lastLoginDate",      ## automatically removed using `delInternals`
+    "registerIp",
+    "lastLoginIp",
+  ]
+  cantSeeUserFields* = [ ## All fields that can't be saw by anyone
+    "password",
+    "salt",
+  ]
 
 func rank*(user: User): UserRank =
   ## User.rank getter
@@ -52,6 +58,7 @@ proc newUser*(username, email, password: string; registerIp: string; rank = urGh
   result.rank = rank
   result.registerIp = registerIp
   result.registerDate = registerDate
+  result.salt = genSalt()
 
 
 proc newUser*: User =
@@ -71,7 +78,9 @@ proc toJson*(user: User): string =
   node{"rank"} = %user.rank
   # node{"lastLoginDate"} = % $user.lastLoginDate.fromUnix
   # node{"registerDate"} = % $user.registerDate.fromUnix
-  node.delete "internal_rank"
+  for key in cantSeeUserFields:
+    node.delete key
+  node.delInternals
   result = $node
 
 ## DB

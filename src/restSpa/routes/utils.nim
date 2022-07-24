@@ -4,9 +4,13 @@ from std/json import parseJson, `{}=`, `%`, newJObject
 
 from std/strtabs import keys
 
+from restSpa/db/models/user import UserRank
+
 import restSpa/config
 export config
-from restSpa/db/models/user import UserRank
+import restSpa/utils
+export utils
+
 
 const
   autoFormParsing {.boolDefine.} = true
@@ -245,11 +249,3 @@ template withUser*(node; usr: untyped; userIdentf: openArray[(string, string)] =
 template withUser*(node; body) =
   ## Runs `withUser` but with default `usr` variable
   node.withUser(usr, userIdentificators): body
-
-func delInternals*(node: var JsonNode) =
-  ## Deletes all DB internals fields from a JSON node
-  const internalDbPrefixLen = internalDbPrefix.len
-  for key in node.keys:
-    if key.len > internalDbPrefixLen:
-      if key[0..<internalDbPrefixLen] == internalDbPrefix:
-        node.delete key
