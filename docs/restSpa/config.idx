@@ -8,3 +8,16 @@ needLogin	restSpa/config.html#needLogin	config: needLogin
 needLogoff	restSpa/config.html#needLogoff	config: needLogoff	
 rankNotMeet	restSpa/config.html#rankNotMeet	config: rankNotMeet	
 userIdentificators	restSpa/config.html#userIdentificators	config: userIdentificators	
+dbHost	restSpa/config.html#dbHost	config: dbHost	
+dbUser	restSpa/config.html#dbUser	config: dbUser	
+dbPass	restSpa/config.html#dbPass	config: dbPass	
+address	restSpa/config.html#address	config: address	
+haveSsl	restSpa/config.html#haveSsl	config: haveSsl	
+settings	restSpa/config.html#settings	config: settings	
+smtpUser	restSpa/config.html#smtpUser	config: smtpUser	
+smtpFrom	restSpa/config.html#smtpFrom	config: smtpFrom	
+smtpPass	restSpa/config.html#smtpPass	config: smtpPass	
+smtpPort	restSpa/config.html#smtpPort	config: smtpPort	
+smtpServer	restSpa/config.html#smtpServer	config: smtpServer	
+errorLog	restSpa/config.html#errorLog	config: errorLog	
+rollingLog	restSpa/config.html#rollingLog	config: rollingLog	

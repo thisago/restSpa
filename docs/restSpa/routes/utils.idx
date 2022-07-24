@@ -18,4 +18,3 @@ updateFields	restSpa/routes/utils.html#updateFields,,JsonNode,openArray[string]	
 getUsing	restSpa/routes/utils.html#getUsing,type,ReqDbFields,	utils: getUsing(table: type; fields: ReqDbFields; node): auto	
 withUser	restSpa/routes/utils.html#withUser.t,,untyped,openArray[],	utils: withUser(node; usr: untyped;\n         userIdentf: openArray[(string, string)] = userIdentificators; body)	
 withUser	restSpa/routes/utils.html#withUser.t,,	utils: withUser(node; body)	
-delInternals	restSpa/routes/utils.html#delInternals,JsonNode	utils: delInternals(node: var JsonNode)	

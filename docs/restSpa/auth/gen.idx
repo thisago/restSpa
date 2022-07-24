@@ -1,0 +1,2 @@
+genIdentHash	restSpa/auth/gen.html#genIdentHash,string,string,string,int64	gen: genIdentHash(username, password, salt: string; epoch: int64): string	
+genSalt	restSpa/auth/gen.html#genSalt	gen: genSalt(): string	
