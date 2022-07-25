@@ -2,6 +2,8 @@
 
 SPA & REST template using Prologue, Norm and Karax
 
+The template is not ready yet, but you can follow all changes on [changelog](changelog.md)
+
 ## Stack
 
 - Nim (Programming language)
