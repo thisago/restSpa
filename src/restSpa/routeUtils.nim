@@ -4,7 +4,7 @@ from std/json import parseJson, `{}=`, `%`, newJObject
 
 from std/strtabs import keys
 
-from restSpa/db/models/user import UserRank
+from restSpa/db/models/user import UserRank, User, get
 
 import restSpa/config
 export config

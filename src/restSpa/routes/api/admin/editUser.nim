@@ -1,27 +1,11 @@
-## Admin privilege actions
-from std/strformat import fmt
 from std/strutils import parseEnum
+
 import pkg/prologue
 
-# import restSpa/db
+import restSpa/routeUtils
 import restSpa/db/models/user
-import restSpa/db
 
-import restSpa/routes/utils
-
-using
-  ctx: Context
-
-proc r_getUser*(ctx) {.async.} =
-  ## Get all user data using POST
-  ctx.forceHttpMethod HttpPost
-  ctx.setContentJsonHeader
-  ctx.ifMinRank urAdmin:
-    ctx.withParams(mergeGet = false):
-      node.withUser:
-        respSucJson usr.toJson
-
-proc r_editUser*(ctx) {.async.} =
+proc r_editUser*(ctx: Context) {.async.} =
   ## Edit user data using POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
@@ -45,13 +29,3 @@ proc r_editUser*(ctx) {.async.} =
         else:
           update usr # save
           respSucJson usr.toJson # send to client
-
-proc r_delUser*(ctx) {.async.} =
-  ctx.forceHttpMethod HttpPost
-  ctx.setContentJsonHeader
-  ctx.ifMinRank urAdmin:
-    ctx.withParams(mergeGet = false):
-      node.withUser:
-        echo usr[]
-        inDb: dbConn.delete usr
-        respSuc fmt"Successfully deleted '{usr.username}'"

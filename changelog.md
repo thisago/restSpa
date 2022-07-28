@@ -1,4 +1,12 @@
 # Changelog
+## Version 0.14.0 (Jul 28 2022)
+
+- Separated all routes to a individual file (Fix [#3](https://github.com/thisago/restSpa/issues/3))
+- Removed some debug `echo`s
+- Moved route utils to parent dir. The `routes` dir can have only routes
+
+---
+
 ## Version 0.13.0 (Jul 23 2022)
 
 - Added salt and ident generation
@@ -8,6 +16,7 @@
 - Use `delInternals` in `user.toJson` to avoid repeat
 
 ---
+
 ## Version 0.12.0 (Jul 23 2022)
 
 - Moved env getting to `restSpa/config.nim`
@@ -16,7 +25,6 @@
 - Added activate mail template
 
 ---
-
 
 ## Version 0.11.0 (Jul 20 2022)
 

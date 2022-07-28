@@ -138,6 +138,9 @@ Cookie: session=<ADMIN SESSION>
   the correct HTTP method (useful in development and helps identify the routes
   by reading the code)
 - In a `if` statement, try to put the error/fallback in the last
+- Imports sequence is: std, pkg and local (current project)
+- Each route file can have just one route
+- in `routes` dir can have just routes because the filename is same as route name
 
 ---
 
@@ -149,7 +152,7 @@ Cookie: session=<ADMIN SESSION>
 - [ ] Add route to get the logged user data
 - [ ] Add login logging table
 - [x] Add last ip in `User`
-- [ ] Add tests
+- [ ] **Add tests**
 - [ ] Support `id` for querying (`User`s)
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
 - [ ] Frontend (break it in smaller tasks)
@@ -157,6 +160,8 @@ Cookie: session=<ADMIN SESSION>
 - [ ] Add user verification
 - [ ] Add user password reset
 - [ ] Add honeypots or captcha
+- [ ] Low priority: Add a temp block to multiple requests at same time to prevent DoS
+- [ ] Block use of certain usernames and add filters. Like special chars
 
 ---
 

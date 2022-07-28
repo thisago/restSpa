@@ -1,9 +1,18 @@
 import pkg/prologue
 
 import restSpa/routes/home
-import restSpa/routes/api/user
+import restSpa/routes/api/[
+  signIn,
+  signUp,
+  logout
+]
+import restSpa/routes/api/delUser as usrDelUser
 
-import restSpa/routes/api/admin
+import restSpa/routes/api/admin/[
+  getUser,
+  editUser,
+  delUser
+]
 
 import restSpa/routes/default/notFound
 
@@ -20,13 +29,13 @@ const
     ("api", @[
       pattern("/signin", r_signIn, HttpPost, "signin"),
       pattern("/signup", r_signUp, HttpPost, "signup"),
-      pattern("/delUser", user.r_delUser, HttpPost, "user_delUser"),
+      pattern("/delUser", usrDelUser.r_delUser, HttpPost, "user_delUser"),
       pattern("/logout", r_logout, HttpPost, "logout"),
     ]),
     ("api/admin", @[
       pattern("/getUser", r_getUser, HttpPost, "getUser"),
       pattern("/editUser", r_editUser, HttpPost, "editUser"),
-      pattern("/delUser", admin.r_delUser, HttpPost, "admin_delUser"),
+      pattern("/delUser", delUser.r_delUser, HttpPost, "admin_delUser"),
     ]),
   ]
 
