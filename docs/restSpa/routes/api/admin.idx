@@ -1,3 +1,0 @@
-r_getUser	restSpa/routes/api/admin.html#r_getUser	admin: r_getUser(ctx): owned(Future[void])	
-r_editUser	restSpa/routes/api/admin.html#r_editUser	admin: r_editUser(ctx): owned(Future[void])	
-r_delUser	restSpa/routes/api/admin.html#r_delUser	admin: r_delUser(ctx): owned(Future[void])	

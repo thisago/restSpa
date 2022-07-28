@@ -1,4 +1,0 @@
-r_signIn	restSpa/routes/api/user.html#r_signIn	user: r_signIn(ctx): owned(Future[void])	
-r_signUp	restSpa/routes/api/user.html#r_signUp,Context	user: r_signUp(ctx: Context): owned(Future[void])	
-r_delUser	restSpa/routes/api/user.html#r_delUser	user: r_delUser(ctx): owned(Future[void])	
-r_logout	restSpa/routes/api/user.html#r_logout	user: r_logout(ctx): owned(Future[void])	

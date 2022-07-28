@@ -1,0 +1,1 @@
+r_signIn	restSpa/routes/api/signIn.html#r_signIn,Context	signIn: r_signIn(ctx: Context): owned(Future[void])	

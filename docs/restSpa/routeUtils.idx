@@ -1,0 +1,20 @@
+hasKey	restSpa/routeUtils.html#hasKey,Session,string	routeUtils: hasKey(session: var Session; key: string): bool	
+setContentJsonHeader	restSpa/routeUtils.html#setContentJsonHeader	routeUtils: setContentJsonHeader(ctx)	
+withParams	restSpa/routeUtils.html#withParams.t,,untyped	routeUtils: withParams(ctx; mergeGet = false; bodyCode: untyped)	
+respJson	restSpa/routeUtils.html#respJson.t,untyped,HttpCode	routeUtils: respJson(data: untyped; code: HttpCode)	
+respErr	restSpa/routeUtils.html#respErr.t,string	routeUtils: respErr(msg: string; code = Http400)	
+respSuc	restSpa/routeUtils.html#respSuc.t,string	routeUtils: respSuc(msg: string; code = Http200)	
+respErrJson	restSpa/routeUtils.html#respErrJson.t,string	routeUtils: respErrJson(json: string; code = Http400)	
+respSucJson	restSpa/routeUtils.html#respSucJson.t,string	routeUtils: respSucJson(json: string; code = Http200)	
+ifContains	restSpa/routeUtils.html#ifContains.t,,openArray[string],	routeUtils: ifContains(node; all: openArray[string]; body)	
+ifContains	restSpa/routeUtils.html#ifContains.t,,openArray[string],_2	routeUtils: ifContains(node; atLeast: openArray[string]; body)	
+forceHttpMethod	restSpa/routeUtils.html#forceHttpMethod.t,,HttpMethod	routeUtils: forceHttpMethod(ctx; httpMethod: HttpMethod)	
+getSession	restSpa/routeUtils.html#getSession,,string,string	routeUtils: getSession(ctx; name: string; default = &quot;&quot;): string	
+ifLogin	restSpa/routeUtils.html#ifLogin.t,,untyped,	routeUtils: ifLogin(ctx; loggedIn = true; loggedUsr: untyped; body)	
+ifLogin	restSpa/routeUtils.html#ifLogin.t,,	routeUtils: ifLogin(ctx; loggedIn = true; body)	
+ifMinRank	restSpa/routeUtils.html#ifMinRank.t,,UserRank,	routeUtils: ifMinRank(ctx; minRank: UserRank; body)	
+ip	restSpa/routeUtils.html#ip,Request	routeUtils: ip(req: Request): string	
+updateFields	restSpa/routeUtils.html#updateFields,,JsonNode,openArray[string]	routeUtils: updateFields(obj: var object; node: JsonNode; blacklist: openArray[string] = []): bool	
+getUsing	restSpa/routeUtils.html#getUsing,type,ReqDbFields,	routeUtils: getUsing(table: type; fields: ReqDbFields; node): auto	
+withUser	restSpa/routeUtils.html#withUser.t,,untyped,openArray[],	routeUtils: withUser(node; usr: untyped;\n         userIdentf: openArray[(string, string)] = userIdentificators; body)	
+withUser	restSpa/routeUtils.html#withUser.t,,	routeUtils: withUser(node; body)	

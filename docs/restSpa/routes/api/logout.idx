@@ -1,0 +1,1 @@
+r_logout	restSpa/routes/api/logout.html#r_logout,Context	logout: r_logout(ctx: Context): owned(Future[void])	
