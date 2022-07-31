@@ -67,6 +67,18 @@ GET /api/delUser HTTP/1.1
 Cookie: session=<LOGGED SESSION>
 ```
 
+#### `POST /api/activate` - Activate the user
+Example:
+```http
+GET /api/activate HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "user",
+  "hash": "verification code",
+}
+```
+
 ---
 
 **Admin**
