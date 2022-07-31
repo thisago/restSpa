@@ -1,11 +1,15 @@
-## Source: https://github.com/nim-lang/nimforum/blob/master/src/auth.nim
+## Base: https://github.com/nim-lang/nimforum/blob/master/src/auth.nim
+from std/base64 import nil
+from std/strformat import fmt
+from std/strutils import split
 import std/random
+
 import pkg/bcrypt
 import pkg/hmac
 
-proc genIdentHash*(username, password, salt: string; epoch: int64): string =
+proc genIdentHash*(username, password, salt, epoch: string): string =
   ## Generates a hash that can be used as single use pass
-  hmac_sha256(salt, username & password & $epoch).toHex()
+  hmac_sha256(salt, username & password & epoch).toHex()
 
 proc randomSalt: string =
   result = ""
@@ -35,3 +39,15 @@ proc genSalt*: string =
     result = devRandomSalt()
   except IOError:
     result = randomSalt()
+
+proc genAuthHash*(username, password, salt, epoch: string): string =
+  ## Generates the complete auth hash with epoch encoded as base64
+  let ident = genIdentHash(username, password, salt, epoch)
+  echo fmt"{ident}:{epoch}"
+  result = base64.encode fmt"{ident}:{epoch}"
+
+proc unpackAuthHash*(hash: string): tuple[ident, epoch: string] =
+  ## Generates the complete auth hash with epoch encoded as base64
+  let res = base64.decode(hash).split ":"
+  if res.len == 2:
+    result = (res[0], res[1])

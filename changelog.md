@@ -1,4 +1,13 @@
 # Changelog
+
+## Version 0.15.0 (Jul 31 2022)
+
+<!-- - Sending (not sending) activation email when new user was created -->
+- Adding `POST /api/activate` to activate account
+- Fixed ident hash generation and checking
+
+---
+
 ## Version 0.14.0 (Jul 28 2022)
 
 - Separated all routes to a individual file (Fix [#3](https://github.com/thisago/restSpa/issues/3))

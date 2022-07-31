@@ -234,7 +234,12 @@ proc getUsing*(
       result = table.get(val, [inDb])
       break
 
-template withUser*(node; usr: untyped; userIdentf: openArray[(string, string)] = userIdentificators; body) =
+template withUser*(
+  node;
+  usr: untyped;
+  userIdentf: openArray[(string, string)] = userIdentifiers;
+  body
+) =
   ## Checks if contains user identificators and try to get it, then run the body
   var fields: seq[string]
   for (field, inDb) in userIdentf:
@@ -248,4 +253,4 @@ template withUser*(node; usr: untyped; userIdentf: openArray[(string, string)] =
 
 template withUser*(node; body) =
   ## Runs `withUser` but with default `usr` variable
-  node.withUser(usr, userIdentificators): body
+  node.withUser(usr, userIdentifiers): body

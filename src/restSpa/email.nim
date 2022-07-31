@@ -8,10 +8,10 @@ export activateAccount
 let mailer = EmailConfigType(
   username: smtpUser,
   password: smtpPass,
-  # serverUrl: "45.63.107.209",
   serverUrl: smtpServer,
   port: smtpPort,
   msgFrom: smtpFrom,
+  tls: smtpTls
 )
 
 proc sendMail*(to, subject, body: string; mime = "html"; test = true): bool =
@@ -19,6 +19,8 @@ proc sendMail*(to, subject, body: string; mime = "html"; test = true): bool =
   ## is "html"
   ##
   ## Enable `test` mode to prevent sending and just printing on stdout
+  ## 
+  ## FIX EMAIL SENDING
   result = true
   let emailMsg = EmailMessage(
     msgTo: @[to],
@@ -35,10 +37,9 @@ proc sendMail*(to, subject, body: string; mime = "html"; test = true): bool =
     echo emailMsg
 
 when isMainModule:
-
   echo sendMail(
-    to = "henry@oxyoy.com",
+    to = "user@example.com",
     subject = "subject",
-    body = "<h1>body</h1>",
+    body = activateAccount.render("user", "abcde"),
     # test = true
   )

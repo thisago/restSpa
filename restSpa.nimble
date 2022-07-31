@@ -24,4 +24,4 @@ requires "karax"
 # Tasks
 
 task genDocs, "Generate documentation":
-  exec "rm -r docs && nim doc -d:usestd --git.commit:master --git.url:https://github.com/thisago/restSpa --project -d:ssl --out:docs ./src/restSpa.nim"
+  exec "rm -r docs; nim doc -d:usestd --git.commit:master --git.url:https://github.com/thisago/restSpa --project -d:ssl --out:docs ./src/restSpa.nim"

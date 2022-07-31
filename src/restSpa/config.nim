@@ -19,7 +19,7 @@ const
 
 # user getting in DB
 const
-  userIdentificators* = {
+  userIdentifiers* = {
     "_username": "username",
     "_email": "email"
   }
@@ -45,19 +45,23 @@ let
   address* = parseUri env.getOrDefault("address", "http://localhost:8080")
   (haveSsl*, host*, port*) = parseAddress address
 
+  appName* = env.getOrDefault("appName", "restSpa")
   settings* = newSettings(
-    appName = env.getOrDefault("appName", "Prologue"),
+    appName = appName,
     debug = env.getOrDefault("debug", true),
     port = Port port,
     secretKey = env.getOrDefault("secretKey", ""),
     address = host
   )
 
-  smtpUser* = env.getOrDefault("smtpUser", "")
-  smtpFrom* = env.getOrDefault("smtpFrom", "")
-  smtpPass* = env.getOrDefault("smtpPass", "")
-  smtpPort* = env.getOrDefault("smtpPort", 587)
   smtpServer* = env.getOrDefault("smtpServer", "")
+  smtpPort* = env.getOrDefault("smtpPort", 587)
+  smtpTls* = env.getOrDefault("smtpTls", true)
+  smtpFrom* = env.getOrDefault("smtpFrom", "")
+  smtpUser* = env.getOrDefault("smtpUser", "")
+  smtpPass* = env.getOrDefault("smtpPass", "")
 
   errorLog* = env.getOrDefault("errorLog", "error.log")
   rollingLog* = env.getOrDefault("rollingLog", "rolling.log")
+
+  hashExpiringHours* = env.getOrDefault("hashExpiringHours", 2) ## How much hours to expire the hash used in links

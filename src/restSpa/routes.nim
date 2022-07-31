@@ -4,7 +4,8 @@ import restSpa/routes/home
 import restSpa/routes/api/[
   signIn,
   signUp,
-  logout
+  logout,
+  activate,
 ]
 import restSpa/routes/api/delUser as usrDelUser
 
@@ -31,6 +32,7 @@ const
       pattern("/signup", r_signUp, HttpPost, "signup"),
       pattern("/delUser", usrDelUser.r_delUser, HttpPost, "user_delUser"),
       pattern("/logout", r_logout, HttpPost, "logout"),
+      pattern("/activate", r_activate, HttpPost, "activate"),
     ]),
     ("api/admin", @[
       pattern("/getUser", r_getUser, HttpPost, "getUser"),
