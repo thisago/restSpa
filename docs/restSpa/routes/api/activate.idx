@@ -1,0 +1,1 @@
+r_activate	restSpa/routes/api/activate.html#r_activate,Context	activate: r_activate(ctx: Context): owned(Future[void])	

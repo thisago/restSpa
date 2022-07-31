@@ -27,10 +27,14 @@
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="restSpa/auth/gen.html">restSpa/auth/gen</a>, <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/routeUtils.html">restSpa/routeUtils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/admin/delUser.html">restSpa/routes/api/admin/delUser</a>, <a href="restSpa/routes/api/admin/editUser.html">restSpa/routes/api/admin/editUser</a>, <a href="restSpa/routes/api/admin/getUser.html">restSpa/routes/api/admin/getUser</a>, <a href="restSpa/routes/api/delUser.html">restSpa/routes/api/delUser</a>, <a href="restSpa/routes/api/logout.html">restSpa/routes/api/logout</a>, <a href="restSpa/routes/api/signIn.html">restSpa/routes/api/signIn</a>, <a href="restSpa/routes/api/signUp.html">restSpa/routes/api/signUp</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="restSpa/auth/check.html">restSpa/auth/check</a>, <a href="restSpa/auth/gen.html">restSpa/auth/gen</a>, <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/email/activateAccount.html">restSpa/email/activateAccount</a>, <a href="restSpa/email/send.html">restSpa/email/send</a>, <a href="restSpa/routeUtils.html">restSpa/routeUtils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/activate.html">restSpa/routes/api/activate</a>, <a href="restSpa/routes/api/admin/delUser.html">restSpa/routes/api/admin/delUser</a>, <a href="restSpa/routes/api/admin/editUser.html">restSpa/routes/api/admin/editUser</a>, <a href="restSpa/routes/api/admin/getUser.html">restSpa/routes/api/admin/getUser</a>, <a href="restSpa/routes/api/delUser.html">restSpa/routes/api/delUser</a>, <a href="restSpa/routes/api/logout.html">restSpa/routes/api/logout</a>, <a href="restSpa/routes/api/signIn.html">restSpa/routes/api/signIn</a>, <a href="restSpa/routes/api/signUp.html">restSpa/routes/api/signUp</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="address" href="#address"><span>address:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: address" href="restSpa/config.html#address">config: address</a></li>
+          </ul></dd>
+<dt><a name="appName" href="#appName"><span>appName:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: appName" href="restSpa/config.html#appName">config: appName</a></li>
           </ul></dd>
 <dt><a name="cantEditUserFields" href="#cantEditUserFields"><span>cantEditUserFields:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -39,6 +43,10 @@
 <dt><a name="cantSeeUserFields" href="#cantSeeUserFields"><span>cantSeeUserFields:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: cantSeeUserFields" href="restSpa/db/models/user.html#cantSeeUserFields">user: cantSeeUserFields</a></li>
+          </ul></dd>
+<dt><a name="confLock" href="#confLock"><span>confLock:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: confLock" href="restSpa/config.html#confLock">config: confLock</a></li>
           </ul></dd>
 <dt><a name="dbConn" href="#dbConn"><span>dbConn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -76,9 +84,13 @@
 <li><a class="reference external"
           data-doc-search-tag="routeUtils: forceHttpMethod(ctx; httpMethod: HttpMethod)" href="restSpa/routeUtils.html#forceHttpMethod.t%2C%2CHttpMethod">routeUtils: forceHttpMethod(ctx; httpMethod: HttpMethod)</a></li>
           </ul></dd>
+<dt><a name="genAuthHash" href="#genAuthHash"><span>genAuthHash:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="gen: genAuthHash(username, password, salt: string; epoch = $nowUnix()): string" href="restSpa/auth/gen.html#genAuthHash%2Cstring%2Cstring%2Cstring">gen: genAuthHash(username, password, salt: string; epoch = $nowUnix()): string</a></li>
+          </ul></dd>
 <dt><a name="genIdentHash" href="#genIdentHash"><span>genIdentHash:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="gen: genIdentHash(username, password, salt: string; epoch: int64): string" href="restSpa/auth/gen.html#genIdentHash%2Cstring%2Cstring%2Cstring%2Cint64">gen: genIdentHash(username, password, salt: string; epoch: int64): string</a></li>
+          data-doc-search-tag="gen: genIdentHash(username, password, salt, epoch: string): string" href="restSpa/auth/gen.html#genIdentHash%2Cstring%2Cstring%2Cstring%2Cstring">gen: genIdentHash(username, password, salt, epoch: string): string</a></li>
           </ul></dd>
 <dt><a name="genSalt" href="#genSalt"><span>genSalt:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -101,6 +113,10 @@
 <dt><a name="getUsing" href="#getUsing"><span>getUsing:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="routeUtils: getUsing(table: type; fields: ReqDbFields; node): auto" href="restSpa/routeUtils.html#getUsing%2Ctype%2CReqDbFields%2C">routeUtils: getUsing(table: type; fields: ReqDbFields; node): auto</a></li>
+          </ul></dd>
+<dt><a name="hashExpiringHours" href="#hashExpiringHours"><span>hashExpiringHours:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: hashExpiringHours" href="restSpa/config.html#hashExpiringHours">config: hashExpiringHours</a></li>
           </ul></dd>
 <dt><a name="hasKey" href="#hasKey"><span>hasKey:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -174,6 +190,10 @@
 <li><a class="reference external"
           data-doc-search-tag="notFound: r_404(ctx: Context): owned(Future[void])" href="restSpa/routes/default/notFound.html#r_404%2CContext">notFound: r_404(ctx: Context): owned(Future[void])</a></li>
           </ul></dd>
+<dt><a name="r_activate" href="#r_activate"><span>r_activate:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="activate: r_activate(ctx: Context): owned(Future[void])" href="restSpa/routes/api/activate.html#r_activate%2CContext">activate: r_activate(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
 <dt><a name="rank" href="#rank"><span>rank:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: rank(user: User): UserRank" href="restSpa/db/models/user.html#rank%2CUser">user: rank(user: User): UserRank</a></li>
@@ -195,6 +215,10 @@
 <dt><a name="r_editUser" href="#r_editUser"><span>r_editUser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="editUser: r_editUser(ctx: Context): owned(Future[void])" href="restSpa/routes/api/admin/editUser.html#r_editUser%2CContext">editUser: r_editUser(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
+<dt><a name="render" href="#render"><span>render:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="activateAccount: render(username, code: string): string" href="restSpa/email/activateAccount.html#render%2Cstring%2Cstring">activateAccount: render(username, code: string): string</a></li>
           </ul></dd>
 <dt><a name="respErr" href="#respErr"><span>respErr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -244,6 +268,14 @@
 <li><a class="reference external"
           data-doc-search-tag="signUp: r_signUp(ctx: Context): owned(Future[void])" href="restSpa/routes/api/signUp.html#r_signUp%2CContext">signUp: r_signUp(ctx: Context): owned(Future[void])</a></li>
           </ul></dd>
+<dt><a name="send" href="#send"><span>send:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="activateAccount: send(to, username, code: string; test = true): bool" href="restSpa/email/activateAccount.html#send%2Cstring%2Cstring%2Cstring">activateAccount: send(to, username, code: string; test = true): bool</a></li>
+          </ul></dd>
+<dt><a name="sendMail" href="#sendMail"><span>sendMail:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="send: sendMail(to, subject, body: string; mime = &quot;html&quot;; test = true): bool" href="restSpa/email/send.html#sendMail%2Cstring%2Cstring%2Cstring%2Cstring">send: sendMail(to, subject, body: string; mime = &quot;html&quot;; test = true): bool</a></li>
+          </ul></dd>
 <dt><a name="sess_username" href="#sess_username"><span>sess_username:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: sess_username" href="restSpa/config.html#sess_username">config: sess_username</a></li>
@@ -276,6 +308,10 @@
 <li><a class="reference external"
           data-doc-search-tag="config: smtpServer" href="restSpa/config.html#smtpServer">config: smtpServer</a></li>
           </ul></dd>
+<dt><a name="smtpTls" href="#smtpTls"><span>smtpTls:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: smtpTls" href="restSpa/config.html#smtpTls">config: smtpTls</a></li>
+          </ul></dd>
 <dt><a name="smtpUser" href="#smtpUser"><span>smtpUser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: smtpUser" href="restSpa/config.html#smtpUser">config: smtpUser</a></li>
@@ -283,6 +319,10 @@
 <dt><a name="toJson" href="#toJson"><span>toJson:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: toJson(user: User): string" href="restSpa/db/models/user.html#toJson%2CUser">user: toJson(user: User): string</a></li>
+          </ul></dd>
+<dt><a name="unpackAuthHash" href="#unpackAuthHash"><span>unpackAuthHash:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="gen: unpackAuthHash(hash: string): tuple[ident, epoch: string]" href="restSpa/auth/gen.html#unpackAuthHash%2Cstring">gen: unpackAuthHash(hash: string): tuple[ident, epoch: string]</a></li>
           </ul></dd>
 <dt><a name="update" href="#update"><span>update:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -316,9 +356,9 @@
 <li><a class="reference external"
           data-doc-search-tag="user: User" href="restSpa/db/models/user.html#User">user: User</a></li>
           </ul></dd>
-<dt><a name="userIdentificators" href="#userIdentificators"><span>userIdentificators:</span></a></dt><dd><ul class="simple">
+<dt><a name="userIdentifiers" href="#userIdentifiers"><span>userIdentifiers:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="config: userIdentificators" href="restSpa/config.html#userIdentificators">config: userIdentificators</a></li>
+          data-doc-search-tag="config: userIdentifiers" href="restSpa/config.html#userIdentifiers">config: userIdentifiers</a></li>
           </ul></dd>
 <dt><a name="userNotExists" href="#userNotExists"><span>userNotExists:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -327,6 +367,14 @@
 <dt><a name="UserRank" href="#UserRank"><span>UserRank:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: UserRank" href="restSpa/db/models/user.html#UserRank">user: UserRank</a></li>
+          </ul></dd>
+<dt><a name="verifyAuthHash" href="#verifyAuthHash"><span>verifyAuthHash:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="check: verifyAuthHash(usr: User; hash: string): tuple[success: bool, error: string]" href="restSpa/auth/check.html#verifyAuthHash%2CUser%2Cstring">check: verifyAuthHash(usr: User; hash: string): tuple[success: bool, error: string]</a></li>
+          </ul></dd>
+<dt><a name="withConf" href="#withConf"><span>withConf:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: withConf(body: untyped)" href="restSpa/config.html#withConf.t%2Cuntyped">config: withConf(body: untyped)</a></li>
           </ul></dd>
 <dt><a name="withParams" href="#withParams"><span>withParams:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -337,15 +385,15 @@
           data-doc-search-tag="routeUtils: withUser(node; body)" href="restSpa/routeUtils.html#withUser.t%2C%2C">routeUtils: withUser(node; body)</a></li>
           <li><a class="reference external"
           data-doc-search-tag="routeUtils: withUser(node; usr: untyped;
-         userIdentf: openArray[(string, string)] = userIdentificators; body)" href="restSpa/routeUtils.html#withUser.t%2C%2Cuntyped%2CopenArray%5B%5D%2C">routeUtils: withUser(node; usr: untyped;
-         userIdentf: openArray[(string, string)] = userIdentificators; body)</a></li>
+         userIdentf: openArray[(string, string)] = userIdentifiers; body)" href="restSpa/routeUtils.html#withUser.t%2C%2Cuntyped%2CopenArray%5B%5D%2C">routeUtils: withUser(node; usr: untyped;
+         userIdentf: openArray[(string, string)] = userIdentifiers; body)</a></li>
           </ul></dd>
 </dl>
     <div class="row">
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-28 00:29:05 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-31 20:28:22 UTC</small>
       </div>
     </div>
   </div>

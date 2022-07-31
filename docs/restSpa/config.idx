@@ -7,17 +7,22 @@ ifContainsInvalidReq	restSpa/config.html#ifContainsInvalidReq	config: ifContains
 needLogin	restSpa/config.html#needLogin	config: needLogin	
 needLogoff	restSpa/config.html#needLogoff	config: needLogoff	
 rankNotMeet	restSpa/config.html#rankNotMeet	config: rankNotMeet	
-userIdentificators	restSpa/config.html#userIdentificators	config: userIdentificators	
+userIdentifiers	restSpa/config.html#userIdentifiers	config: userIdentifiers	
+confLock	restSpa/config.html#confLock	config: confLock	
 dbHost	restSpa/config.html#dbHost	config: dbHost	
 dbUser	restSpa/config.html#dbUser	config: dbUser	
 dbPass	restSpa/config.html#dbPass	config: dbPass	
 address	restSpa/config.html#address	config: address	
 haveSsl	restSpa/config.html#haveSsl	config: haveSsl	
+appName	restSpa/config.html#appName	config: appName	
 settings	restSpa/config.html#settings	config: settings	
-smtpUser	restSpa/config.html#smtpUser	config: smtpUser	
-smtpFrom	restSpa/config.html#smtpFrom	config: smtpFrom	
-smtpPass	restSpa/config.html#smtpPass	config: smtpPass	
-smtpPort	restSpa/config.html#smtpPort	config: smtpPort	
 smtpServer	restSpa/config.html#smtpServer	config: smtpServer	
+smtpPort	restSpa/config.html#smtpPort	config: smtpPort	
+smtpTls	restSpa/config.html#smtpTls	config: smtpTls	
+smtpFrom	restSpa/config.html#smtpFrom	config: smtpFrom	
+smtpUser	restSpa/config.html#smtpUser	config: smtpUser	
+smtpPass	restSpa/config.html#smtpPass	config: smtpPass	
 errorLog	restSpa/config.html#errorLog	config: errorLog	
 rollingLog	restSpa/config.html#rollingLog	config: rollingLog	
+hashExpiringHours	restSpa/config.html#hashExpiringHours	config: hashExpiringHours	
+withConf	restSpa/config.html#withConf.t,untyped	config: withConf(body: untyped)	

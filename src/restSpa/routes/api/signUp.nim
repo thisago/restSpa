@@ -3,6 +3,8 @@ import pkg/prologue
 import restSpa/routeUtils
 import restSpa/db/models/user
 import restSpa/db
+from restSpa/email/activateAccount import nil 
+from restSpa/auth/gen import genAuthHash
 
 proc r_signUp*(ctx: Context) {.async.} =
   ## Create new user with POST
@@ -25,6 +27,15 @@ proc r_signUp*(ctx: Context) {.async.} =
             rank = urGhost
           )
           inDb: dbConn.insert user
+          echo activateAccount.send(
+            to = user.email,
+            username = user.username,
+            code = genAuthHash(
+              username = user.username,
+              password = user.password,
+              salt = user.salt
+            )
+          )
           # ctx.session["username"] = username
           respSuc "Successfully created user"
         except DbError:

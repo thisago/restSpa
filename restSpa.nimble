@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.14.0"
+version       = "0.15.0"
 author        = "Thiago Navarro"
 description   = "SPA & REST template using Prologue, Norm and Karax"
 license       = "mit"

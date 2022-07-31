@@ -11,9 +11,10 @@ from std/uri import `$`
 from restSpa/config import address
 
 proc url*(path: string): string =
-  var link = address
-  link.path = path
-  result = $link
+  withConf:
+    var link = address
+    link.path = path
+    result = $link
 
 func delInternals*(node: var JsonNode) =
   ## Deletes all DB internals fields from a JSON node

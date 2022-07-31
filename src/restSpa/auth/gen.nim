@@ -4,8 +4,10 @@ from std/strformat import fmt
 from std/strutils import split
 import std/random
 
-import pkg/bcrypt
+# import pkg/bcrypt
 import pkg/hmac
+
+import restSpa/utils
 
 proc genIdentHash*(username, password, salt, epoch: string): string =
   ## Generates a hash that can be used as single use pass
@@ -40,11 +42,11 @@ proc genSalt*: string =
   except IOError:
     result = randomSalt()
 
-proc genAuthHash*(username, password, salt, epoch: string): string =
+proc genAuthHash*(username, password, salt: string; epoch = $nowUnix()): string =
   ## Generates the complete auth hash with epoch encoded as base64
   let ident = genIdentHash(username, password, salt, epoch)
-  echo fmt"{ident}:{epoch}"
   result = base64.encode fmt"{ident}:{epoch}"
+  echo "hash = ", result
 
 proc unpackAuthHash*(hash: string): tuple[ident, epoch: string] =
   ## Generates the complete auth hash with epoch encoded as base64

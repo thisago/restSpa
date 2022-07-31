@@ -2,9 +2,10 @@
 
 ## Version 0.15.0 (Jul 31 2022)
 
-<!-- - Sending (not sending) activation email when new user was created -->
-- Adding `POST /api/activate` to activate account
+- Sending (not sending, just printing) activation email when new user was created
+- Added `POST /api/activate` to activate account
 - Fixed ident hash generation and checking
+- Fixed error whe session is broken
 
 ---
 

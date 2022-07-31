@@ -1,0 +1,1 @@
+sendMail	restSpa/email/send.html#sendMail,string,string,string,string	send: sendMail(to, subject, body: string; mime = &quot;html&quot;; test = true): bool	

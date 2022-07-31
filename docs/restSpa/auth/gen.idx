@@ -1,2 +1,4 @@
-genIdentHash	restSpa/auth/gen.html#genIdentHash,string,string,string,int64	gen: genIdentHash(username, password, salt: string; epoch: int64): string	
+genIdentHash	restSpa/auth/gen.html#genIdentHash,string,string,string,string	gen: genIdentHash(username, password, salt, epoch: string): string	
 genSalt	restSpa/auth/gen.html#genSalt	gen: genSalt(): string	
+genAuthHash	restSpa/auth/gen.html#genAuthHash,string,string,string	gen: genAuthHash(username, password, salt: string; epoch = $nowUnix()): string	
+unpackAuthHash	restSpa/auth/gen.html#unpackAuthHash,string	gen: unpackAuthHash(hash: string): tuple[ident, epoch: string]	

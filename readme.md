@@ -157,11 +157,12 @@ Cookie: session=<ADMIN SESSION>
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
 - [ ] Frontend (break it in smaller tasks)
 - [ ] Fix email sending
-- [ ] Add user verification
+- [x] Add user activation
 - [ ] Add user password reset
 - [ ] Add honeypots or captcha
 - [ ] Low priority: Add a temp block to multiple requests at same time to prevent DoS
 - [ ] Block use of certain usernames and add filters. Like special chars
+- [ ] Add a route to request new email validation (or don't expire the link)
 
 ---
 

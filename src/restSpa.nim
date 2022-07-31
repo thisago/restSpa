@@ -31,7 +31,20 @@ proc main =
     ]
   )
 
-  app.use(@[debugRequestMiddleware(), sessionMiddleware(settings)])
+  proc sessionMw: HandlerAsync =
+    ## This is a tricky way to prevent error showing to client if session
+    ## was corrupted
+    let mw = sessionMiddleware(settings)
+    result = proc(ctx: Context) {.async.} =
+      try:
+        await mw ctx
+      except:
+        logging.info "Corrupted session"
+
+  app.use(@[
+    debugRequestMiddleware(),
+    sessionMw()
+  ])
 
   for r in routesDefinition:
     app.addRoute(r.routes, r.path)

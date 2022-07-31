@@ -2,18 +2,6 @@ import pkg/mcmail
 
 import restSpa/config
 
-from restSpa/email/activateAccount import nil
-export activateAccount
-
-let mailer = EmailConfigType(
-  username: smtpUser,
-  password: smtpPass,
-  serverUrl: smtpServer,
-  port: smtpPort,
-  msgFrom: smtpFrom,
-  tls: smtpTls
-)
-
 proc sendMail*(to, subject, body: string; mime = "html"; test = true): bool =
   ## Tries to send an email `to` destination, the `body can be HTML when `mime`
   ## is "html"
@@ -22,6 +10,16 @@ proc sendMail*(to, subject, body: string; mime = "html"; test = true): bool =
   ## 
   ## FIX EMAIL SENDING
   result = true
+  var mailer: EmailConfigType
+  withConf:
+    mailer = EmailConfigType(
+      username: smtpUser,
+      password: smtpPass,
+      serverUrl: smtpServer,
+      port: smtpPort,
+      msgFrom: smtpFrom,
+      tls: smtpTls
+    )
   let emailMsg = EmailMessage(
     msgTo: @[to],
     msgCc: @[],
@@ -29,7 +27,7 @@ proc sendMail*(to, subject, body: string; mime = "html"; test = true): bool =
     msgBody: body,
   )
   if not test:
-    let res = sendEmail(mailer, emailMsg, mime)
+    let res = mailer.sendEmail(emailMsg, mime)
     result = $res.code == "success"
     # if not result:
     #   echo res.message
@@ -40,6 +38,6 @@ when isMainModule:
   echo sendMail(
     to = "user@example.com",
     subject = "subject",
-    body = activateAccount.render("user", "abcde"),
+    body = "<h1>Title</h1>",
     # test = true
   )

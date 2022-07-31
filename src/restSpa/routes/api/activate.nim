@@ -16,6 +16,11 @@ proc r_activate*(ctx: Context) {.async.} =
         echo node{"hash"}.getStr
         let check = verifyAuthHash(usr, node{"hash"}.getStr)
         if check.success:
-          respSucJson "success"
+          if usr.rank == urGhost:
+            usr.rank = urUser
+            update usr
+            respSucJson "Successfully activated user"
+          else:
+            respErrJson "User already activated"
         else:
           respErrJson check.error

@@ -35,6 +35,12 @@ func parseAddress(url: Uri): tuple[hasSsl: bool; host: string; port: int] =
   result.host = url.hostname
   result.port = if url.port.len == 0: 80 else: parseInt url.port
 
+import std/locks
+  
+var confLock*: Lock
+initLock confLock
+
+# {.push guard: confLock.} # Why push isn't working?
 let
   env = loadPrologueEnv ".env"
 
@@ -65,3 +71,11 @@ let
   rollingLog* = env.getOrDefault("rollingLog", "rolling.log")
 
   hashExpiringHours* = env.getOrDefault("hashExpiringHours", 2) ## How much hours to expire the hash used in links
+
+# {.pop.}
+
+template withConf*(body: untyped) =
+  ## Dirt trick to bypass gcsafe check, if I use locks, then echo doesn't works
+  {.gcsafe.}:
+    # withLock confLock:
+    body
