@@ -175,6 +175,8 @@ Cookie: session=<ADMIN SESSION>
 - [ ] Low priority: Add a temp block to multiple requests at same time to prevent DoS
 - [ ] Block use of certain usernames and add filters. Like special chars
 - [ ] Add a route to request new email validation (or don't expire the link)
+- [ ] Fix API to be REST (Resources: [IBM](https://www.ibm.com/cloud/learn/rest-apis), [RestfulAPI](https://restfulapi.net/))
+  - [ ] Statelessness - Remove session verification at API, use some API key
 
 ---
 
