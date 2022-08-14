@@ -73,6 +73,10 @@
   <li><a class="reference" href="#genSalt" title="genSalt(): string">genSalt(): string</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">hashPassword
+  <li><a class="reference" href="#hashPassword%2Cstring%2Cstring" title="hashPassword(salt, password: string): string">hashPassword(salt, password: string): string</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">unpackAuthHash
   <li><a class="reference" href="#unpackAuthHash%2Cstring" title="unpackAuthHash(hash: string): tuple[ident, epoch: string]">unpackAuthHash(hash: string): tuple[ident, epoch: string]</a></li>
 
@@ -108,8 +112,8 @@
   <dd>
     
     Generates the code used to activate user (same code for each user)
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L57" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L57" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L61" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L61" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -122,8 +126,8 @@
   <dd>
     
     Generates the complete auth hash with epoch encoded as base64
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L46" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L46" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L50" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L50" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -151,8 +155,22 @@
     <p>Creates a salt using a cryptographically secure random number generator.</p>
 <p>Ensures that the resulting salt contains no <tt class="docutils literal"><span class="pre">\0</span></tt>.</p>
 
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L37" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L37" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L41" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L41" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
+<div id="hashPassword-procs-all">
+  <div id="hashPassword,string,string">
+  <dt><pre><span class="Keyword">proc</span> <a href="#hashPassword%2Cstring%2Cstring"><span class="Identifier">hashPassword</span></a><span class="Other">(</span><span class="Identifier">salt</span><span class="Other">,</span> <span class="Identifier">password</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
+  <dd>
+    
+    Generates a hash that can be used as single use pass
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L17" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L17" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -165,8 +183,8 @@
   <dd>
     
     Generates the complete auth hash with epoch encoded as base64
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L51" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L51" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/auth/gen.nim#L55" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/auth/gen.nim#L55" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -182,7 +200,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-14 16:28:42 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-14 16:47:25 UTC</small>
       </div>
     </div>
   </div>
