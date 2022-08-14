@@ -6,6 +6,7 @@
 - API response is now a object, `ResponseKind`
 - Added string values to `UserRank` and `ResponseKind` enum
 - Fixed `db/utils.getFromDb`
+- Hash user password
 
 ---
 

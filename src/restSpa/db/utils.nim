@@ -1,7 +1,5 @@
 from std/strutils import join
 
-import pkg/norm/model
-
 import restSpa/db
 
 

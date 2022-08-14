@@ -8,7 +8,7 @@ import pkg/norm/[
 from restSpa/utils import nowUnix, delInternals
 from restSpa/db/utils as dbUtils import getFromDb
 import restSpa/db
-from restSpa/auth/gen import genSalt
+from restSpa/auth/gen import genSalt, hashPassword
 
 type
   User* = ref object of Model
@@ -53,11 +53,11 @@ proc newUser*(username, email, password: string; registerIp: string; rank = urGh
   new result
   result.username = username
   result.email = email
-  result.password = password # TODO: hash password
+  result.salt = genSalt()
+  result.password = result.salt.hashPassword password
   result.rank = rank
   result.registerIp = registerIp
   result.registerDate = registerDate
-  result.salt = genSalt()
 
 proc newUser*: User =
   ## Creates new blank `User`

@@ -1,7 +1,7 @@
 import pkg/prologue
 
 import restSpa/routes/home
-import restSpa/routes/activate as getActivate
+# import restSpa/routes/activate as getActivate
 
 import restSpa/routes/api/[
   signIn,

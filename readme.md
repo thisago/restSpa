@@ -158,16 +158,16 @@ Cookie: session=<ADMIN SESSION>
 
 ## TODO
 
-- [ ] Hash the password
+- [x] Hash the password
 - [x] Add user permission levels
-- [ ] Add a route to delete user (for moderators?)
+- [x] Add a route to delete user (for moderators?)
 - [ ] Add route to get the logged user data
 - [ ] Add login logging table
 - [x] Add last ip in `User`
 - [ ] **Add tests**
 - [ ] Support `id` for querying (`User`s)
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
-- [ ] Frontend (break it in smaller tasks)
+- [ ] Do tge frontend (break it in smaller tasks)
 - [ ] Fix email sending
 - [x] Add user activation
 - [ ] Add user password reset
@@ -177,7 +177,7 @@ Cookie: session=<ADMIN SESSION>
 - [ ] Add a route to request new email validation
 - [ ] Fix API to be REST (Resources: [IBM](https://www.ibm.com/cloud/learn/rest-apis), [RestfulAPI](https://restfulapi.net/))
   - [ ] Statelessness - Remove session verification at API, use some API key
-- [ ] User activation as a code like Github
+- [x] User activation as a code like Github
 - [ ] **Split route function to a function that can be called with custom data** 
 
 ---

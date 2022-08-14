@@ -14,6 +14,10 @@ proc genIdentHash*(username, password, salt, epoch: string): string =
   ## Generates a hash that can be used as single use pass
   hmac_sha256(salt, username & password & epoch).toHex()
 
+proc hashPassword*(salt, password: string): string =
+  ## Generates a hash that can be used as single use pass
+  hmac_sha256(salt, password).toHex()
+
 proc randomSalt: string =
   result = ""
   for i in 0..127:
