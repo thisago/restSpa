@@ -1,6 +1,10 @@
 hasKey	restSpa/routeUtils.html#hasKey,Session,string	routeUtils: hasKey(session: var Session; key: string): bool	
 setContentJsonHeader	restSpa/routeUtils.html#setContentJsonHeader	routeUtils: setContentJsonHeader(ctx)	
 withParams	restSpa/routeUtils.html#withParams.t,,untyped	routeUtils: withParams(ctx; mergeGet = false; bodyCode: untyped)	
+ResponseJson	restSpa/routeUtils.html#ResponseJson	routeUtils: ResponseJson	
+RkMessage	restSpa/routeUtils.html#RkMessage	ResponseKind.RkMessage	
+RkJson	restSpa/routeUtils.html#RkJson	ResponseKind.RkJson	
+ResponseKind	restSpa/routeUtils.html#ResponseKind	routeUtils: ResponseKind	
 respJson	restSpa/routeUtils.html#respJson.t,untyped,HttpCode	routeUtils: respJson(data: untyped; code: HttpCode)	
 respErr	restSpa/routeUtils.html#respErr.t,string	routeUtils: respErr(msg: string; code = Http400)	
 respSuc	restSpa/routeUtils.html#respSuc.t,string	routeUtils: respSuc(msg: string; code = Http200)	

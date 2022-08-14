@@ -1,1 +1,0 @@
-verifyAuthHash	restSpa/auth/check.html#verifyAuthHash,User,string	check: verifyAuthHash(usr: User; hash: string): tuple[success: bool, error: string]	

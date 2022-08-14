@@ -14,13 +14,12 @@ proc render*(username, code: string): string {.gcsafe.} =
       p: text fmt"Thanks joining in {appName}"
       p:
         text "Please activate your account by clicking "
-        a(href = url "activate" / code): text "here"
+        a(href = url "activate" / username / code): text "here"
         text "."
     result = $vnode
 
 proc send*(to, username, code: string; test = true): bool =
   ## Sends the account activation email
-  echo "---"
   withConf:
     result = sendMail(
       to = to,

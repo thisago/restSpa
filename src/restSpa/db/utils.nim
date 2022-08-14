@@ -1,6 +1,9 @@
 from std/strutils import join
 
+import pkg/norm/model
+
 import restSpa/db
+
 
 template getFromDb*(
   table: type;
@@ -17,7 +20,7 @@ template getFromDb*(
     inDb: dbConn.select(
       result,
       query.join " or ",
-      vars
+      [dbValue vars]
     )
   except NotFoundError:
     echo getCurrentExceptionMsg()

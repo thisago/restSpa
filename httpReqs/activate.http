@@ -2,8 +2,9 @@
 
 POST {{url}}/api/activate HTTP/1.1
 Content-Type: application/json
+Cookie: a=1 
 
 {
   "username": "user",
-  "hash": "NzRhZTRlZDA2ZWFjZjNjOTJjNjA1NGJiMjg5YTgzMjk1YzRkODZmYmNkMWIyZWIwNTI3NmM4ZmMyZWJkMjM1ZDoxNjU5Mjk5MTc5",
+  "code": "019196",
 }

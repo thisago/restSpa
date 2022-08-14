@@ -4,7 +4,7 @@ import restSpa/routeUtils
 import restSpa/db/models/user
 import restSpa/db
 from restSpa/email/activateAccount import nil 
-from restSpa/auth/gen import genAuthHash
+from restSpa/auth/gen import genActivationCode
 
 proc r_signUp*(ctx: Context) {.async.} =
   ## Create new user with POST
@@ -30,11 +30,7 @@ proc r_signUp*(ctx: Context) {.async.} =
           echo activateAccount.send(
             to = user.email,
             username = user.username,
-            code = genAuthHash(
-              username = user.username,
-              password = user.password,
-              salt = user.salt
-            )
+            code = genActivationCode(user.username, user.email, user.password, user.salt)
           )
           # ctx.session["username"] = username
           respSuc "Successfully created user"

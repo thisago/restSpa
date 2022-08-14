@@ -2,3 +2,4 @@ genIdentHash	restSpa/auth/gen.html#genIdentHash,string,string,string,string	gen:
 genSalt	restSpa/auth/gen.html#genSalt	gen: genSalt(): string	
 genAuthHash	restSpa/auth/gen.html#genAuthHash,string,string,string	gen: genAuthHash(username, password, salt: string; epoch = $nowUnix()): string	
 unpackAuthHash	restSpa/auth/gen.html#unpackAuthHash,string	gen: unpackAuthHash(hash: string): tuple[ident, epoch: string]	
+genActivationCode	restSpa/auth/gen.html#genActivationCode,string,string,string,string	gen: genActivationCode(username, email, password, salt: string): string	

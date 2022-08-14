@@ -1,5 +1,4 @@
 from std/json import `$`, `%*`, `%`, `{}=`, delete
-# from std/times import `$`, fromUnix
 
 import pkg/norm/[
   model,
@@ -24,10 +23,10 @@ type
     registerIp*, lastLoginIp*: string
 
   UserRank* = enum
-    urDisabled, ## Disabled user is same as a non-existent user
-    urGhost,    ## Ghost is a user that cannot do anything, a unverified user
-    urUser,     ## Default user privileges
-    urAdmin     ## All privileges
+    urDisabled = "disabled",  ## Disabled user is same as a non-existent user
+    urGhost = "ghost",        ## Ghost is a user that cannot do anything, a unverified user
+    urUser = "user",          ## Default user privileges
+    urAdmin = "admin"         ## All privileges
 
 const
   cantEditUserFields* = [ ## All fields that can't be edited by anyone
@@ -60,7 +59,6 @@ proc newUser*(username, email, password: string; registerIp: string; rank = urGh
   result.registerDate = registerDate
   result.salt = genSalt()
 
-
 proc newUser*: User =
   ## Creates new blank `User`
   newUser(
@@ -84,6 +82,8 @@ proc toJson*(user: User): string =
   result = $node
 
 ## DB
+
+from restSpa/db import dbConn
 
 proc get*(self: type User; username: string; fields: varargs[string] = []): User =
   ## Get the user in db which have the username or email same as `username`

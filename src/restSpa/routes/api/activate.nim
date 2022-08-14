@@ -4,23 +4,26 @@ import restSpa/routeUtils
 import restSpa/db/models/user
 # import restSpa/db
 
-from restSpa/auth/check import verifyAuthHash
+from restSpa/auth/gen import genActivationCode
 
 proc r_activate*(ctx: Context) {.async.} =
   ## Activate the user with POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.withParams(mergeGet = false):
-    node.ifContains(all = ["username", "hash"]):
+    node.ifContains(all = ["username", "code"]):
       node.withUser(usr, {"username": "username"}):
-        echo node{"hash"}.getStr
-        let check = verifyAuthHash(usr, node{"hash"}.getStr)
-        if check.success:
+        let code = node{"code"}.getStr
+        echo code
+        echo genActivationCode(usr.username, usr.email, usr.password, usr.salt)
+
+        if code == genActivationCode(usr.username, usr.email, usr.password, usr.salt):
           if usr.rank == urGhost:
             usr.rank = urUser
             update usr
-            respSucJson "Successfully activated user"
+            respSuc "Successfully activated user"
           else:
-            respErrJson "User already activated"
+            respErr "User already activated"
         else:
-          respErrJson check.error
+          echo "err"
+          respErr "Invalid activation code"

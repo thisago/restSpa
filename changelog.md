@@ -1,5 +1,14 @@
 # Changelog
 
+## Version 0.16.0 (Aug 14, 2022)
+
+- Changed user activation to a code
+- API response is now a object, `ResponseKind`
+- Added string values to `UserRank` and `ResponseKind` enum
+- Fixed `db/utils.getFromDb`
+
+---
+
 ## Version 0.15.0 (Jul 31 2022)
 
 - Sending (not sending, just printing) activation email when new user was created

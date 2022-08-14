@@ -174,9 +174,11 @@ Cookie: session=<ADMIN SESSION>
 - [ ] Add honeypots or captcha
 - [ ] Low priority: Add a temp block to multiple requests at same time to prevent DoS
 - [ ] Block use of certain usernames and add filters. Like special chars
-- [ ] Add a route to request new email validation (or don't expire the link)
+- [ ] Add a route to request new email validation
 - [ ] Fix API to be REST (Resources: [IBM](https://www.ibm.com/cloud/learn/rest-apis), [RestfulAPI](https://restfulapi.net/))
   - [ ] Statelessness - Remove session verification at API, use some API key
+- [ ] User activation as a code like Github
+- [ ] **Split route function to a function that can be called with custom data** 
 
 ---
 

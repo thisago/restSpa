@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>restSpa/routes/api/logout</title>
+<title>restSpa/routes/activate</title>
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA=="/>
@@ -16,15 +16,15 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../../../nimdoc.out.css">
+<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css">
 
 <!-- JS -->
-<script type="text/javascript" src="../../../dochack.js"></script>
+<script type="text/javascript" src="../../dochack.js"></script>
 </head>
 <body>
   <div class="document" id="documentId">
     <div class="container">
-      <h1 class="title">restSpa/routes/api/logout</h1>
+      <h1 class="title">restSpa/routes/activate</h1>
       <div class="row">
   <div class="three columns">
     <div class="theme-switch-wrapper">
@@ -36,7 +36,7 @@
     </div>
     <div id="global-links">
       <ul class="simple">
-        <li><a href="../../../theindex.html">Index</a></li>
+        <li><a href="../../theindex.html">Index</a></li>
       </ul>
     </div>
     <div id="searchInputDiv">
@@ -57,8 +57,8 @@
   <details open>
     <summary><a class="reference reference-toplevel" href="#12" id="62">Procs</a></summary>
     <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">r_logout
-  <li><a class="reference" href="#r_logout%2CContext" title="r_logout(ctx: Context): owned(Future[void])">r_logout(ctx: Context): owned(Future[void])</a></li>
+      <ul class="simple nested-toc-section">r_activate
+  <li><a class="reference" href="#r_activate%2CContext" title="r_activate(ctx: Context): owned(Future[void])">r_activate(ctx: Context): owned(Future[void])</a></li>
 
 </ul>
 
@@ -70,8 +70,8 @@
 
   </div>
   <div class="nine columns" id="content">
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routes/api/logout.nim#L1" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routes/api/logout.nim#L1" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routes/activate.nim#L1" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routes/activate.nim#L1" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
     <div id="tocRoot"></div>
     
@@ -79,21 +79,22 @@
     <div class="section" id="6">
   <h1><a class="toc-backref" href="#6">Imports</a></h1>
   <dl class="item">
-    <a class="reference external" href="../../routeUtils.html">../../routeUtils</a>
+    <a class="reference external" href="../routeUtils.html">../routeUtils</a>, <a class="reference external" href="../db/models/user.html">../db/models/user</a>, <a class="reference external" href="api/activate.html">api/activate</a>
   </dl>
 </div>
 <div class="section" id="12">
   <h1><a class="toc-backref" href="#12">Procs</a></h1>
   <dl class="item">
-    <div id="r_logout-procs-all">
-  <div id="r_logout,Context">
-  <dt><pre><span class="Keyword">proc</span> <a href="#r_logout%2CContext"><span class="Identifier">r_logout</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">Context</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">owned</span><span class="Other">(</span><span class="Identifier">Future</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadDbEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span><span class="Other">,</span> </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
+    <div id="r_activate-procs-all">
+  <div id="r_activate,Context">
+  <dt><pre><span class="Keyword">proc</span> <a href="#r_activate%2CContext"><span class="Identifier">r_activate</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">Context</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">owned</span><span class="Other">(</span><span class="Identifier">Future</span><span class="Other">[</span><span class="Identifier">void</span><span class="Other">]</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadDbEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteDbEffect</span><span class="Other">]</span><span class="Other">,</span> </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
   <dd>
     
-    
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routes/api/logout.nim#L5" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routes/api/logout.nim#L5" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    Verify account's email; needs <tt class="docutils literal"><span class="pre"><span class="Identifier">code</span></span></tt> path param
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routes/activate.nim#L8" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routes/activate.nim#L8" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>

@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.15.0"
+version       = "0.16.0"
 author        = "Thiago Navarro"
 description   = "SPA & REST template using Prologue, Norm and Karax"
 license       = "mit"
@@ -16,7 +16,7 @@ requires "nim >= 1.6.4"
 
 # Backend
 requires "prologue", "norm", "bcrypt", "hmac"
-requires "https://github.com/abbeymart/mcmail-nim"
+requires "https://github.com/thisago/mcmail-nim", "util"
 
 # Backend and frontend
 requires "karax"

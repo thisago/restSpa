@@ -1,8 +1,10 @@
 const internalDbPrefix* = "internal_"
 
-const
-  sess_username* = "username"
+# session
+const sess_username* = "username"
 
+# activation
+const activationCodeLen* = 6
 
 # error messages
 const

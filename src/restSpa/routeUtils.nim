@@ -77,22 +77,39 @@ template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
   logging.debug "Auto parsed params: " & $node
   bodyCode
 
+type
+  ResponseJson* = object
+    kind*: ResponseKind
+    text*: string
+    error*: bool
+  ResponseKind* = enum
+    RkMessage = "message",
+    RkJson = "json"
+
+func initResponseJson(
+  kind: ResponseJson.kind;
+  text: ResponseJson.text;
+  error: ResponseJson.error
+): ResponseJson =
+  ResponseJson(kind: kind, text: text, error: error)
+
+  
 template respJson*(data: untyped; code: HttpCode) =
   ## Send a JSON to client
   resp($(%*data), code)
 
 template respErr*(msg: string; code = Http400) =
   ## Send a error message in a JSON to client
-  respJson({"kind": "message", "message": msg, "error": true}, code)
+  respJson(initResponseJson(RkMessage, msg, true), code)
 template respSuc*(msg: string; code = Http200) =
   ## Send a success message in a JSON to client
-  respJson({"kind": "message", "message": msg, "error": false}, code)
+  respJson(initResponseJson(RkMessage, msg, false), code)
 template respErrJson*(json: string; code = Http400) =
   ## Send a success message in a JSON to client
-  respJson({"kind": "json", "json": json, "error": true}, code)
+  respJson(initResponseJson(RkJson, json, true), code)
 template respSucJson*(json: string; code = Http200) =
   ## Send a error message in a JSON to client
-  respJson({"kind": "json", "json": json, "error": false}, code)
+  respJson(initResponseJson(RkJson, json, false), code)
 
 from std/strutils import `%`, join
 
