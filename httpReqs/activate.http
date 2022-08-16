@@ -2,9 +2,10 @@
 
 POST {{url}}/api/activate HTTP/1.1
 Content-Type: application/json
-Cookie: a=1 
+Cookie: session=none 
 
 {
   "username": "user",
-  "code": "019196",
+  "password": "pass",
+  "code": "030803",
 }

@@ -102,3 +102,7 @@ proc update*(user: var User; loginIp = "") =
   user.lastLoginIp = loginIp
   user.lastLoginDate = nowUnix()
   inDb: dbConn.update user
+
+func passwordIs*(self: User; pass: string): bool =
+  ## Checks if the plain text password is same as hashed from DB
+  self.password == self.salt.hashPassword pass

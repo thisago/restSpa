@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 0.17.0 (Aug 16, 2022)
+
+- Added a requirement to specify the user password at user verification
+- Fixed login password hashing
+- Fixed corrupted session trick
+
+---
+
 ## Version 0.16.0 (Aug 14, 2022)
 
 - Changed user activation to a code

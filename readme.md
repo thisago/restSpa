@@ -75,6 +75,7 @@ Content-Type: application/json
 
 {
   "username": "user",
+  "password": "pass",
   "code": "verification code",
 }
 ```

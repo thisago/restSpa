@@ -40,6 +40,9 @@ proc main =
         await mw ctx
       except:
         logging.info "Corrupted session"
+      finally:
+        await switch(ctx)
+
 
   app.use(@[
     debugRequestMiddleware(),

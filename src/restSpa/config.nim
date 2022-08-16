@@ -17,7 +17,12 @@ const
   needLogin* = "User not logged in. Please signin"
   needLogoff* = "User logged in. Please logoff"
 
-  rankNotMeet* = "Permition denied"
+  rankNotMeet* = "Permission denied"
+  
+  invalidPassword* = "Invalid password"
+  invalidActivCode* = "Invalid activation code"
+  userAlreadyActivated* = "User already activated"
+  succActivation* = "User successfully activated"
 
 # user getting in DB
 const
