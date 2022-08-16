@@ -100,6 +100,10 @@
         registerDate = nowUnix()): User</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">passwordIs
+  <li><a class="reference" href="#passwordIs%2CUser%2Cstring" title="passwordIs(self: User; pass: string): bool">passwordIs(self: User; pass: string): bool</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">rank
   <li><a class="reference" href="#rank%2CUser" title="rank(user: User): UserRank">rank(user: User): UserRank</a></li>
 
@@ -245,6 +249,20 @@
 </div>
 
 </div>
+<div id="passwordIs-procs-all">
+  <div id="passwordIs,User,string">
+  <dt><pre><span class="Keyword">func</span> <a href="#passwordIs%2CUser%2Cstring"><span class="Identifier">passwordIs</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="user.html#User"><span class="Identifier">User</span></a><span class="Other">;</span> <span class="Identifier">pass</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
+  <dd>
+    
+    Checks if the plain text password is same as hashed from DB
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L106" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L106" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
+
+</div>
 <div id="rank-procs-all">
   <div id="rank,User">
   <dt><pre><span class="Keyword">func</span> <a href="#rank%2CUser"><span class="Identifier">rank</span></a><span class="Other">(</span><span class="Identifier">user</span><span class="Other">:</span> <a href="user.html#User"><span class="Identifier">User</span></a><span class="Other">)</span><span class="Other">:</span> <a href="user.html#UserRank"><span class="Identifier">UserRank</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
@@ -311,7 +329,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-14 16:47:25 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-16 22:56:15 UTC</small>
       </div>
     </div>
   </div>

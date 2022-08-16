@@ -13,3 +13,4 @@ newUser	restSpa/db/models/user.html#newUser	user: newUser(): User
 toJson	restSpa/db/models/user.html#toJson,User	user: toJson(user: User): string	
 get	restSpa/db/models/user.html#get,typeUser,string,varargs[string]	user: get(self: type User; username: string; fields: varargs[string] = []): User	
 update	restSpa/db/models/user.html#update,User,string	user: update(user: var User; loginIp = &quot;&quot;)	
+passwordIs	restSpa/db/models/user.html#passwordIs,User,string	user: passwordIs(self: User; pass: string): bool	

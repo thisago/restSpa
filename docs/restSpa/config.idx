@@ -8,6 +8,10 @@ ifContainsInvalidReq	restSpa/config.html#ifContainsInvalidReq	config: ifContains
 needLogin	restSpa/config.html#needLogin	config: needLogin	
 needLogoff	restSpa/config.html#needLogoff	config: needLogoff	
 rankNotMeet	restSpa/config.html#rankNotMeet	config: rankNotMeet	
+invalidPassword	restSpa/config.html#invalidPassword	config: invalidPassword	
+invalidActivCode	restSpa/config.html#invalidActivCode	config: invalidActivCode	
+userAlreadyActivated	restSpa/config.html#userAlreadyActivated	config: userAlreadyActivated	
+succActivation	restSpa/config.html#succActivation	config: succActivation	
 userIdentifiers	restSpa/config.html#userIdentifiers	config: userIdentifiers	
 confLock	restSpa/config.html#confLock	config: confLock	
 dbHost	restSpa/config.html#dbHost	config: dbHost	
