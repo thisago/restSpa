@@ -168,7 +168,7 @@ Cookie: session=<ADMIN SESSION>
 - [ ] **Add tests**
 - [ ] Support `id` for querying (`User`s)
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
-- [ ] Do tge frontend (break it in smaller tasks)
+- [ ] Do tHe frontend (break it in smaller tasks)
 - [ ] Fix email sending
 - [x] Add user activation
 - [ ] Add user password reset
