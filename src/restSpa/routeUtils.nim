@@ -271,3 +271,11 @@ template withUser*(
 template withUser*(node; body) =
   ## Runs `withUser` but with default `usr` variable
   node.withUser(usr, userIdentifiers): body
+
+template saveSession*(ctx; usr: User) =
+  ## Set the session
+  ctx.session["username"] = usr.username
+  
+template cleanSession*(ctx) =
+  ## Set the session
+  ctx.session.del "username"

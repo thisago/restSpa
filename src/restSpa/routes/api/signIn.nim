@@ -1,6 +1,5 @@
 import pkg/prologue
 
-from restSpa/auth/gen import hashPassword
 from restSpa/config import invalidPassword
 from restSpa/db/models/user import passwordIs
 
@@ -21,7 +20,7 @@ proc r_signIn*(ctx: Context) {.async.} =
           if usr.passwordIs password:
             usr.update(loginIp = ctx.request.ip)
             inDb: dbConn.update usr
-            ctx.session["username"] = usr.username
+            ctx.saveSession usr
             respSuc "Success"
           else:
             respErr invalidPassword

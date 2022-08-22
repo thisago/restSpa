@@ -6,5 +6,5 @@ proc r_logout*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.ifLogin true: # if logged
-    ctx.session.del "username"
+    ctx.cleanSession
     respSuc "Successfully logged out"

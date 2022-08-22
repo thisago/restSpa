@@ -31,7 +31,7 @@ the `Content-Type`
 #### `POST /api/signin` - Login
 Example:
 ```http
-GET /api/signin HTTP/1.1
+POST /api/signin HTTP/1.1
 Content-Type: application/json
 
 {
@@ -43,7 +43,7 @@ Content-Type: application/json
 #### `POST /api/signup` - Create new account
 Example:
 ```http
-GET /api/signup HTTP/1.1
+POST /api/signup HTTP/1.1
 Content-Type: application/json
 
 {
@@ -56,21 +56,21 @@ Content-Type: application/json
 #### `POST /api/logout`
 Example:
 ```http
-GET /api/logout HTTP/1.1
+POST /api/logout HTTP/1.1
 Cookie: session=<LOGGED SESSION>
 ```
 
 #### `POST /api/delUser` - Delete current user
 Example:
 ```http
-GET /api/delUser HTTP/1.1
+POST /api/delUser HTTP/1.1
 Cookie: session=<LOGGED SESSION>
 ```
 
 #### `POST /api/activate` - Activate the user
 Example:
 ```http
-GET /api/activate HTTP/1.1
+POST /api/activate HTTP/1.1
 Content-Type: application/json
 
 {
@@ -78,6 +78,12 @@ Content-Type: application/json
   "password": "pass",
   "code": "verification code",
 }
+```
+
+#### `GET /api/resend/{kind}` - Resend emails
+Example:
+```http
+GET /api/resend/activation HTTP/1.1
 ```
 
 ---
@@ -168,14 +174,14 @@ Cookie: session=<ADMIN SESSION>
 - [ ] **Add tests**
 - [ ] Support `id` for querying (`User`s)
 - [x] Add an error when no fields to edit was provided at `/api/admin/editUser` route
-- [ ] Do tHe frontend (break it in smaller tasks)
+- [ ] Do the frontend (break it in smaller tasks)
 - [ ] Fix email sending
 - [x] Add user activation
 - [ ] Add user password reset
 - [ ] Add honeypots or captcha
 - [ ] Low priority: Add a temp block to multiple requests at same time to prevent DoS
 - [ ] Block use of certain usernames and add filters. Like special chars
-- [ ] Add a route to request new email validation
+- [x] ~~Add a route to request new email validation~~ Email resending
 - [ ] Fix API to be REST (Resources: [IBM](https://www.ibm.com/cloud/learn/rest-apis), [RestfulAPI](https://restfulapi.net/))
   - [ ] Statelessness - Remove session verification at API, use some API key
 - [x] User activation as a code like Github

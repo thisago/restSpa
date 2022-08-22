@@ -30,9 +30,14 @@ proc r_signUp*(ctx: Context) {.async.} =
           echo activateAccount.send(
             to = user.email,
             username = user.username,
-            code = genActivationCode(user.username, user.email, user.password, user.salt)
+            code = genActivationCode(
+              user.username,
+              user.email,
+              user.password,
+              user.salt
+            )
           )
-          # ctx.session["username"] = username
+          ctx.saveSession user
           respSuc "Successfully created user"
         except DbError:
           case getCurrentExceptionMsg():

@@ -1,0 +1,4 @@
+@url = http://localhost:8080
+
+# Activation
+GET {{url}}/api/resend/activation HTTP/1.1

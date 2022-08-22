@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.18.0 (Aug 22, 2022)
+
+- Added `GET /api/resend/{kind}`
+
+---
+
 ## Version 0.17.0 (Aug 16, 2022)
 
 - Added a requirement to specify the user password at user verification
