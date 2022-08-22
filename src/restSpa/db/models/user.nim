@@ -48,7 +48,11 @@ func `rank=`*(user: var User; rank: UserRank) =
   user.internal_rank = ord rank
 
 
-proc newUser*(username, email, password: string; registerIp: string; rank = urGhost; registerDate = nowUnix()): User =
+proc newUser*(
+  username, email, password, registerIp: string;
+  rank = urGhost;
+  registerDate = nowUnix()
+): User =
   ## Creates new `User`
   new result
   result.username = username

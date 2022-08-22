@@ -170,6 +170,7 @@ Cookie: session=<ADMIN SESSION>
 - [x] Add a route to delete user (for moderators?)
 - [ ] Add route to get the logged user data
 - [ ] Add login logging table
+  - [ ] Add routes to get data (admin)
 - [x] Add last ip in `User`
 - [ ] **Add tests**
 - [ ] Support `id` for querying (`User`s)
@@ -186,6 +187,7 @@ Cookie: session=<ADMIN SESSION>
   - [ ] Statelessness - Remove session verification at API, use some API key
 - [x] User activation as a code like Github
 - [ ] **Split route function to a function that can be called with custom data** 
+- [ ] Fix file logging
 
 ---
 

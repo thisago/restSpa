@@ -18,7 +18,7 @@ proc main =
     result = proc =
       addHandler newFileLogger(errorLog, levelThreshold = lvlError)
       addHandler newRollingFileLogger rollingLog
-      addHandler(newConsoleLogger())
+      addHandler newConsoleLogger()
       if settings.debug:
         logging.setLogFilter(lvlDebug)
       else:
@@ -43,11 +43,10 @@ proc main =
       finally:
         await switch(ctx)
 
-
-  app.use(@[
+  app.use @[
     debugRequestMiddleware(),
     sessionMw()
-  ])
+  ]
 
   for r in routesDefinition:
     app.addRoute(r.routes, r.path)
@@ -59,4 +58,4 @@ proc main =
 when isMainModule:
   main()
 else:
-  {.fatal: "This module cannot be imported.".}
+  {.fatal: "This app cannot be imported.".}
