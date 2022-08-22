@@ -26,7 +26,7 @@ type
     routes: seq[UrlPattern]
 
 const
-  routesDefinition*: seq[Route] = @[
+  routesDefinition*: seq[Route] = @[ ## All application routes
     ("", @[
       pattern("/", r_home, HttpGet, "home"),
       # pattern("/activate/{username}/{code}", getActivate.r_activate, HttpGet, "activate"),
@@ -46,6 +46,6 @@ const
     ]),
   ]
 
-  defaultRoutes* = @[
+  defaultRoutes* = @[ ## Default routes
     (Http404, r_404)
   ]

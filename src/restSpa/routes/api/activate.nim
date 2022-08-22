@@ -6,7 +6,7 @@ import restSpa/db/models/user
 
 from restSpa/db/models/user import passwordIs
 from restSpa/auth/gen import genActivationCode
-from restSpa/config import invalidPassword, succActivation, userAlreadyActivated,
+from restSpa/config import invalidPassword, successActivation, userAlreadyActivated,
                             invalidActivCode
 
 proc r_activate*(ctx: Context) {.async.} =
@@ -25,7 +25,7 @@ proc r_activate*(ctx: Context) {.async.} =
             if usr.rank == urGhost:
               usr.rank = urUser
               update usr
-              respSuc succActivation
+              respSuc successActivation
             else:
               respErr userAlreadyActivated
           else:

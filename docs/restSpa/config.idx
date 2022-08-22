@@ -11,7 +11,7 @@ rankNotMeet	restSpa/config.html#rankNotMeet	config: rankNotMeet
 invalidPassword	restSpa/config.html#invalidPassword	config: invalidPassword	
 invalidActivCode	restSpa/config.html#invalidActivCode	config: invalidActivCode	
 userAlreadyActivated	restSpa/config.html#userAlreadyActivated	config: userAlreadyActivated	
-succActivation	restSpa/config.html#succActivation	config: succActivation	
+successActivation	restSpa/config.html#successActivation	config: successActivation	
 userIdentifiers	restSpa/config.html#userIdentifiers	config: userIdentifiers	
 confLock	restSpa/config.html#confLock	config: confLock	
 dbHost	restSpa/config.html#dbHost	config: dbHost	

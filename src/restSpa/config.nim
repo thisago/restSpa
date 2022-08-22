@@ -18,11 +18,11 @@ const
   needLogoff* = "User logged in. Please logoff"
 
   rankNotMeet* = "Permission denied"
-  
+
   invalidPassword* = "Invalid password"
   invalidActivCode* = "Invalid activation code"
   userAlreadyActivated* = "User already activated"
-  succActivation* = "User successfully activated"
+  successActivation* = "User successfully activated"
 
 # user getting in DB
 const
@@ -43,7 +43,7 @@ func parseAddress(url: Uri): tuple[hasSsl: bool; host: string; port: int] =
   result.port = if url.port.len == 0: 80 else: parseInt url.port
 
 import std/locks
-  
+
 var confLock*: Lock
 initLock confLock
 
@@ -77,7 +77,8 @@ let
   errorLog* = env.getOrDefault("errorLog", "error.log")
   rollingLog* = env.getOrDefault("rollingLog", "rolling.log")
 
-  hashExpiringHours* = env.getOrDefault("hashExpiringHours", 2) ## How much hours to expire the hash used in links
+  hashExpiringHours* = env.getOrDefault("hashExpiringHours",
+      2) ## How much hours to expire the hash used in links
 
 # {.pop.}
 
