@@ -25,7 +25,7 @@
   <div class="document" id="documentId">
     <div class="container">
       <h1 class="title">Index</h1>
-      Modules: <a href="restSpa/auth/gen.html">restSpa/auth/gen</a>, <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/email/activateAccount.html">restSpa/email/activateAccount</a>, <a href="restSpa/email/send.html">restSpa/email/send</a>, <a href="restSpa/routeUtils.html">restSpa/routeUtils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/activate.html">restSpa/routes/api/activate</a>, <a href="restSpa/routes/api/admin/delUser.html">restSpa/routes/api/admin/delUser</a>, <a href="restSpa/routes/api/admin/editUser.html">restSpa/routes/api/admin/editUser</a>, <a href="restSpa/routes/api/admin/getUser.html">restSpa/routes/api/admin/getUser</a>, <a href="restSpa/routes/api/delUser.html">restSpa/routes/api/delUser</a>, <a href="restSpa/routes/api/logout.html">restSpa/routes/api/logout</a>, <a href="restSpa/routes/api/signIn.html">restSpa/routes/api/signIn</a>, <a href="restSpa/routes/api/signUp.html">restSpa/routes/api/signUp</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
+      Modules: <a href="restSpa/auth/gen.html">restSpa/auth/gen</a>, <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/email/activateAccount.html">restSpa/email/activateAccount</a>, <a href="restSpa/email/send.html">restSpa/email/send</a>, <a href="restSpa/routeUtils.html">restSpa/routeUtils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/activate.html">restSpa/routes/api/activate</a>, <a href="restSpa/routes/api/admin/delUser.html">restSpa/routes/api/admin/delUser</a>, <a href="restSpa/routes/api/admin/editUser.html">restSpa/routes/api/admin/editUser</a>, <a href="restSpa/routes/api/admin/getUser.html">restSpa/routes/api/admin/getUser</a>, <a href="restSpa/routes/api/delUser.html">restSpa/routes/api/delUser</a>, <a href="restSpa/routes/api/logout.html">restSpa/routes/api/logout</a>, <a href="restSpa/routes/api/resend.html">restSpa/routes/api/resend</a>, <a href="restSpa/routes/api/signIn.html">restSpa/routes/api/signIn</a>, <a href="restSpa/routes/api/signUp.html">restSpa/routes/api/signUp</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="activationCodeLen" href="#activationCodeLen"><span>activationCodeLen:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: activationCodeLen" href="restSpa/config.html#activationCodeLen">config: activationCodeLen</a></li>
@@ -45,6 +45,10 @@
 <dt><a name="cantSeeUserFields" href="#cantSeeUserFields"><span>cantSeeUserFields:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: cantSeeUserFields" href="restSpa/db/models/user.html#cantSeeUserFields">user: cantSeeUserFields</a></li>
+          </ul></dd>
+<dt><a name="cleanSession" href="#cleanSession"><span>cleanSession:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="routeUtils: cleanSession(ctx)" href="restSpa/routeUtils.html#cleanSession.t">routeUtils: cleanSession(ctx)</a></li>
           </ul></dd>
 <dt><a name="confLock" href="#confLock"><span>confLock:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -298,6 +302,10 @@
 <li><a class="reference external"
           data-doc-search-tag="routes: routesDefinition" href="restSpa/routes.html#routesDefinition">routes: routesDefinition</a></li>
           </ul></dd>
+<dt><a name="r_resend" href="#r_resend"><span>r_resend:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="resend: r_resend(ctx: Context): owned(Future[void])" href="restSpa/routes/api/resend.html#r_resend%2CContext">resend: r_resend(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
 <dt><a name="r_signIn" href="#r_signIn"><span>r_signIn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="signIn: r_signIn(ctx: Context): owned(Future[void])" href="restSpa/routes/api/signIn.html#r_signIn%2CContext">signIn: r_signIn(ctx: Context): owned(Future[void])</a></li>
@@ -305,6 +313,10 @@
 <dt><a name="r_signUp" href="#r_signUp"><span>r_signUp:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="signUp: r_signUp(ctx: Context): owned(Future[void])" href="restSpa/routes/api/signUp.html#r_signUp%2CContext">signUp: r_signUp(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
+<dt><a name="saveSession" href="#saveSession"><span>saveSession:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="routeUtils: saveSession(ctx; usr: User)" href="restSpa/routeUtils.html#saveSession.t%2C%2CUser">routeUtils: saveSession(ctx; usr: User)</a></li>
           </ul></dd>
 <dt><a name="send" href="#send"><span>send:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -434,7 +446,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-16 22:56:16 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-22 12:54:44 UTC</small>
       </div>
     </div>
   </div>

@@ -1,0 +1,1 @@
+r_resend	restSpa/routes/api/resend.html#r_resend,Context	resend: r_resend(ctx: Context): owned(Future[void])	
