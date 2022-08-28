@@ -13,7 +13,7 @@ proc r_activate*(ctx: Context) {.async.} =
   ## Activate the user with POST
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
-  ctx.withParams(mergeGet = false):
+  ctx.withParams(get = false, path = false):
     node.ifContains(all = ["username", "code", "password"]):
       node.withUser(usr, {"username": "username"}):
         let

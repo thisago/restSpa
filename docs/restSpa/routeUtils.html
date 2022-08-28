@@ -151,9 +151,9 @@
 </ul>
 <ul class="simple nested-toc-section">withParams
   <li><a class="reference" href="#withParams.t%2C%2Cuntyped_4" title="withParams(ctx; bodyCode: untyped)">withParams(ctx; bodyCode: untyped)</a></li>
-<li><a class="reference" href="#withParams.t%2C%2Cuntyped_2" title="withParams(ctx; mergeGet = false; bodyCode: untyped)">withParams(ctx; mergeGet = false; bodyCode: untyped)</a></li>
-<li><a class="reference" href="#withParams.t%2C%2Cuntyped" title="withParams(ctx; mergeGet = false; mergePath = false; bodyCode: untyped)">withParams(ctx; mergeGet = false; mergePath = false; bodyCode: untyped)</a></li>
-<li><a class="reference" href="#withParams.t%2C%2Cuntyped_3" title="withParams(ctx; mergePath = false; bodyCode: untyped)">withParams(ctx; mergePath = false; bodyCode: untyped)</a></li>
+<li><a class="reference" href="#withParams.t%2C%2Cuntyped_2" title="withParams(ctx; get = false; bodyCode: untyped)">withParams(ctx; get = false; bodyCode: untyped)</a></li>
+<li><a class="reference" href="#withParams.t%2C%2Cuntyped" title="withParams(ctx; get = false; path = false; bodyCode: untyped)">withParams(ctx; get = false; path = false; bodyCode: untyped)</a></li>
+<li><a class="reference" href="#withParams.t%2C%2Cuntyped_3" title="withParams(ctx; path = false; bodyCode: untyped)">withParams(ctx; path = false; bodyCode: untyped)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">withUser
@@ -487,22 +487,22 @@
   </dd>
 </div>
 <div id="withParams.t,,untyped_2">
-  <dt><pre><span class="Keyword">template</span> <a href="#withParams.t%2C%2Cuntyped_2"><span class="Identifier">withParams</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">;</span> <span class="Identifier">mergeGet</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">bodyCode</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
+  <dt><pre><span class="Keyword">template</span> <a href="#withParams.t%2C%2Cuntyped_2"><span class="Identifier">withParams</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">;</span> <span class="Identifier">get</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">bodyCode</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    Alias for <tt class="docutils literal"><span class="pre"><span class="Identifier">ctx</span><span class="Operator">.</span><span class="Identifier">withParams</span><span class="Punctuation">(</span><span class="Identifier">mergeGet</span><span class="Punctuation">,</span> <span class="Identifier">false</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bodyCode</span></span></tt>
+    Alias for <tt class="docutils literal"><span class="pre"><span class="Identifier">ctx</span><span class="Operator">.</span><span class="Identifier">withParams</span><span class="Punctuation">(</span><span class="Identifier">get</span><span class="Punctuation">,</span> <span class="Identifier">false</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bodyCode</span></span></tt>
     <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routeUtils.nim#L83" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
 <a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routeUtils.nim#L83" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 <div id="withParams.t,,untyped">
-  <dt><pre><span class="Keyword">template</span> <a href="#withParams.t%2C%2Cuntyped"><span class="Identifier">withParams</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">;</span> <span class="Identifier">mergeGet</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">mergePath</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">bodyCode</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
+  <dt><pre><span class="Keyword">template</span> <a href="#withParams.t%2C%2Cuntyped"><span class="Identifier">withParams</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">;</span> <span class="Identifier">get</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">path</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">bodyCode</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
   <dd>
     
     <p>Run <tt class="docutils literal"><span class="pre"><span class="Identifier">body</span></span></tt> if request has a JSON body</p>
 <p>If no JSON sent or/and the <tt class="docutils literal"><span class="pre"><span class="Identifier">content</span><span class="Operator">-</span><span class="Keyword">type</span></span></tt> is not JSON, it will response with <tt class="docutils literal"><span class="pre"><span class="Identifier">Http400</span></span></tt> and close connection</p>
-<p>Use <tt class="docutils literal"><span class="pre"><span class="Identifier">mergeGet</span></span></tt> to merge the get parameters into <tt class="docutils literal"><span class="pre"><span class="Identifier">node</span></span></tt> The GET parameters override the POST</p>
+<p>Use <tt class="docutils literal"><span class="pre"><span class="Identifier">get</span></span></tt> to merge the get parameters into <tt class="docutils literal"><span class="pre"><span class="Identifier">node</span></span></tt> The GET parameters override the POST</p>
 
     <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routeUtils.nim#L43" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
 <a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routeUtils.nim#L43" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
@@ -510,10 +510,10 @@
   </dd>
 </div>
 <div id="withParams.t,,untyped_3">
-  <dt><pre><span class="Keyword">template</span> <a href="#withParams.t%2C%2Cuntyped_3"><span class="Identifier">withParams</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">;</span> <span class="Identifier">mergePath</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">bodyCode</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
+  <dt><pre><span class="Keyword">template</span> <a href="#withParams.t%2C%2Cuntyped_3"><span class="Identifier">withParams</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">;</span> <span class="Identifier">path</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">bodyCode</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    Alias for <tt class="docutils literal"><span class="pre"><span class="Identifier">ctx</span><span class="Operator">.</span><span class="Identifier">withParams</span><span class="Punctuation">(</span><span class="Identifier">mergeGet</span><span class="Punctuation">,</span> <span class="Identifier">false</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bodyCode</span></span></tt>
+    Alias for <tt class="docutils literal"><span class="pre"><span class="Identifier">ctx</span><span class="Operator">.</span><span class="Identifier">withParams</span><span class="Punctuation">(</span><span class="Identifier">get</span><span class="Punctuation">,</span> <span class="Identifier">false</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bodyCode</span></span></tt>
     <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routeUtils.nim#L86" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
 <a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routeUtils.nim#L86" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 

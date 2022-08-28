@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.20.0 (Aug 28, 2022)
+
+- Added a config to change error responses kind: if `logicInApi` the response
+  will be a JSON
+- Fixed compiling error
+
+---
 ## Version 0.19.0 (Aug 28, 2022)
 
 - Added option to merge path parameters at `routeUtils.withParams`

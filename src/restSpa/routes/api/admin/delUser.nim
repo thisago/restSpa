@@ -10,7 +10,7 @@ proc r_delUser*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.ifMinRank urAdmin:
-    ctx.withParams(mergeGet = false):
+    ctx.withParams(get = false, path = false):
       node.withUser:
         # echo usr[]
         inDb: dbConn.delete usr

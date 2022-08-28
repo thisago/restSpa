@@ -1,3 +1,13 @@
+
+from std/uri import Uri, parseUri
+from std/strutils import parseInt
+
+import pkg/prologue
+
+# Server response kind
+const logicInApi* = true
+
+# DB
 const internalDbPrefix* = "internal_"
 
 # session
@@ -31,21 +41,16 @@ const
     "_email": "email"
   }
 
-from std/uri import Uri, parseUri
-from std/strutils import parseInt
-
-import pkg/prologue
-
 func parseAddress(url: Uri): tuple[hasSsl: bool; host: string; port: int] =
   ## Parses the address into `haveSsl`, `host` and `port`
   result.hasSsl = url.scheme == "https"
   result.host = url.hostname
   result.port = if url.port.len == 0: 80 else: parseInt url.port
 
-import std/locks
+# import std/locks
 
-var confLock*: Lock
-initLock confLock
+# var confLock*: Lock
+# initLock confLock
 
 # {.push guard: confLock.} # Why push isn't working?
 let

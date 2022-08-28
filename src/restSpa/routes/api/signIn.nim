@@ -13,7 +13,7 @@ proc r_signIn*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.ifLogin false:
-    ctx.withParams(mergeGet = false):
+    ctx.withParams(get = false, path = false):
       node.withUser(usr, {"username": "username"}):
         node.ifContains(all = ["password"]):
           let password = node{"password"}.getStr

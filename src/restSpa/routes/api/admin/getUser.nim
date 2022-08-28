@@ -8,6 +8,6 @@ proc r_getUser*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.ifMinRank urAdmin:
-    ctx.withParams(mergeGet = false):
+    ctx.withParams(get = false, path = false):
       node.withUser:
         respSucJson usr.toJson

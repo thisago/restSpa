@@ -40,14 +40,14 @@ proc setContentJsonHeader*(ctx) =
   ## Set the response content-type to json
   ctx.response.setHeader "content-type", "application/json"
 
-template withParams*(ctx; mergeGet = false; mergePath = false; bodyCode: untyped) =
+template withParams*(ctx; get = false; path = false; bodyCode: untyped) =
   ## Run `body` if request has a JSON body
   ##
   ## If no JSON sent or/and the `content-type` is not
   ## JSON, it will response with `Http400` and close
   ## connection
   ##
-  ## Use `mergeGet` to merge the get parameters into `node`
+  ## Use `get` to merge the get parameters into `node`
   ## The GET parameters override the POST
   let reqMethod = ctx.request.reqMethod
   var
@@ -71,24 +71,14 @@ template withParams*(ctx; mergeGet = false; mergePath = false; bodyCode: untyped
       when autoXmlParsing:
         {.fatal: "XML parsing not implemented".}
     else: discard
-  if mergeGet or reqMethod == HttpGet:
+  if get or reqMethod == HttpGet:
     for key, val in ctx.request.queryParams:
       node{key} = %val
-  if mergePath:
+  if path:
     for key, val in ctx.request.pathParams:
       node{key} = %val
   logging.debug "Auto parsed params: " & $node
   bodyCode
-
-template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
-  ## Alias for `ctx.withParams(mergeGet, false): bodyCode`
-  ctx.withParams(mergeGet, false): bodyCode
-template withParams*(ctx; mergePath = false; bodyCode: untyped) =
-  ## Alias for `ctx.withParams(mergeGet, false): bodyCode`
-  ctx.withParams(false, mergePath): bodyCode
-template withParams*(ctx; bodyCode: untyped) =
-  ## Alias for `ctx.withParams(false, false): bodyCode`
-  ctx.withParams(false, false): bodyCode
 
 type
   ResponseJson* = object
@@ -109,7 +99,10 @@ func initResponseJson(
   
 template respJson*(data: untyped; code: HttpCode) =
   ## Send a JSON to client
-  resp($(%*data), code)
+  when logicInApi:
+    resp($(%*data), code)
+  else:
+    resp(data.text, code)
 
 template respErr*(msg: string; code = Http400) =
   ## Send a error message in a JSON to client

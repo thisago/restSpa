@@ -11,7 +11,7 @@ proc r_signUp*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.ifLogin false:
-    ctx.withParams(mergeGet = false):
+    ctx.withParams(get = false, path = false):
       node.ifContains(all = ["username", "email", "password"]):
         let
           username = node{"username"}.getStr

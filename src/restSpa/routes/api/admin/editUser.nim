@@ -10,7 +10,7 @@ proc r_editUser*(ctx: Context) {.async.} =
   ctx.forceHttpMethod HttpPost
   ctx.setContentJsonHeader
   ctx.ifMinRank urAdmin:
-    ctx.withParams(mergeGet = false):
+    ctx.withParams(get = false, path = false):
       node.withUser:
         # convert `rank` to `internal_rank`, and block editing by internal values
         node.delInternals
