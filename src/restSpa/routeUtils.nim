@@ -71,6 +71,8 @@ template withParams*(ctx; get = false; path = false; bodyCode: untyped) =
       when autoXmlParsing:
         {.fatal: "XML parsing not implemented".}
     else: discard
+  else:
+    error = false
   if get or reqMethod == HttpGet:
     for key, val in ctx.request.queryParams:
       node{key} = %val

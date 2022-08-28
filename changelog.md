@@ -5,6 +5,7 @@
 - Added a config to change error responses kind: if `logicInApi` the response
   will be a JSON
 - Fixed compiling error
+- Fixed GET request fake error at `routeUtils.withParams`
 
 ---
 ## Version 0.19.0 (Aug 28, 2022)
