@@ -8,7 +8,7 @@ cantEditUserFields	restSpa/db/models/user.html#cantEditUserFields	user: cantEdit
 cantSeeUserFields	restSpa/db/models/user.html#cantSeeUserFields	user: cantSeeUserFields	
 rank	restSpa/db/models/user.html#rank,User	user: rank(user: User): UserRank	
 rank=	restSpa/db/models/user.html#rank=,User,UserRank	user: rank=(user: var User; rank: UserRank)	
-newUser	restSpa/db/models/user.html#newUser,string,string,string,string	user: newUser(username, email, password: string; registerIp: string; rank = urGhost;\n        registerDate = nowUnix()): User	
+newUser	restSpa/db/models/user.html#newUser,string,string,string,string	user: newUser(username, email, password, registerIp: string; rank = urGhost;\n        registerDate = nowUnix()): User	
 newUser	restSpa/db/models/user.html#newUser	user: newUser(): User	
 toJson	restSpa/db/models/user.html#toJson,User	user: toJson(user: User): string	
 get	restSpa/db/models/user.html#get,typeUser,string,varargs[string]	user: get(self: type User; username: string; fields: varargs[string] = []): User	

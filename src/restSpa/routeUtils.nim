@@ -40,7 +40,7 @@ proc setContentJsonHeader*(ctx) =
   ## Set the response content-type to json
   ctx.response.setHeader "content-type", "application/json"
 
-template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
+template withParams*(ctx; mergeGet = false; mergePath = false; bodyCode: untyped) =
   ## Run `body` if request has a JSON body
   ##
   ## If no JSON sent or/and the `content-type` is not
@@ -74,8 +74,21 @@ template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
   if mergeGet or reqMethod == HttpGet:
     for key, val in ctx.request.queryParams:
       node{key} = %val
+  if mergePath:
+    for key, val in ctx.request.pathParams:
+      node{key} = %val
   logging.debug "Auto parsed params: " & $node
   bodyCode
+
+template withParams*(ctx; mergeGet = false; bodyCode: untyped) =
+  ## Alias for `ctx.withParams(mergeGet, false): bodyCode`
+  ctx.withParams(mergeGet, false): bodyCode
+template withParams*(ctx; mergePath = false; bodyCode: untyped) =
+  ## Alias for `ctx.withParams(mergeGet, false): bodyCode`
+  ctx.withParams(false, mergePath): bodyCode
+template withParams*(ctx; bodyCode: untyped) =
+  ## Alias for `ctx.withParams(false, false): bodyCode`
+  ctx.withParams(false, false): bodyCode
 
 type
   ResponseJson* = object

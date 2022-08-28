@@ -8,11 +8,11 @@ const activationCodeLen* = 6
 
 # error messages
 const
-  userNotExists* = "User not exists"
-
   ifContainsAllErr* = "Please provide $1"
   ifContainsAtLeastErr* = "Please provide at least $1"
   ifContainsInvalidReq* = "Invalid request"
+  
+  userNotExists* = "User not exists"
 
   needLogin* = "User not logged in. Please signin"
   needLogoff* = "User logged in. Please logoff"

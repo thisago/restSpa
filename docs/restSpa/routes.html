@@ -53,26 +53,6 @@
   <li>
   <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
 </li>
-<li>
-  <details open>
-    <summary><a class="reference reference-toplevel" href="#10" id="60">Consts</a></summary>
-    <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#defaultRoutes" title="defaultRoutes = [(404, r_404)]">defaultRoutes</a></li>
-<li><a class="reference" href="#routesDefinition" title="routesDefinition: seq[Route] = [(&quot;&quot;, [(&quot;/&quot;, (r_home, nil), [HttpGet], &quot;home&quot;, [])]), (
-    &quot;api&quot;, [(&quot;/signin&quot;, (r_signIn, nil), [HttpPost], &quot;api_signin&quot;, []),
-            (&quot;/signup&quot;, (r_signUp, nil), [HttpPost], &quot;api_signup&quot;, []),
-            (&quot;/delUser&quot;, (r_delUser, nil), [HttpPost], &quot;api_delUser&quot;, []),
-            (&quot;/logout&quot;, (r_logout, nil), [HttpPost], &quot;api_logout&quot;, []),
-            (&quot;/activate&quot;, (r_activate, nil), [HttpPost], &quot;api_activate&quot;, []),
-            (&quot;/resend/{kind}&quot;, (r_resend, nil), [HttpGet], &quot;api_resend&quot;, [])]), (
-    &quot;api/admin&quot;, [(&quot;/getUser&quot;, (r_getUser, nil), [HttpPost],
-                   &quot;api_admin_getUser&quot;, []), (&quot;/editUser&quot;, (r_editUser, nil),
-    [HttpPost], &quot;api_admin_editUser&quot;, []), (&quot;/delUser&quot;, (r_delUser, nil),
-    [HttpPost], &quot;api_admin_delUser&quot;, [])])]">routesDefinition</a></li>
-
-    </ul>
-  </details>
-</li>
 
 </ul>
 
@@ -90,42 +70,6 @@
     <a class="reference external" href="routes/home.html">routes/home</a>, <a class="reference external" href="routes/api/signIn.html">routes/api/signIn</a>, <a class="reference external" href="routes/api/signUp.html">routes/api/signUp</a>, <a class="reference external" href="routes/api/logout.html">routes/api/logout</a>, <a class="reference external" href="routes/api/activate.html">routes/api/activate</a>, <a class="reference external" href="routes/api/resend.html">routes/api/resend</a>, <a class="reference external" href="routes/api/delUser.html">routes/api/delUser</a>, <a class="reference external" href="routes/api/admin/getUser.html">routes/api/admin/getUser</a>, <a class="reference external" href="routes/api/admin/editUser.html">routes/api/admin/editUser</a>, <a class="reference external" href="routes/api/admin/delUser.html">routes/api/admin/delUser</a>, <a class="reference external" href="routes/default/notFound.html">routes/default/notFound</a>
   </dl>
 </div>
-<div class="section" id="10">
-  <h1><a class="toc-backref" href="#10">Consts</a></h1>
-  <dl class="item">
-    <div id="defaultRoutes">
-  <dt><pre><a href="routes.html#defaultRoutes"><span class="Identifier">defaultRoutes</span></a> <span class="Other">=</span> <span class="Other">[</span><span class="Other">(</span><span class="DecNumber">404</span><span class="Other">,</span> <span class="Identifier">r_404</span><span class="Other">)</span><span class="Other">]</span></pre></dt>
-  <dd>
-    
-    
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routes.nim#L49" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routes.nim#L49" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
-
-  </dd>
-</div>
-<div id="routesDefinition">
-  <dt><pre><a href="routes.html#routesDefinition"><span class="Identifier">routesDefinition</span></a><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Route</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;/&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_home</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpGet</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;home&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span>
-    <span class="StringLit">&quot;api&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;/signin&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_signIn</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_signin&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span>
-            <span class="Other">(</span><span class="StringLit">&quot;/signup&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_signUp</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_signup&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span>
-            <span class="Other">(</span><span class="StringLit">&quot;/delUser&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_delUser</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_delUser&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span>
-            <span class="Other">(</span><span class="StringLit">&quot;/logout&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_logout</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_logout&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span>
-            <span class="Other">(</span><span class="StringLit">&quot;/activate&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_activate</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_activate&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span>
-            <span class="Other">(</span><span class="StringLit">&quot;/resend/{kind}&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_resend</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpGet</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_resend&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span>
-    <span class="StringLit">&quot;api/admin&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;/getUser&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_getUser</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span>
-                   <span class="StringLit">&quot;api_admin_getUser&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;/editUser&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_editUser</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span>
-    <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_admin_editUser&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;/delUser&quot;</span><span class="Other">,</span> <span class="Other">(</span><span class="Identifier">r_delUser</span><span class="Other">,</span> <span class="Keyword">nil</span><span class="Other">)</span><span class="Other">,</span>
-    <span class="Other">[</span><span class="DecNumber">HttpPost</span><span class="Other">]</span><span class="Other">,</span> <span class="StringLit">&quot;api_admin_delUser&quot;</span><span class="Other">,</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">]</span><span class="Other">)</span><span class="Other">]</span></pre></dt>
-  <dd>
-    
-    
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/routes.nim#L29" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/routes.nim#L29" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
-
-  </dd>
-</div>
-
-  </dl>
-</div>
 
   </div>
 </div>
@@ -133,7 +77,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-22 13:07:54 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-28 12:59:44 UTC</small>
       </div>
     </div>
   </div>

@@ -95,8 +95,8 @@
 </ul>
 <ul class="simple nested-toc-section">newUser
   <li><a class="reference" href="#newUser" title="newUser(): User">newUser(): User</a></li>
-<li><a class="reference" href="#newUser%2Cstring%2Cstring%2Cstring%2Cstring" title="newUser(username, email, password: string; registerIp: string; rank = urGhost;
-        registerDate = nowUnix()): User">newUser(username, email, password: string; registerIp: string; rank = urGhost;
+<li><a class="reference" href="#newUser%2Cstring%2Cstring%2Cstring%2Cstring" title="newUser(username, email, password, registerIp: string; rank = urGhost;
+        registerDate = nowUnix()): User">newUser(username, email, password, registerIp: string; rank = urGhost;
         registerDate = nowUnix()): User</a></li>
 
 </ul>
@@ -217,8 +217,8 @@
     <p>Get the user in db which have the username or email same as <tt class="docutils literal"><span class="pre"><span class="Identifier">username</span></span></tt></p>
 <p><tt class="docutils literal"><span class="pre"><span class="Identifier">fields</span></span></tt> not working!!</p>
 
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L88" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L88" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L92" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L92" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -230,15 +230,15 @@
   <dd>
     
     Creates new blank <tt class="docutils literal"><span class="pre"><span class="Identifier">User</span></span></tt>
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L62" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L62" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L66" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L66" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
 <div id="newUser,string,string,string,string">
-  <dt><pre><span class="Keyword">proc</span> <a href="#newUser%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">newUser</span></a><span class="Other">(</span><span class="Identifier">username</span><span class="Other">,</span> <span class="Identifier">email</span><span class="Other">,</span> <span class="Identifier">password</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">registerIp</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
-             <span class="Identifier">rank</span> <span class="Other">=</span> <span class="Identifier">urGhost</span><span class="Other">;</span> <span class="Identifier">registerDate</span> <span class="Other">=</span> <span class="Identifier">nowUnix</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <a href="user.html#User"><span class="Identifier">User</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span> </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
+  <dt><pre><span class="Keyword">proc</span> <a href="#newUser%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">newUser</span></a><span class="Other">(</span><span class="Identifier">username</span><span class="Other">,</span> <span class="Identifier">email</span><span class="Other">,</span> <span class="Identifier">password</span><span class="Other">,</span> <span class="Identifier">registerIp</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">rank</span> <span class="Other">=</span> <span class="Identifier">urGhost</span><span class="Other">;</span>
+             <span class="Identifier">registerDate</span> <span class="Other">=</span> <span class="Identifier">nowUnix</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <a href="user.html#User"><span class="Identifier">User</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span><span class="Other">,</span>
+    </span><span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span>.}</pre></dt>
   <dd>
     
     Creates new <tt class="docutils literal"><span class="pre"><span class="Identifier">User</span></span></tt>
@@ -256,8 +256,8 @@
   <dd>
     
     Checks if the plain text password is same as hashed from DB
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L106" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L106" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L110" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L110" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -295,8 +295,8 @@
   <dd>
     
     Converts the user to a JSON notation
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L73" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L73" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L77" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L77" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -312,8 +312,8 @@
     <p>Updates the user in db</p>
 <p>To set new login, use <tt class="docutils literal"><span class="pre"><span class="Identifier">loginIp</span></span></tt></p>
 
-    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L98" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L98" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+    <a href="https://github.com/thisago/restSpa/tree/master/src/restSpa/db/models/user.nim#L102" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/thisago/restSpa/edit/devel/src/restSpa/db/models/user.nim#L102" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -329,7 +329,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-22 13:07:54 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-28 12:59:44 UTC</small>
       </div>
     </div>
   </div>

@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.19.0 (Aug 28, 2022)
+
+- Added option to merge path parameters at `routeUtils.withParams`
+
+---
+
 ## Version 0.18.0 (Aug 22, 2022)
 
 - Added `GET /api/resend/{kind}`
