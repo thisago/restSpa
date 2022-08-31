@@ -1,0 +1,1 @@
+r_signUp	restSpa/routes/api/signUp.html#r_signUp,Context	signUp: r_signUp(ctx: Context): owned(Future[void])	

@@ -1,4 +1,5 @@
 from std/logging import nil
+from std/uri import decodeUrl
 
 from std/json import parseJson, `{}=`, `%`, newJObject
 
@@ -75,10 +76,10 @@ template withParams*(ctx; get = false; path = false; bodyCode: untyped) =
     error = false
   if get or reqMethod == HttpGet:
     for key, val in ctx.request.queryParams:
-      node{key} = %val
+      node{key} = %decodeUrl val
   if path:
     for key, val in ctx.request.pathParams:
-      node{key} = %val
+      node{key} = %decodeUrl val
   logging.debug "Auto parsed params: " & $node
   bodyCode
 

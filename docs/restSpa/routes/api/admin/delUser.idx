@@ -1,0 +1,1 @@
+r_delUser	restSpa/routes/api/admin/delUser.html#r_delUser,Context	delUser: r_delUser(ctx: Context): owned(Future[void])	

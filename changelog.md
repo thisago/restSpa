@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.21.0 (Aug 31, 2022)
+
+- Added URL decoding at `routeUtils.withParams`
+
+---
+
 ## Version 0.20.0 (Aug 28, 2022)
 
 - Added a config to change error responses kind: if `logicInApi` the response

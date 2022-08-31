@@ -25,7 +25,7 @@
   <div class="document" id="documentId">
     <div class="container">
       <h1 class="title">Index</h1>
-      Modules: <a href="restSpa/auth/gen.html">restSpa/auth/gen</a>, <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/email/activateAccount.html">restSpa/email/activateAccount</a>, <a href="restSpa/email/send.html">restSpa/email/send</a>, <a href="restSpa/routeUtils.html">restSpa/routeUtils</a>, <a href="restSpa/routes/api/admin/editUser.html">restSpa/routes/api/admin/editUser</a>, <a href="restSpa/routes/api/admin/getUser.html">restSpa/routes/api/admin/getUser</a>, <a href="restSpa/routes/api/delUser.html">restSpa/routes/api/delUser</a>, <a href="restSpa/routes/api/logout.html">restSpa/routes/api/logout</a>, <a href="restSpa/routes/api/resend.html">restSpa/routes/api/resend</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
+      Modules: <a href="restSpa/auth/gen.html">restSpa/auth/gen</a>, <a href="restSpa/config.html">restSpa/config</a>, <a href="restSpa/db.html">restSpa/db</a>, <a href="restSpa/db/models/user.html">restSpa/db/models/user</a>, <a href="restSpa/db/setup.html">restSpa/db/setup</a>, <a href="restSpa/db/utils.html">restSpa/db/utils</a>, <a href="restSpa/email/activateAccount.html">restSpa/email/activateAccount</a>, <a href="restSpa/email/send.html">restSpa/email/send</a>, <a href="restSpa/routeUtils.html">restSpa/routeUtils</a>, <a href="restSpa/routes.html">restSpa/routes</a>, <a href="restSpa/routes/api/activate.html">restSpa/routes/api/activate</a>, <a href="restSpa/routes/api/admin/delUser.html">restSpa/routes/api/admin/delUser</a>, <a href="restSpa/routes/api/admin/editUser.html">restSpa/routes/api/admin/editUser</a>, <a href="restSpa/routes/api/admin/getUser.html">restSpa/routes/api/admin/getUser</a>, <a href="restSpa/routes/api/delUser.html">restSpa/routes/api/delUser</a>, <a href="restSpa/routes/api/logout.html">restSpa/routes/api/logout</a>, <a href="restSpa/routes/api/resend.html">restSpa/routes/api/resend</a>, <a href="restSpa/routes/api/signIn.html">restSpa/routes/api/signIn</a>, <a href="restSpa/routes/api/signUp.html">restSpa/routes/api/signUp</a>, <a href="restSpa/routes/default/notFound.html">restSpa/routes/default/notFound</a>, <a href="restSpa/routes/home.html">restSpa/routes/home</a>, <a href="restSpa/utils.html">restSpa/utils</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="activationCodeLen" href="#activationCodeLen"><span>activationCodeLen:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: activationCodeLen" href="restSpa/config.html#activationCodeLen">config: activationCodeLen</a></li>
@@ -50,10 +50,6 @@
 <li><a class="reference external"
           data-doc-search-tag="routeUtils: cleanSession(ctx)" href="restSpa/routeUtils.html#cleanSession.t">routeUtils: cleanSession(ctx)</a></li>
           </ul></dd>
-<dt><a name="confLock" href="#confLock"><span>confLock:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="config: confLock" href="restSpa/config.html#confLock">config: confLock</a></li>
-          </ul></dd>
 <dt><a name="dbConn" href="#dbConn"><span>dbConn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="db: dbConn" href="restSpa/db.html#dbConn">db: dbConn</a></li>
@@ -73,6 +69,10 @@
 <dt><a name="dbUser" href="#dbUser"><span>dbUser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: dbUser" href="restSpa/config.html#dbUser">config: dbUser</a></li>
+          </ul></dd>
+<dt><a name="defaultRoutes" href="#defaultRoutes"><span>defaultRoutes:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="routes: defaultRoutes" href="restSpa/routes.html#defaultRoutes">routes: defaultRoutes</a></li>
           </ul></dd>
 <dt><a name="delInternals" href="#delInternals"><span>delInternals:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -184,6 +184,10 @@
 <li><a class="reference external"
           data-doc-search-tag="routeUtils: ip(req: Request): string" href="restSpa/routeUtils.html#ip%2CRequest">routeUtils: ip(req: Request): string</a></li>
           </ul></dd>
+<dt><a name="logicInApi" href="#logicInApi"><span>logicInApi:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="config: logicInApi" href="restSpa/config.html#logicInApi">config: logicInApi</a></li>
+          </ul></dd>
 <dt><a name="needLogin" href="#needLogin"><span>needLogin:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="config: needLogin" href="restSpa/config.html#needLogin">config: needLogin</a></li>
@@ -212,6 +216,10 @@
 <li><a class="reference external"
           data-doc-search-tag="notFound: r_404(ctx: Context): owned(Future[void])" href="restSpa/routes/default/notFound.html#r_404%2CContext">notFound: r_404(ctx: Context): owned(Future[void])</a></li>
           </ul></dd>
+<dt><a name="r_activate" href="#r_activate"><span>r_activate:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="activate: r_activate(ctx: Context): owned(Future[void])" href="restSpa/routes/api/activate.html#r_activate%2CContext">activate: r_activate(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
 <dt><a name="rank" href="#rank"><span>rank:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="user: rank(user: User): UserRank" href="restSpa/db/models/user.html#rank%2CUser">user: rank(user: User): UserRank</a></li>
@@ -226,6 +234,8 @@
           </ul></dd>
 <dt><a name="r_delUser" href="#r_delUser"><span>r_delUser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="delUser: r_delUser(ctx: Context): owned(Future[void])" href="restSpa/routes/api/admin/delUser.html#r_delUser%2CContext">delUser: r_delUser(ctx: Context): owned(Future[void])</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="delUser: r_delUser(ctx: Context): owned(Future[void])" href="restSpa/routes/api/delUser.html#r_delUser%2CContext">delUser: r_delUser(ctx: Context): owned(Future[void])</a></li>
           </ul></dd>
 <dt><a name="r_editUser" href="#r_editUser"><span>r_editUser:</span></a></dt><dd><ul class="simple">
@@ -288,9 +298,21 @@
 <li><a class="reference external"
           data-doc-search-tag="config: rollingLog" href="restSpa/config.html#rollingLog">config: rollingLog</a></li>
           </ul></dd>
+<dt><a name="routesDefinition" href="#routesDefinition"><span>routesDefinition:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="routes: routesDefinition" href="restSpa/routes.html#routesDefinition">routes: routesDefinition</a></li>
+          </ul></dd>
 <dt><a name="r_resend" href="#r_resend"><span>r_resend:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="resend: r_resend(ctx: Context): owned(Future[void])" href="restSpa/routes/api/resend.html#r_resend%2CContext">resend: r_resend(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
+<dt><a name="r_signIn" href="#r_signIn"><span>r_signIn:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="signIn: r_signIn(ctx: Context): owned(Future[void])" href="restSpa/routes/api/signIn.html#r_signIn%2CContext">signIn: r_signIn(ctx: Context): owned(Future[void])</a></li>
+          </ul></dd>
+<dt><a name="r_signUp" href="#r_signUp"><span>r_signUp:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="signUp: r_signUp(ctx: Context): owned(Future[void])" href="restSpa/routes/api/signUp.html#r_signUp%2CContext">signUp: r_signUp(ctx: Context): owned(Future[void])</a></li>
           </ul></dd>
 <dt><a name="saveSession" href="#saveSession"><span>saveSession:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -411,12 +433,6 @@
 <dt><a name="withParams" href="#withParams"><span>withParams:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="routeUtils: withParams(ctx; get = false; path = false; bodyCode: untyped)" href="restSpa/routeUtils.html#withParams.t%2C%2Cuntyped">routeUtils: withParams(ctx; get = false; path = false; bodyCode: untyped)</a></li>
-          <li><a class="reference external"
-          data-doc-search-tag="routeUtils: withParams(ctx; get = false; bodyCode: untyped)" href="restSpa/routeUtils.html#withParams.t%2C%2Cuntyped_2">routeUtils: withParams(ctx; get = false; bodyCode: untyped)</a></li>
-          <li><a class="reference external"
-          data-doc-search-tag="routeUtils: withParams(ctx; path = false; bodyCode: untyped)" href="restSpa/routeUtils.html#withParams.t%2C%2Cuntyped_3">routeUtils: withParams(ctx; path = false; bodyCode: untyped)</a></li>
-          <li><a class="reference external"
-          data-doc-search-tag="routeUtils: withParams(ctx; bodyCode: untyped)" href="restSpa/routeUtils.html#withParams.t%2C%2Cuntyped_4">routeUtils: withParams(ctx; bodyCode: untyped)</a></li>
           </ul></dd>
 <dt><a name="withUser" href="#withUser"><span>withUser:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -430,7 +446,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-28 12:59:44 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-08-31 14:14:11 UTC</small>
       </div>
     </div>
   </div>

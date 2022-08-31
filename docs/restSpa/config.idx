@@ -1,3 +1,4 @@
+logicInApi	restSpa/config.html#logicInApi	config: logicInApi	
 internalDbPrefix	restSpa/config.html#internalDbPrefix	config: internalDbPrefix	
 sess_username	restSpa/config.html#sess_username	config: sess_username	
 activationCodeLen	restSpa/config.html#activationCodeLen	config: activationCodeLen	
@@ -13,7 +14,6 @@ invalidActivCode	restSpa/config.html#invalidActivCode	config: invalidActivCode
 userAlreadyActivated	restSpa/config.html#userAlreadyActivated	config: userAlreadyActivated	
 successActivation	restSpa/config.html#successActivation	config: successActivation	
 userIdentifiers	restSpa/config.html#userIdentifiers	config: userIdentifiers	
-confLock	restSpa/config.html#confLock	config: confLock	
 dbHost	restSpa/config.html#dbHost	config: dbHost	
 dbUser	restSpa/config.html#dbUser	config: dbUser	
 dbPass	restSpa/config.html#dbPass	config: dbPass	
