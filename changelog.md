@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.21.1 (Sun Nov 20, 2022)
+
+- Renamed the internal param error var to `internal_paramExtracting_error`
+
+---
+
 ## Version 0.21.0 (Aug 31, 2022)
 
 - Added URL decoding at `routeUtils.withParams`

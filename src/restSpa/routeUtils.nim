@@ -53,27 +53,27 @@ template withParams*(ctx; get = false; path = false; bodyCode: untyped) =
   let reqMethod = ctx.request.reqMethod
   var
     node {.inject.} = newJObject()
-    error {.inject.} = true
+    internal_paramExtracting_error {.inject.} = true
 
   if reqMethod == HttpPost:
     case ctx.request.contentType:
     of "application/json":
       try:
         node = parseJson ctx.request.body
-        error = false
+        internal_paramExtracting_error = false
       except JsonParsingError: discard
     of "application/x-www-form-urlencoded", "multipart/form-data":
       when autoFormParsing:
         for key, val in ctx.request.formParams.data:
           # echo val.params
           node{key} = %val.body
-        error = false
+        internal_paramExtracting_error = false
     of "application/xml":
       when autoXmlParsing:
         {.fatal: "XML parsing not implemented".}
     else: discard
   else:
-    error = false
+    internal_paramExtracting_error = false
   if get or reqMethod == HttpGet:
     for key, val in ctx.request.queryParams:
       node{key} = %decodeUrl val
@@ -124,7 +124,7 @@ from std/strutils import `%`, join
 
 template ifNoError(body) =
   ## If `error` is false execute the body, else shows a error
-  if not error: body
+  if not internal_paramExtracting_error: body
   else: respErr ifContainsInvalidReq
 
 template ifContains*(
