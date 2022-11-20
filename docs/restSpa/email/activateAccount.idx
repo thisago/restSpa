@@ -1,2 +1,0 @@
-render	restSpa/email/activateAccount.html#render,string,string	activateAccount: render(username, code: string): string	
-send	restSpa/email/activateAccount.html#send,string,string,string	activateAccount: send(to, username, code: string; test = true): bool	

@@ -1,1 +1,0 @@
-r_getUser	restSpa/routes/api/admin/getUser.html#r_getUser,Context	getUser: r_getUser(ctx: Context): owned(Future[void])	

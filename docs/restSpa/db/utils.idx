@@ -1,1 +1,0 @@
-getFromDb	restSpa/db/utils.html#getFromDb.t,type,ref.,openArray[string],untyped	utils: getFromDb(table: type; blank: ref object; identifiers: openArray[string];\n          vars: untyped): untyped	

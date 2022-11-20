@@ -1,3 +1,0 @@
-nowUnix	restSpa/utils.html#nowUnix	utils: nowUnix(): int64	
-url	restSpa/utils.html#url,string	utils: url(path: string): string	
-delInternals	restSpa/utils.html#delInternals,JsonNode	utils: delInternals(node: var JsonNode)	
